@@ -5,6 +5,7 @@ Public Class Consts
 	Public Const x86_64 = "GDPI\x86_64\goodbyedpi.exe"
 	Public Const GDPIName = "GoodbyeDPI"
 	Public Const WDName = "WinDivert1.4"
+	Public Const ConfigFile = "Config.xml"
 
 	Public Shared ReadOnly Property PathToEXE As String
 		Get

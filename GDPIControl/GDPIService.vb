@@ -2,7 +2,7 @@
 Imports System.Diagnostics
 Imports System.Threading
 
-Public Class ServiceHelper
+Public Class GDPIService
 
 	Private GDPIService As ServiceController
 	Private WDService As ServiceController
@@ -13,7 +13,7 @@ Public Class ServiceHelper
 	End Sub
 
 	Public Shared Function IsServiceRunning() As Boolean
-
+		Return False
 	End Function
 
 End Class

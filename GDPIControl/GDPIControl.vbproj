@@ -106,6 +106,12 @@
     <Compile Include="DateTimeS.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormBlacklist.Designer.vb">
+      <DependentUpon>FormBlacklist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBlacklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,8 +135,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ProcessHelper.vb" />
-    <Compile Include="ServiceHelper.vb" />
+    <Compile Include="GDPIProcess.vb" />
+    <Compile Include="GDPIService.vb" />
     <Compile Include="ToggleValueBox.Designer.vb">
       <DependentUpon>ToggleValueBox.vb</DependentUpon>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormBlacklist.resx">
+      <DependentUpon>FormBlacklist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +169,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <Content Include="Userlist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icon_green.ico" />
+    <None Include="Resources\icon_red.ico" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -3,7 +3,7 @@
   <MySubMain>true</MySubMain>
   <MainForm>FormMain</MainForm>
   <SingleInstance>true</SingleInstance>
-  <ShutdownMode>1</ShutdownMode>
+  <ShutdownMode>0</ShutdownMode>
   <EnableVisualStyles>true</EnableVisualStyles>
   <AuthenticationMode>0</AuthenticationMode>
   <SaveMySettingsOnExit>true</SaveMySettingsOnExit>
