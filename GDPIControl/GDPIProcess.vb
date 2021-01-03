@@ -22,7 +22,7 @@
 	Public Shared Sub Start()
 		If IsRunning Then Exit Sub
 		Dim startInfo = New ProcessStartInfo() With {
-			.FileName = Consts.PathToEXE,
+			.FileName = Consts.GDPIPath,
 			.Arguments = My.Application.Config.Arguments,
 			.RedirectStandardOutput = True,
 			.RedirectStandardError = True,
@@ -30,7 +30,7 @@
 			.CreateNoWindow = True}
 		Dim TestInfo = New ProcessStartInfo() With {
 			.FileName = "cmd.exe",
-			.Arguments = $"/C start """" {Consts.PathToEXE } { My.Application.Config.Arguments}"}
+			.Arguments = $"/C start """" {Consts.GDPIPath } { My.Application.Config.Arguments}"}
 		'GDPIP = Process.Start(TestInfo)
 		GDPIP = Process.Start(startInfo)
 		GDPIP.BeginOutputReadLine()

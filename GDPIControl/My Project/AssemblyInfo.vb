@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Проверьте значения атрибутов сборки
 
 <Assembly: AssemblyTitle("GDPIControl")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("IT Organization")>
+<Assembly: AssemblyDescription("GoodbyeDPI Tray Control")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("GDPIControl")>
-<Assembly: AssemblyCopyright("Copyright © IT Organization 2020")>
+<Assembly: AssemblyCopyright("Virenbar 2021")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,4 @@ Imports System.Runtime.InteropServices
 ' используя "*", как показано ниже:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0")>

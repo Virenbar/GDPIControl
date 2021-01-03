@@ -31,6 +31,7 @@ Partial Class FormMain
 		Me.TSMI_Settings = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Close = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+		Me.BS_GDPISettings = New System.Windows.Forms.BindingSource(Me.components)
 		Me.FLP_Custom = New System.Windows.Forms.FlowLayoutPanel()
 		Me.CheckBox2 = New System.Windows.Forms.CheckBox()
 		Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -80,12 +81,14 @@ Partial Class FormMain
 		Me.TraySettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Mini = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Start = New System.Windows.Forms.ToolStripMenuItem()
-		Me.TLP_S = New System.Windows.Forms.TableLayoutPanel()
-		Me.BS_GDPISettings = New System.Windows.Forms.BindingSource(Me.components)
+		Me.TSMI_Logon = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ListsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Blacklist = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Userlist = New System.Windows.Forms.ToolStripMenuItem()
+		Me.TSMI_Debug = New System.Windows.Forms.ToolStripMenuItem()
+		Me.TLP_S = New System.Windows.Forms.TableLayoutPanel()
 		Me.TrayMenu.SuspendLayout()
+		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.FLP_Custom.SuspendLayout()
 		Me.TableLayoutPanel3.SuspendLayout()
 		CType(Me.NUD_F, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +104,6 @@ Partial Class FormMain
 		Me.TLP_Buttons.SuspendLayout()
 		Me.FormMenu.SuspendLayout()
 		Me.TLP_S.SuspendLayout()
-		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'TrayControl
@@ -153,6 +155,10 @@ Partial Class FormMain
 		Me.CheckBox1.TabIndex = 1
 		Me.CheckBox1.Text = "-p Block passive DPI"
 		Me.CheckBox1.UseVisualStyleBackColor = True
+		'
+		'BS_GDPISettings
+		'
+		Me.BS_GDPISettings.DataSource = GetType(GDPIControl.Data.GDPISettings)
 		'
 		'FLP_Custom
 		'
@@ -561,7 +567,7 @@ Partial Class FormMain
 		'NumericUpDown1
 		'
 		Me.NumericUpDown1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.BS_GDPISettings, "TTL_Value", True))
-		Me.NumericUpDown1.DataBindings.Add(New System.Windows.Forms.Binding("Enabled", Me.BS_GDPISettings, "TTL_State", True))
+		Me.NumericUpDown1.DataBindings.Add(New System.Windows.Forms.Binding("Enabled", Me.BS_GDPISettings, "TTL_State", True, System.Windows.Forms.DataSourceUpdateMode.Never))
 		Me.NumericUpDown1.Location = New System.Drawing.Point(24, 3)
 		Me.NumericUpDown1.Name = "NumericUpDown1"
 		Me.NumericUpDown1.Size = New System.Drawing.Size(51, 20)
@@ -609,10 +615,12 @@ Partial Class FormMain
 		'RB_Custom
 		'
 		Me.RB_Custom.AutoSize = True
+		Me.RB_Custom.Checked = True
 		Me.RB_Custom.Location = New System.Drawing.Point(3, 3)
 		Me.RB_Custom.Name = "RB_Custom"
 		Me.RB_Custom.Size = New System.Drawing.Size(86, 17)
 		Me.RB_Custom.TabIndex = 7
+		Me.RB_Custom.TabStop = True
 		Me.RB_Custom.Text = "User settings"
 		Me.RB_Custom.UseVisualStyleBackColor = True
 		'
@@ -628,12 +636,10 @@ Partial Class FormMain
 		'RB_P1
 		'
 		Me.RB_P1.AutoSize = True
-		Me.RB_P1.Checked = True
 		Me.RB_P1.Location = New System.Drawing.Point(3, 39)
 		Me.RB_P1.Name = "RB_P1"
 		Me.RB_P1.Size = New System.Drawing.Size(181, 17)
 		Me.RB_P1.TabIndex = 8
-		Me.RB_P1.TabStop = True
 		Me.RB_P1.Text = "-1 Most compatible mode, default"
 		Me.RB_P1.UseVisualStyleBackColor = True
 		'
@@ -727,7 +733,7 @@ Partial Class FormMain
 		'
 		'FormMenu
 		'
-		Me.FormMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TraySettingsToolStripMenuItem, Me.ListsToolStripMenuItem})
+		Me.FormMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TraySettingsToolStripMenuItem, Me.ListsToolStripMenuItem, Me.TSMI_Debug})
 		Me.FormMenu.Location = New System.Drawing.Point(0, 0)
 		Me.FormMenu.Name = "FormMenu"
 		Me.FormMenu.Size = New System.Drawing.Size(474, 24)
@@ -736,7 +742,7 @@ Partial Class FormMain
 		'
 		'TraySettingsToolStripMenuItem
 		'
-		Me.TraySettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMI_Mini, Me.TSMI_Start})
+		Me.TraySettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMI_Mini, Me.TSMI_Start, Me.TSMI_Logon})
 		Me.TraySettingsToolStripMenuItem.Name = "TraySettingsToolStripMenuItem"
 		Me.TraySettingsToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
 		Me.TraySettingsToolStripMenuItem.Text = "Control settings"
@@ -757,6 +763,39 @@ Partial Class FormMain
 		Me.TSMI_Start.Size = New System.Drawing.Size(183, 22)
 		Me.TSMI_Start.Text = "Start GDPI on launch"
 		'
+		'TSMI_Logon
+		'
+		Me.TSMI_Logon.CheckOnClick = True
+		Me.TSMI_Logon.Name = "TSMI_Logon"
+		Me.TSMI_Logon.Size = New System.Drawing.Size(183, 22)
+		Me.TSMI_Logon.Text = "Launch on logon"
+		'
+		'ListsToolStripMenuItem
+		'
+		Me.ListsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMI_Blacklist, Me.TSMI_Userlist})
+		Me.ListsToolStripMenuItem.Name = "ListsToolStripMenuItem"
+		Me.ListsToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+		Me.ListsToolStripMenuItem.Text = "Lists"
+		'
+		'TSMI_Blacklist
+		'
+		Me.TSMI_Blacklist.Name = "TSMI_Blacklist"
+		Me.TSMI_Blacklist.Size = New System.Drawing.Size(158, 22)
+		Me.TSMI_Blacklist.Text = "Update blacklist"
+		'
+		'TSMI_Userlist
+		'
+		Me.TSMI_Userlist.Name = "TSMI_Userlist"
+		Me.TSMI_Userlist.Size = New System.Drawing.Size(158, 22)
+		Me.TSMI_Userlist.Text = "Open userlist"
+		'
+		'TSMI_Debug
+		'
+		Me.TSMI_Debug.Name = "TSMI_Debug"
+		Me.TSMI_Debug.Size = New System.Drawing.Size(75, 20)
+		Me.TSMI_Debug.Text = "DebugInfo"
+		Me.TSMI_Debug.Visible = False
+		'
 		'TLP_S
 		'
 		Me.TLP_S.ColumnCount = 1
@@ -771,29 +810,6 @@ Partial Class FormMain
 		Me.TLP_S.RowStyles.Add(New System.Windows.Forms.RowStyle())
 		Me.TLP_S.Size = New System.Drawing.Size(474, 539)
 		Me.TLP_S.TabIndex = 9
-		'
-		'BS_GDPISettings
-		'
-		Me.BS_GDPISettings.DataSource = GetType(GDPIControl.Data.GDPISettings)
-		'
-		'ListsToolStripMenuItem
-		'
-		Me.ListsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMI_Blacklist, Me.TSMI_Userlist})
-		Me.ListsToolStripMenuItem.Name = "ListsToolStripMenuItem"
-		Me.ListsToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
-		Me.ListsToolStripMenuItem.Text = "Lists"
-		'
-		'TSMI_Blacklist
-		'
-		Me.TSMI_Blacklist.Name = "TSMI_Blacklist"
-		Me.TSMI_Blacklist.Size = New System.Drawing.Size(180, 22)
-		Me.TSMI_Blacklist.Text = "Update blacklist"
-		'
-		'TSMI_Userlist
-		'
-		Me.TSMI_Userlist.Name = "TSMI_Userlist"
-		Me.TSMI_Userlist.Size = New System.Drawing.Size(180, 22)
-		Me.TSMI_Userlist.Text = "Open userlist"
 		'
 		'FormMain
 		'
@@ -812,6 +828,7 @@ Partial Class FormMain
 		Me.Name = "FormMain"
 		Me.Text = "Settings"
 		Me.TrayMenu.ResumeLayout(False)
+		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.FLP_Custom.ResumeLayout(False)
 		Me.FLP_Custom.PerformLayout()
 		Me.TableLayoutPanel3.ResumeLayout(False)
@@ -838,7 +855,6 @@ Partial Class FormMain
 		Me.FormMenu.PerformLayout()
 		Me.TLP_S.ResumeLayout(False)
 		Me.TLP_S.PerformLayout()
-		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -905,4 +921,6 @@ Partial Class FormMain
 	Friend WithEvents ListsToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents TSMI_Blacklist As ToolStripMenuItem
 	Friend WithEvents TSMI_Userlist As ToolStripMenuItem
+	Friend WithEvents TSMI_Logon As ToolStripMenuItem
+	Friend WithEvents TSMI_Debug As ToolStripMenuItem
 End Class

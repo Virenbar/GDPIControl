@@ -22,7 +22,7 @@ deploy:
   release: GDPIControl $(AppVersion)
   description: "No changelog"
   auth_token:
-    secure: 
+    secure: 9NRTNKyVHpRNaenx8/anaILCi7GN/qSFnXAbGAzx2oCoIUJsiAhuxP0MHIBG/V8k
   artifact: GDPIControl
   draft: false
   prerelease: true

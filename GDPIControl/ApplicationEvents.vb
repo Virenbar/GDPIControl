@@ -14,19 +14,19 @@ Namespace My
 		Public Config As ControlSettings
 
 		Private Sub LoadConfig()
-			If File.Exists(Consts.ConfigFile) Then
+			If File.Exists(Consts.ConfigPath) Then
 				Dim xs As New XmlSerializer(GetType(ControlSettings))
-				Using SR As New StreamReader(Consts.ConfigFile)
+				Using SR As New StreamReader(Consts.ConfigPath)
 					Config = DirectCast(xs.Deserialize(SR), ControlSettings)
 				End Using
 			Else
-				Config = New ControlSettings With {.StartOnLaunch = False, .LaunchMinimized = True, .GDPIConfig = GDPISettings.C4}
+				Config = New ControlSettings With {.StartOnLaunch = False, .LaunchMinimized = False, .GDPIConfig = GDPISettings.C4}
 			End If
 		End Sub
 
 		Private Sub SaveConfig()
 			Dim xs As New XmlSerializer(GetType(ControlSettings))
-			Using SW As New StreamWriter(Consts.ConfigFile)
+			Using SW As New StreamWriter(Consts.ConfigPath)
 				xs.Serialize(SW, Config)
 			End Using
 		End Sub

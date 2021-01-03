@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 Imports GDPIControl.Data
 
 Public Class FormMain
-	Private Shared ReadOnly IP_R As New Regex("((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])")
+	Private Shared ReadOnly IP_R As New Regex("^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$")
 	Private BlockVisible As Boolean
 	Private StrToRB As Dictionary(Of String, RadioButton)
 
@@ -15,6 +15,7 @@ Public Class FormMain
 		StrToRB = New Dictionary(Of String, RadioButton) From {{"-1", RB_P1}, {"-2", RB_P2}, {"-3", RB_P3}, {"-4", RB_P4}}
 		TSMI_Mini.Checked = My.Application.Config.LaunchMinimized
 		TSMI_Start.Checked = My.Application.Config.StartOnLaunch
+		TSMI_Logon.Checked = My.Application.Config.AutoLaunch
 
 		BlockVisible = My.Application.Config.LaunchMinimized
 		If My.Application.Config.StartOnLaunch Then
@@ -58,6 +59,7 @@ Public Class FormMain
 		TSMI_Disable.Enabled = True
 		TrayControl.Icon = My.Resources.icon_green
 		Icon = My.Resources.icon_green
+		SetArguments()
 		GDPIProcess.Start()
 	End Sub
 
@@ -66,17 +68,8 @@ Public Class FormMain
 		TrayControl.Icon = Nothing
 		TrayControl.Visible = False
 		TrayControl.Dispose()
-		Application.Exit()
-	End Sub
-
-	Private Sub FormMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-		e.Cancel = True
-		Visible = False
-	End Sub
-
-	Private Sub RB_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Custom.CheckedChanged, RB_P1.CheckedChanged, RB_P2.CheckedChanged, RB_P3.CheckedChanged, RB_P4.CheckedChanged
 		SetArguments()
-		FLP_Custom.Enabled = RB_Custom.Checked
+		Application.Exit()
 	End Sub
 
 	Private Sub SetArguments()
@@ -103,6 +96,7 @@ Public Class FormMain
 #Region "Validating"
 
 	Private Sub DNS_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS_IP.Validating
+		If DNS_IP.Text = "" Then Exit Sub
 		Try
 			Dim M = IP_R.Match(DNS_IP.Text)
 			e.Cancel = Not M.Success
@@ -121,6 +115,7 @@ Public Class FormMain
 	End Sub
 
 	Private Sub DNS6_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS6_IP.Validating
+		If DNS6_IP.Text = "" Then Exit Sub
 		Try
 			Dim IP As IPAddress = Nothing
 			Dim r = IPAddress.TryParse(DNS6_IP.Text, IP)
@@ -141,8 +136,18 @@ Public Class FormMain
 
 #End Region
 
+#Region "Tray Events"
+
 	Private Sub TrayControl_MouseClick(sender As Object, e As MouseEventArgs) Handles TrayControl.MouseClick
 		If e.Button = MouseButtons.Left Then ShowForm()
+	End Sub
+
+	Private Sub TSMI_Enable_Click(sender As Object, e As EventArgs) Handles TSMI_Enable.Click
+		StartGDPI()
+	End Sub
+
+	Private Sub TSMI_Disable_Click(sender As Object, e As EventArgs) Handles TSMI_Disable.Click
+		StopGDPI()
 	End Sub
 
 	Private Sub TSMI_Close_Click(sender As Object, e As EventArgs) Handles TSMI_Close.Click
@@ -153,20 +158,20 @@ Public Class FormMain
 		ShowForm()
 	End Sub
 
+#End Region
+
+#Region "Form Events"
+
+	Private Sub RB_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Custom.CheckedChanged
+		FLP_Custom.Enabled = RB_Custom.Checked
+	End Sub
+
 	Private Sub TSMI_Mini_CheckedChanged(sender As Object, e As EventArgs) Handles TSMI_Mini.CheckedChanged
 		My.Application.Config.LaunchMinimized = TSMI_Mini.Checked
 	End Sub
 
 	Private Sub TSMI_Start_CheckedChanged(sender As Object, e As EventArgs) Handles TSMI_Start.CheckedChanged
 		My.Application.Config.StartOnLaunch = TSMI_Start.Checked
-	End Sub
-
-	Private Sub TSMI_Enable_Click(sender As Object, e As EventArgs) Handles TSMI_Enable.Click
-		StartGDPI()
-	End Sub
-
-	Private Sub TSMI_Disable_Click(sender As Object, e As EventArgs) Handles TSMI_Disable.Click
-		StopGDPI()
 	End Sub
 
 	Private Sub B_Stop_Click(sender As Object, e As EventArgs) Handles B_Stop.Click
@@ -186,17 +191,39 @@ Public Class FormMain
 		MyBase.SetVisibleCore(value)
 	End Sub
 
-	Protected Overrides Sub OnLoad(e As EventArgs)
-		MyBase.OnLoad(e)
-	End Sub
-
 	Private Sub TSMI_Blacklist_Click(sender As Object, e As EventArgs) Handles TSMI_Blacklist.Click
 		Dim F = New FormBlacklist
 		F.ShowDialog(Me)
 	End Sub
 
 	Private Sub TSMI_Userlist_Click(sender As Object, e As EventArgs) Handles TSMI_Userlist.Click
-		Process.Start("Userlist.txt")
+		Process.Start(Consts.UserlistPath)
 	End Sub
+
+	Private Sub TSMI_Logon_Click(sender As Object, e As EventArgs) Handles TSMI_Logon.Click
+		My.Application.Config.AutoLaunch = TSMI_Logon.Checked
+		Try
+			If TSMI_Logon.Checked Then
+				TaskLaunch.Register()
+			Else
+				TaskLaunch.Delete()
+			End If
+		Catch ex As IO.FileNotFoundException
+			'Task removed by someone else
+		Catch ex As Exception
+			MessageBox.Show(ex.Message)
+		End Try
+	End Sub
+
+	Private Sub TSMI_Debug_Click(sender As Object, e As EventArgs) Handles TSMI_Debug.Click
+		MessageBox.Show(Application.StartupPath + vbNewLine + Consts.ConfigPath)
+	End Sub
+
+	Private Sub FormMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+		e.Cancel = True
+		Visible = False
+	End Sub
+
+#End Region
 
 End Class
