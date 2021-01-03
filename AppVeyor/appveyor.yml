@@ -15,7 +15,6 @@ build:
 artifacts:
 - path: GDPIControl\bin\Release
   name: GDPIControl
-
 deploy:
   provider: GitHub
   tag: $(APPVEYOR_REPO_TAG_NAME)
