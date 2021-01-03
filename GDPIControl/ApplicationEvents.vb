@@ -20,7 +20,7 @@ Namespace My
 					Config = DirectCast(xs.Deserialize(SR), ControlSettings)
 				End Using
 			Else
-				Config = New ControlSettings With {.StartOnLaunch = False, .LaunchMinimized = False, .GDPIConfig = GDPISettings.C4}
+				Config = New ControlSettings With {.GDPIConfig = GDPISettings.C4, .Arguments = "-4"}
 			End If
 		End Sub
 
