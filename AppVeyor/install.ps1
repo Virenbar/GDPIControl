@@ -1,4 +1,4 @@
-$content = Get-Content "AssemblyInfo.vb"
+$content = Get-Content "GDPIControl\My Project\AssemblyInfo.vb"
 $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
 if ($match.Success)
 {
