@@ -224,6 +224,9 @@ Namespace Data
 			If DNS6_State Then Params.Add($"--dnsv6-addr {DNS6_IP} --dnsv6-port {DNS6_Port}")
 			If TTL_State Then Params.Add($"--set-ttl {TTL_Value}")
 			If ChkSum Then Params.Add("--wrong-chksum")
+
+			If My.Application.Config.UseUserlist Then Params.Add($"--blacklist {Consts.UserlistPath}")
+			If My.Application.Config.UseBlacklist Then Params.Add($"--blacklist {Consts.BlacklistPath}")
 			Return String.Join(" ", Params)
 		End Function
 
@@ -251,7 +254,7 @@ Namespace Data
 			End Get
 		End Property
 
-		Protected Sub NotifyPropertyChanged(<CallerMemberName()> Optional ByVal propertyName As String = Nothing)
+		Protected Sub NotifyPropertyChanged(<CallerMemberName()> Optional propertyName As String = Nothing)
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End Sub
 

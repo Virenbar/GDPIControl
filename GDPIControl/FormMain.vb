@@ -6,7 +6,7 @@ Imports GDPIControl.Data
 Public Class FormMain
 	Private Shared ReadOnly IP_R As New Regex("^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$")
 	Private BlockVisible As Boolean
-	Private StrToRB As Dictionary(Of String, RadioButton)
+	Private ReadOnly StrToRB As Dictionary(Of String, RadioButton)
 
 	Public Sub New()
 		' Этот вызов является обязательным для конструктора.
@@ -23,8 +23,12 @@ Public Class FormMain
 		Else
 			StopGDPI()
 		End If
+
+		BS_ControlSettings.DataSource = My.Application.Config
 		BS_GDPISettings.DataSource = My.Application.Config.GDPIConfig
-		Dim RB = If(StrToRB.ContainsKey(My.Application.Config.Arguments), StrToRB(My.Application.Config.Arguments), RB_Custom)
+
+		Dim Arg = My.Application.Config.Arguments.Split(" "c)(0)
+		Dim RB = If(StrToRB.ContainsKey(Arg), StrToRB(Arg), RB_Custom)
 		RB.Checked = True
 	End Sub
 
@@ -162,8 +166,13 @@ Public Class FormMain
 
 #Region "Form Events"
 
+	Private Sub RadioButtonChanged(sender As Object, e As EventArgs) Handles RB_Custom.CheckedChanged, RB_P1.CheckedChanged, RB_P2.CheckedChanged, RB_P3.CheckedChanged, RB_P4.CheckedChanged
+
+	End Sub
+
 	Private Sub RB_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Custom.CheckedChanged
 		FLP_Custom.Enabled = RB_Custom.Checked
+		B_Copy.Enabled = Not RB_Custom.Checked
 	End Sub
 
 	Private Sub TSMI_Mini_CheckedChanged(sender As Object, e As EventArgs) Handles TSMI_Mini.CheckedChanged
@@ -208,8 +217,6 @@ Public Class FormMain
 			Else
 				TaskLaunch.Delete()
 			End If
-		Catch ex As IO.FileNotFoundException
-			'Task removed by someone else
 		Catch ex As Exception
 			MessageBox.Show(ex.Message)
 		End Try

@@ -85,6 +85,7 @@ Partial Class FormBlacklist
 		Me.Name = "FormBlacklist"
 		Me.ShowIcon = False
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
 		Me.Text = "Blacklist download"
 		Me.TableLayoutPanel1.ResumeLayout(False)
 		Me.TableLayoutPanel1.PerformLayout()

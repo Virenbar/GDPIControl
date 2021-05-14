@@ -31,7 +31,6 @@ Partial Class FormMain
 		Me.TSMI_Settings = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Close = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-		Me.BS_GDPISettings = New System.Windows.Forms.BindingSource(Me.components)
 		Me.FLP_Custom = New System.Windows.Forms.FlowLayoutPanel()
 		Me.CheckBox2 = New System.Windows.Forms.CheckBox()
 		Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -87,8 +86,13 @@ Partial Class FormMain
 		Me.TSMI_Userlist = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TSMI_Debug = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TLP_S = New System.Windows.Forms.TableLayoutPanel()
+		Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+		Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+		Me.CB_Blacklist = New System.Windows.Forms.CheckBox()
+		Me.CB_Userlist = New System.Windows.Forms.CheckBox()
+		Me.BS_ControlSettings = New System.Windows.Forms.BindingSource(Me.components)
+		Me.BS_GDPISettings = New System.Windows.Forms.BindingSource(Me.components)
 		Me.TrayMenu.SuspendLayout()
-		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.FLP_Custom.SuspendLayout()
 		Me.TableLayoutPanel3.SuspendLayout()
 		CType(Me.NUD_F, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,6 +108,10 @@ Partial Class FormMain
 		Me.TLP_Buttons.SuspendLayout()
 		Me.FormMenu.SuspendLayout()
 		Me.TLP_S.SuspendLayout()
+		Me.FlowLayoutPanel1.SuspendLayout()
+		Me.FlowLayoutPanel2.SuspendLayout()
+		CType(Me.BS_ControlSettings, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'TrayControl
@@ -155,10 +163,6 @@ Partial Class FormMain
 		Me.CheckBox1.TabIndex = 1
 		Me.CheckBox1.Text = "-p Block passive DPI"
 		Me.CheckBox1.UseVisualStyleBackColor = True
-		'
-		'BS_GDPISettings
-		'
-		Me.BS_GDPISettings.DataSource = GetType(GDPIControl.Data.GDPISettings)
 		'
 		'FLP_Custom
 		'
@@ -607,7 +611,7 @@ Partial Class FormMain
 		Me.FLP_Radio.Controls.Add(Me.RB_P3)
 		Me.FLP_Radio.Controls.Add(Me.RB_P4)
 		Me.FLP_Radio.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-		Me.FLP_Radio.Location = New System.Drawing.Point(3, 395)
+		Me.FLP_Radio.Location = New System.Drawing.Point(3, 3)
 		Me.FLP_Radio.Name = "FLP_Radio"
 		Me.FLP_Radio.Size = New System.Drawing.Size(245, 128)
 		Me.FLP_Radio.TabIndex = 8
@@ -800,7 +804,7 @@ Partial Class FormMain
 		'
 		Me.TLP_S.ColumnCount = 1
 		Me.TLP_S.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-		Me.TLP_S.Controls.Add(Me.FLP_Radio, 0, 1)
+		Me.TLP_S.Controls.Add(Me.FlowLayoutPanel1, 0, 1)
 		Me.TLP_S.Controls.Add(Me.FLP_Custom, 0, 0)
 		Me.TLP_S.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.TLP_S.Location = New System.Drawing.Point(0, 24)
@@ -810,6 +814,59 @@ Partial Class FormMain
 		Me.TLP_S.RowStyles.Add(New System.Windows.Forms.RowStyle())
 		Me.TLP_S.Size = New System.Drawing.Size(474, 539)
 		Me.TLP_S.TabIndex = 9
+		'
+		'FlowLayoutPanel1
+		'
+		Me.FlowLayoutPanel1.Controls.Add(Me.FLP_Radio)
+		Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
+		Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 395)
+		Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+		Me.FlowLayoutPanel1.Size = New System.Drawing.Size(468, 141)
+		Me.FlowLayoutPanel1.TabIndex = 10
+		Me.FlowLayoutPanel1.WrapContents = False
+		'
+		'FlowLayoutPanel2
+		'
+		Me.FlowLayoutPanel2.AutoSize = True
+		Me.FlowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+		Me.FlowLayoutPanel2.Controls.Add(Me.CB_Blacklist)
+		Me.FlowLayoutPanel2.Controls.Add(Me.CB_Userlist)
+		Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+		Me.FlowLayoutPanel2.Location = New System.Drawing.Point(254, 3)
+		Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+		Me.FlowLayoutPanel2.Size = New System.Drawing.Size(92, 46)
+		Me.FlowLayoutPanel2.TabIndex = 2
+		'
+		'CB_Blacklist
+		'
+		Me.CB_Blacklist.AutoSize = True
+		Me.CB_Blacklist.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Me.BS_ControlSettings, "UseBlacklist", True))
+		Me.CB_Blacklist.Location = New System.Drawing.Point(3, 3)
+		Me.CB_Blacklist.Name = "CB_Blacklist"
+		Me.CB_Blacklist.Size = New System.Drawing.Size(86, 17)
+		Me.CB_Blacklist.TabIndex = 0
+		Me.CB_Blacklist.Text = "Use blacklist"
+		Me.CB_Blacklist.UseVisualStyleBackColor = True
+		'
+		'CB_Userlist
+		'
+		Me.CB_Userlist.AutoSize = True
+		Me.CB_Userlist.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Me.BS_ControlSettings, "UseUserlist", True))
+		Me.CB_Userlist.Location = New System.Drawing.Point(3, 26)
+		Me.CB_Userlist.Name = "CB_Userlist"
+		Me.CB_Userlist.Size = New System.Drawing.Size(80, 17)
+		Me.CB_Userlist.TabIndex = 1
+		Me.CB_Userlist.Text = "Use userlist"
+		Me.CB_Userlist.UseVisualStyleBackColor = True
+		'
+		'BS_ControlSettings
+		'
+		Me.BS_ControlSettings.DataSource = GetType(GDPIControl.Data.ControlSettings)
+		'
+		'BS_GDPISettings
+		'
+		Me.BS_GDPISettings.DataSource = GetType(GDPIControl.Data.GDPISettings)
 		'
 		'FormMain
 		'
@@ -826,9 +883,9 @@ Partial Class FormMain
 		Me.MinimizeBox = False
 		Me.MinimumSize = New System.Drawing.Size(490, 650)
 		Me.Name = "FormMain"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Settings"
 		Me.TrayMenu.ResumeLayout(False)
-		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.FLP_Custom.ResumeLayout(False)
 		Me.FLP_Custom.PerformLayout()
 		Me.TableLayoutPanel3.ResumeLayout(False)
@@ -855,6 +912,12 @@ Partial Class FormMain
 		Me.FormMenu.PerformLayout()
 		Me.TLP_S.ResumeLayout(False)
 		Me.TLP_S.PerformLayout()
+		Me.FlowLayoutPanel1.ResumeLayout(False)
+		Me.FlowLayoutPanel1.PerformLayout()
+		Me.FlowLayoutPanel2.ResumeLayout(False)
+		Me.FlowLayoutPanel2.PerformLayout()
+		CType(Me.BS_ControlSettings, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.BS_GDPISettings, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -923,4 +986,9 @@ Partial Class FormMain
 	Friend WithEvents TSMI_Userlist As ToolStripMenuItem
 	Friend WithEvents TSMI_Logon As ToolStripMenuItem
 	Friend WithEvents TSMI_Debug As ToolStripMenuItem
+	Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+	Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+	Friend WithEvents CB_Blacklist As CheckBox
+	Friend WithEvents CB_Userlist As CheckBox
+	Friend WithEvents BS_ControlSettings As BindingSource
 End Class
