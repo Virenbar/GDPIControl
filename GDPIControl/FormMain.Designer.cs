@@ -205,19 +205,19 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.loadToolStripMenuItem.Text = "Load";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripMenuItem2
@@ -234,14 +234,14 @@
             // 
             this.MI_Minimized.CheckOnClick = true;
             this.MI_Minimized.Name = "MI_Minimized";
-            this.MI_Minimized.Size = new System.Drawing.Size(180, 22);
+            this.MI_Minimized.Size = new System.Drawing.Size(172, 22);
             this.MI_Minimized.Text = "Launch minimized";
             this.MI_Minimized.CheckedChanged += new System.EventHandler(this.MI_Minimized_CheckedChanged);
             // 
             // MI_Autostart
             // 
             this.MI_Autostart.Name = "MI_Autostart";
-            this.MI_Autostart.Size = new System.Drawing.Size(180, 22);
+            this.MI_Autostart.Size = new System.Drawing.Size(172, 22);
             this.MI_Autostart.Text = "Autostart GDPI";
             this.MI_Autostart.CheckedChanged += new System.EventHandler(this.MI_Autostart_CheckedChanged);
             // 
@@ -249,7 +249,7 @@
             // 
             this.MI_Logon.CheckOnClick = true;
             this.MI_Logon.Name = "MI_Logon";
-            this.MI_Logon.Size = new System.Drawing.Size(180, 22);
+            this.MI_Logon.Size = new System.Drawing.Size(172, 22);
             this.MI_Logon.Text = "Launch on logon";
             this.MI_Logon.Click += new System.EventHandler(this.MI_Logon_Click);
             // 
@@ -403,7 +403,7 @@
             this.RB_Custom.TabStop = true;
             this.RB_Custom.Text = "User settings";
             this.RB_Custom.UseVisualStyleBackColor = true;
-            this.RB_Custom.CheckedChanged += new System.EventHandler(this.RB_Custom_CheckedChanged);
+            this.RB_Custom.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // label2
             // 
@@ -424,6 +424,7 @@
             this.RB_M1.TabStop = true;
             this.RB_M1.Text = "-1 Most compatible mode";
             this.RB_M1.UseVisualStyleBackColor = true;
+            this.RB_M1.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // RB_M2
             // 
@@ -435,6 +436,7 @@
             this.RB_M2.TabStop = true;
             this.RB_M2.Text = "-2 Better speed for HTTPS yet still compatible";
             this.RB_M2.UseVisualStyleBackColor = true;
+            this.RB_M2.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // RB_M3
             // 
@@ -446,6 +448,7 @@
             this.RB_M3.TabStop = true;
             this.RB_M3.Text = "-3 Better speed for HTTP and HTTPS";
             this.RB_M3.UseVisualStyleBackColor = true;
+            this.RB_M3.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // RB_M4
             // 
@@ -457,6 +460,7 @@
             this.RB_M4.TabStop = true;
             this.RB_M4.Text = "-4 Best speed";
             this.RB_M4.UseVisualStyleBackColor = true;
+            this.RB_M4.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // label1
             // 
@@ -477,6 +481,7 @@
             this.RB_M5.TabStop = true;
             this.RB_M5.Text = "-5 (default)";
             this.RB_M5.UseVisualStyleBackColor = true;
+            this.RB_M5.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // RB_M6
             // 
@@ -488,6 +493,7 @@
             this.RB_M6.TabStop = true;
             this.RB_M6.Text = "-6";
             this.RB_M6.UseVisualStyleBackColor = true;
+            this.RB_M6.CheckedChanged += new System.EventHandler(this.RB_CheckedChanged);
             // 
             // B_Copy
             // 

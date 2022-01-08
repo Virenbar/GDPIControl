@@ -152,7 +152,13 @@ namespace GDPIControl.Model
         public string ToArguments()
         {
             var SB = new StringBuilder();
-            return SB.ToString();
+            if (P) { SB.Append(" -p"); }
+            if (R) { SB.Append(" -r"); }
+            if (S) { SB.Append(" -s"); }
+            if (M) { SB.Append(" -m"); }
+            if (F_State) { SB.Append($" -f {F_Value}"); }
+            if (K_State) { SB.Append($" -k {K_Value}"); }
+            return SB.ToString().Trim();
         }
 
         public static string ModesetArgument(Modeset modeset)
@@ -185,7 +191,7 @@ namespace GDPIControl.Model
 
         #region INotify
 
-        protected void NotifyPropertyChanged([CallerMemberName()] string propertyName = null)
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

@@ -7,7 +7,7 @@ namespace GDPIControl
 {
     public partial class FormBlacklist : Form
     {
-        private readonly WebClient Client = new WebClient();
+        private readonly WebClient Client = new();
 
         public FormBlacklist()
         {

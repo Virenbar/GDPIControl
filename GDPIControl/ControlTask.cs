@@ -8,10 +8,15 @@ namespace GDPIControl
     internal static class ControlTask
     {
         private const string TaskName = "GDPIControl";
-        private static readonly string UserName = WindowsIdentity.GetCurrent().Name.Split('\\')[1];
         private static readonly string TaskPath = $@"{TaskName}\Autorun for {UserName}";
-
+        private static readonly string UserName = WindowsIdentity.GetCurrent().Name.Split('\\')[1];
         public static bool IsRegistered => TaskService.Instance.GetTask(TaskPath) != null;
+
+        public static void Delete()
+        {
+            if (!IsRegistered) { return; }
+            TaskService.Instance.RootFolder.DeleteTask(TaskPath);
+        }
 
         public static void Register()
         {
@@ -25,16 +30,10 @@ namespace GDPIControl
             S.ExecutionTimeLimit = TimeSpan.Zero;
             S.StopIfGoingOnBatteries = false;
 
-            var LT = new LogonTrigger() { UserId = UserName };
+            var LT = new LogonTrigger { UserId = UserName };
             TD.Triggers.Add(LT);
 
             TS.RootFolder.RegisterTaskDefinition(TaskPath, TD);
-        }
-
-        public static void Delete()
-        {
-            if (!IsRegistered) { return; }
-            TaskService.Instance.RootFolder.DeleteTask(TaskPath);
         }
     }
 }

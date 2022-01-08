@@ -15,7 +15,7 @@ namespace GDPIControl
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Config.Load();
-            Form = new FormMain();
+            var Form = new FormMain();
 
             if (!Config.Current.LaunchMinimazed) { Form.Show(); }
             Application.ApplicationExit += Application_ApplicationExit;
@@ -26,7 +26,5 @@ namespace GDPIControl
         {
             Config.Save();
         }
-
-        private static Form Form;
     }
 }

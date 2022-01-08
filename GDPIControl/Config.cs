@@ -18,7 +18,7 @@ namespace GDPIControl
             }
             else
             {
-                Current = new ControlSettings() { Modeset = Modeset.M5, GDPISettings = GDPISettings.ModesetSettings(Modeset.M5) };
+                Current = new ControlSettings { Modeset = Modeset.M5, GDPISettings = GDPISettings.ModesetSettings(Modeset.M5) };
             }
         }
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace GDPIControl
 {
-    internal class GDPIProcess
+    internal static class GDPIProcess
     {
         private static Process GDPIP;
 
@@ -20,7 +20,7 @@ namespace GDPIControl
         public static void Start()
         {
             if (IsRunning) { return; }
-            var StartInfo = new ProcessStartInfo()
+            var StartInfo = new ProcessStartInfo
             {
                 FileName = Constants.GDPIPath,
                 Arguments = Config.Current.Arguments,

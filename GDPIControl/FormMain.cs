@@ -11,14 +11,14 @@ namespace GDPIControl
 {
     public partial class FormMain : Form
     {
-        private readonly Regex IP_R = new Regex(@"^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$");
+        private readonly Regex IP_R = new(@"^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$");
         private readonly List<(RadioButton Button, Modeset Modeset)> RBModesets;
         private readonly ControlSettings Settings = Config.Current;
 
         public FormMain()
         {
             InitializeComponent();
-            RBModesets = new List<(RadioButton Button, Modeset Modeset)>()
+            RBModesets = new List<(RadioButton Button, Modeset Modeset)>
             {
                 (RB_M1,Modeset.M1),
                 (RB_M2,Modeset.M2),
@@ -108,11 +108,11 @@ namespace GDPIControl
         }
 
         private void MI_About_Click(object sender, EventArgs e)
-        { }
-
-        private void RB_Custom_CheckedChanged(object sender, EventArgs e)
         {
+            //TODO Add about form
         }
+
+        private void RB_CheckedChanged(object sender, EventArgs e) => SetArguments();
 
         #region Lists
 
