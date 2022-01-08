@@ -53,6 +53,7 @@ jobs:
       with:
         name: GDPIControl
         path: |
-          bin\${{matrix.configuration}}\net5.0-windows\*.*(dll|exe)
+          bin\${{matrix.configuration}}\net5.0-windows\*.exe
+          bin\${{matrix.configuration}}\net5.0-windows\*.dll
           bin\${{matrix.configuration}}\net5.0-windows\GDPI\
         if-no-files-found: error
