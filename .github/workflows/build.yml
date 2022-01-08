@@ -37,7 +37,12 @@ jobs:
         $number = $version.Split('-')[0]
         echo "GITHUB_ENV: VERSION=$version"
         echo "VERSION=$version" >> $GITHUB_ENV
-  
+        
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+        
     - name: Build the application
       run: msbuild $env:Solution_Name /t:Build /p:Configuration=$env:Configuration
       env:
