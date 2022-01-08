@@ -14,6 +14,7 @@ jobs:
     runs-on: windows-latest
     env:
       Solution_Name: GDPIControl.sln
+      Configuration: ${{ matrix.configuration }}
 
     steps:
     - name: Checkout
@@ -38,22 +39,19 @@ jobs:
         echo "GITHUB_ENV: VERSION=$version"
         echo "VERSION=$version" >> $GITHUB_ENV
         
-    - name: Restore the application
+    - name: Restore solution
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
         
-    - name: Build the application
+    - name: Build solutin
       run: msbuild $env:Solution_Name /t:Build /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
-    
+
     - name: Upload a Build Artifact
+      if: matrix.configuration == 'Release'
       uses: actions/upload-artifact@v2.3.1
       with:
         name: GDPIControl
         path: |
-          **\bin\${{matrix.configuration}}\net5.0-windows\*.exe
-          **\bin\${{matrix.configuration}}\net5.0-windows\*.dll
-          **\bin\${{matrix.configuration}}\net5.0-windows\GDPI\
+          GDPIControl\bin\Release\net5.0-windows\*.exe
+          GDPIControl\bin\Release\net5.0-windows\*.dll
+          GDPIControl\bin\Release\net5.0-windows\GDPI\
         if-no-files-found: error
