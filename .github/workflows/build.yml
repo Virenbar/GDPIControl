@@ -53,5 +53,5 @@ jobs:
         path: |
           GDPIControl\bin\Release\net5.0-windows\*.exe
           GDPIControl\bin\Release\net5.0-windows\*.dll
-          GDPIControl\bin\Release\net5.0-windows\GDPI\
+          GDPIControl\bin\Release\net5.0-windows\GDPI\*
         if-no-files-found: error
