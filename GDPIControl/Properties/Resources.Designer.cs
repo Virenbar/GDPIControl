@@ -63,6 +63,16 @@ namespace GDPIControl.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GDPI {
+            get {
+                object obj = ResourceManager.GetObject("GDPI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GDPI_green {
             get {
                 object obj = ResourceManager.GetObject("GDPI_green", resourceCulture);

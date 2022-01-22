@@ -30,6 +30,7 @@ namespace GDPIControl
                 CreateNoWindow = true
             };
             GDPIP = new Process { StartInfo = StartInfo };
+            GDPIP.EnableRaisingEvents = true;
             GDPIP.OutputDataReceived += GDPIP_OutputDataReceived;
             GDPIP.ErrorDataReceived += GDPIP_ErrorDataReceived;
             GDPIP.Start();
@@ -46,12 +47,12 @@ namespace GDPIControl
 
         private static void GDPIP_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
-            Console.WriteLine(e.Data);
+            Debug.WriteLine(e.Data);
         }
 
         private static void GDPIP_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
-            Console.WriteLine(e.Data);
+            Debug.WriteLine(e.Data);
         }
     }
 }

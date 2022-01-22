@@ -22,6 +22,12 @@ namespace GDPIControl
             L_Done.Text = $"{Math.Round((double)e.BytesReceived / 1024, 2)} КВ";
         }
 
+        private void FormBlacklist_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Client.IsBusy) { Client.CancelAsync(); }
+            Client.Dispose();
+        }
+
         private async void FormBlacklist_Load(object sender, EventArgs e)
         {
             try
@@ -36,12 +42,6 @@ namespace GDPIControl
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void FormBlacklist_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (Client.IsBusy) { Client.CancelAsync(); }
-            Client.Dispose();
         }
     }
 }

@@ -49,9 +49,21 @@ jobs:
       if: matrix.configuration == 'Release'
       uses: actions/upload-artifact@v2.3.1
       with:
-        name: GDPIControl
+        name: GDPIControl(5.0)
         path: |
           GDPIControl\bin\Release\net5.0-windows\*.exe
           GDPIControl\bin\Release\net5.0-windows\*.dll
-          GDPIControl\bin\Release\net5.0-windows\GDPI\*
+          GDPIControl\bin\Release\net5.0-windows\GDPI\**\*
+          GDPIControl\bin\Release\net5.0-windows\GDPIControl.runtimeconfig.json
+        if-no-files-found: error
+
+    - name: Upload a Build Artifact
+      if: matrix.configuration == 'Release'
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        name: GDPIControl(4.7.2)
+        path: |
+          GDPIControl\bin\Release\net472\*.exe
+          GDPIControl\bin\Release\net472\*.dll
+          GDPIControl\bin\Release\net472\GDPI\**\*
         if-no-files-found: error

@@ -1,8 +1,9 @@
-﻿using GDPIControl.Properties;
-using GDPIControl.Model;
+﻿using GDPIControl.Model;
+using GDPIControl.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -65,6 +66,8 @@ namespace GDPIControl
             if (Settings.UseBlacklist) { Arguments += $" --blacklist {Constants.BlacklistName}"; }
             if (Settings.UseUserlist) { Arguments += $" --blacklist {Constants.UserlistName}"; }
             Settings.Arguments = Arguments;
+
+            B_Copy.Enabled = Settings.Modeset != Modeset.Custom;
         }
 
         private void ShowGDPIControl() => Visible = true;
@@ -72,6 +75,7 @@ namespace GDPIControl
         private void StartGDPI()
         {
             B_Start.Text = "Stop GDPI";
+            B_Start.Image = Resources.GDPI_red;
             MI_Start.Enabled = false;
             MI_Stop.Enabled = true;
             TrayControl.Icon = Resources.icon_green;
@@ -83,6 +87,7 @@ namespace GDPIControl
         private void StopGDPI()
         {
             B_Start.Text = "Start GDPI";
+            B_Start.Image = Resources.GDPI_green;
             MI_Start.Enabled = true;
             MI_Stop.Enabled = false;
             TrayControl.Icon = Resources.icon_red;
@@ -94,6 +99,14 @@ namespace GDPIControl
         #region UIEvents
 
         private void B_Close_Click(object sender, EventArgs e) => CloseGDPIControl();
+
+        private void B_Copy_Click(object sender, EventArgs e)
+        {
+            Settings.GDPISettings = GDPISettings.ModesetSettings(Settings.Modeset);
+            RB_Custom.Checked = true;
+            TC_Main.SelectedTab = TP_Custom;
+            BS_GDPISettings.DataSource = Settings.GDPISettings;
+        }
 
         private void B_Start_Click(object sender, EventArgs e)
         {
@@ -109,7 +122,8 @@ namespace GDPIControl
 
         private void MI_About_Click(object sender, EventArgs e)
         {
-            //TODO Add about form
+            var F = new FormAbout();
+            F.ShowDialog(this);
         }
 
         private void RB_CheckedChanged(object sender, EventArgs e) => SetArguments();
@@ -122,7 +136,11 @@ namespace GDPIControl
             F.ShowDialog(this);
         }
 
-        private void MI_Userlist_Click(object sender, EventArgs e) => Process.Start(new ProcessStartInfo(Constants.UserlistPath) { UseShellExecute = true });
+        private void MI_Userlist_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(Constants.UserlistPath)) { File.Create(Constants.UserlistPath); }
+            Process.Start(new ProcessStartInfo(Constants.UserlistPath) { UseShellExecute = true });
+        }
 
         #endregion Lists
 
@@ -135,7 +153,7 @@ namespace GDPIControl
 
         private void MI_Logon_Click(object sender, EventArgs e)
         {
-            if (ControlTask.IsRegistered)
+            if (!ControlTask.IsRegistered)
             {
                 ControlTask.Register();
             }

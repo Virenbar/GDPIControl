@@ -11,7 +11,9 @@ namespace GDPIControl
         [STAThread]
         private static void Main()
         {
+#if NET5_0
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
+#endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Config.Load();

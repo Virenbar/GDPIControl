@@ -8,8 +8,15 @@ namespace GDPIControl
     internal static class ControlTask
     {
         private const string TaskName = "GDPIControl";
-        private static readonly string TaskPath = $@"{TaskName}\Autorun for {UserName}";
-        private static readonly string UserName = WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+        private static readonly string TaskPath;
+        private static readonly string UserName;
+
+        static ControlTask()
+        {
+            UserName = WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+            TaskPath = $@"{TaskName}\Autorun for {UserName}";
+        }
+
         public static bool IsRegistered => TaskService.Instance.GetTask(TaskPath) != null;
 
         public static void Delete()
