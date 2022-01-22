@@ -1,11 +1,15 @@
-name: .NET Core Desktop
+name: Build Artifact
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+  workflow_call:
+    outputs:
+      version: 
+        description: "Version builded"
+        value: ${{ jobs.build.outputs.version }}
 jobs:
   build:
     strategy:
@@ -13,9 +17,11 @@ jobs:
         configuration: [Debug, Release]
     runs-on: windows-latest
     env:
-      Solution_Name: GDPIControl.sln
+      DOTNET_NOLOGO: true
+      SolutionName: GDPIControl.sln
       Configuration: ${{ matrix.configuration }}
-
+    outputs:
+      version: ${{steps.version.outputs.version}}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -31,19 +37,20 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Set VERSION
-      shell: pwsh
+      id: version
       run: |
         dotnet tool install -g minver-cli --version 2.5.0
         $version = minver -t v -d preview
         $number = $version.Split('-')[0]
-        echo "GITHUB_ENV: VERSION=$version"
+        echo "VERSION=$version"
         echo "VERSION=$version" >> $GITHUB_ENV
-        
+        echo "::set-output name=version::$version"
+
     - name: Restore solution
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      run: msbuild $env:SolutionName /t:Restore /p:Configuration=$env:Configuration
         
     - name: Build solutin
-      run: msbuild $env:Solution_Name /t:Build /p:Configuration=$env:Configuration
+      run: msbuild $env:SolutionName /t:Build /p:Configuration=$env:Configuration
 
     - name: Upload a Build Artifact
       if: matrix.configuration == 'Release'

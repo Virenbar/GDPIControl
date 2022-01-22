@@ -1,0 +1,16 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    uses: Virenbar/GDPIControl/.github/workflows/build-artifact.yml@master
+  release:
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - run: echo Version builded ${{ needs.build.outputs.version }}
+       

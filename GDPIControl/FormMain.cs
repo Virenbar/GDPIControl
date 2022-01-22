@@ -138,7 +138,7 @@ namespace GDPIControl
 
         private void MI_Userlist_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(Constants.UserlistPath)) { File.Create(Constants.UserlistPath); }
+            if (!File.Exists(Constants.UserlistPath)) { File.WriteAllText("", Constants.UserlistPath); }
             Process.Start(new ProcessStartInfo(Constants.UserlistPath) { UseShellExecute = true });
         }
 
