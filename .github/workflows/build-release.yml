@@ -7,10 +7,12 @@ on:
 
 jobs:
   build:
+    name: Artifact
     uses: Virenbar/GDPIControl/.github/workflows/build-artifact.yml@master
   release:
+    name: Release
     runs-on: windows-latest
     needs: build
     steps:
-      - run: echo Version builded ${{ needs.build.outputs.version }}
+      - run: echo "Version builded ${{ needs.build.outputs.version }}"
        

@@ -12,6 +12,7 @@ on:
         value: ${{ jobs.build.outputs.version }}
 jobs:
   build:
+    name: Build
     strategy:
       matrix:
         configuration: [Debug, Release]

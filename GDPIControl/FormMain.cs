@@ -70,7 +70,11 @@ namespace GDPIControl
             B_Copy.Enabled = Settings.Modeset != Modeset.Custom;
         }
 
-        private void ShowGDPIControl() => Visible = true;
+        private void ShowGDPIControl()
+        {
+            Show();
+            Activate();
+        }
 
         private void StartGDPI()
         {
@@ -138,7 +142,7 @@ namespace GDPIControl
 
         private void MI_Userlist_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(Constants.UserlistPath)) { File.WriteAllText("", Constants.UserlistPath); }
+            if (!File.Exists(Constants.UserlistPath)) { File.WriteAllText(Constants.UserlistPath, ""); }
             Process.Start(new ProcessStartInfo(Constants.UserlistPath) { UseShellExecute = true });
         }
 

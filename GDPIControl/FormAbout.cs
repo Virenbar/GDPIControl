@@ -8,7 +8,7 @@ namespace GDPIControl
         public FormAbout()
         {
             InitializeComponent();
-            L_Version.Text = Application.ProductVersion;
+            L_Version.Text = $"v{Application.ProductVersion}";
         }
 
         private static void OpenURL(string url) => Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
