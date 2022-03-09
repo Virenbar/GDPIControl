@@ -44,7 +44,7 @@ jobs:
         $version = minver -t v -d preview
         $number = $version.Split('-')[0]
         echo "VERSION=$version"
-        echo "VERSION=$version" >> $GITHUB_ENV
+        echo "VERSION=$version" >> $env:GITHUB_ENV
         echo "::set-output name=version::$version"
 
     - name: Restore solution
