@@ -293,7 +293,7 @@
             // 
             this.MI_Minimized.CheckOnClick = true;
             this.MI_Minimized.Name = "MI_Minimized";
-            this.MI_Minimized.Size = new System.Drawing.Size(180, 22);
+            this.MI_Minimized.Size = new System.Drawing.Size(172, 22);
             this.MI_Minimized.Text = "Launch minimized";
             this.MI_Minimized.CheckedChanged += new System.EventHandler(this.MI_Minimized_CheckedChanged);
             // 
@@ -301,7 +301,7 @@
             // 
             this.MI_Autostart.CheckOnClick = true;
             this.MI_Autostart.Name = "MI_Autostart";
-            this.MI_Autostart.Size = new System.Drawing.Size(180, 22);
+            this.MI_Autostart.Size = new System.Drawing.Size(172, 22);
             this.MI_Autostart.Text = "Autostart GDPI";
             this.MI_Autostart.CheckedChanged += new System.EventHandler(this.MI_Autostart_CheckedChanged);
             // 
@@ -309,7 +309,7 @@
             // 
             this.MI_Logon.CheckOnClick = true;
             this.MI_Logon.Name = "MI_Logon";
-            this.MI_Logon.Size = new System.Drawing.Size(180, 22);
+            this.MI_Logon.Size = new System.Drawing.Size(172, 22);
             this.MI_Logon.Text = "Launch on logon";
             this.MI_Logon.Click += new System.EventHandler(this.MI_Logon_Click);
             // 
@@ -325,14 +325,14 @@
             // MI_Blacklist
             // 
             this.MI_Blacklist.Name = "MI_Blacklist";
-            this.MI_Blacklist.Size = new System.Drawing.Size(180, 22);
+            this.MI_Blacklist.Size = new System.Drawing.Size(158, 22);
             this.MI_Blacklist.Text = "Update Blacklist";
             this.MI_Blacklist.Click += new System.EventHandler(this.MI_Blacklist_Click);
             // 
             // MI_Userlist
             // 
             this.MI_Userlist.Name = "MI_Userlist";
-            this.MI_Userlist.Size = new System.Drawing.Size(180, 22);
+            this.MI_Userlist.Size = new System.Drawing.Size(158, 22);
             this.MI_Userlist.Text = "Open Userlist";
             this.MI_Userlist.Click += new System.EventHandler(this.MI_Userlist_Click);
             // 
@@ -1208,7 +1208,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(414, 26);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(434, 26);
             this.tableLayoutPanel9.TabIndex = 8;
             // 
             // checkBox14
@@ -1228,15 +1228,20 @@
             this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_GDPISettings, "STTL_V", true));
             this.numericUpDown5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown5.Location = new System.Drawing.Point(24, 3);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(43, 20);
+            this.numericUpDown5.Size = new System.Drawing.Size(63, 20);
             this.numericUpDown5.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(73, 6);
+            this.label10.Location = new System.Drawing.Point(93, 6);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(338, 13);
             this.label10.TabIndex = 2;
@@ -1319,16 +1324,16 @@
             this.numericUpDown1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown1.Location = new System.Drawing.Point(24, 3);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(43, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(63, 20);
             this.numericUpDown1.TabIndex = 1;
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(73, 0);
+            this.label18.Location = new System.Drawing.Point(93, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(414, 26);
+            this.label18.Size = new System.Drawing.Size(373, 26);
             this.label18.TabIndex = 2;
             this.label18.Text = "Minimum TTL distance (128/64 - TTL) for which to send Fake Request in --set-ttl a" +
     "nd --auto-ttl modes";
@@ -1502,7 +1507,7 @@
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 1;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(434, 26);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(454, 26);
             this.tableLayoutPanel22.TabIndex = 19;
             // 
             // checkBox23
@@ -1522,15 +1527,20 @@
             this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_GDPISettings, "MP_V", true));
             this.numericUpDown6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown6.Location = new System.Drawing.Point(24, 3);
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(43, 20);
+            this.numericUpDown6.Size = new System.Drawing.Size(63, 20);
             this.numericUpDown6.TabIndex = 1;
             // 
             // label23
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(73, 6);
+            this.label23.Location = new System.Drawing.Point(93, 6);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(358, 13);
             this.label23.TabIndex = 2;
@@ -1589,6 +1599,8 @@
             this.Name = "FormMain";
             this.Text = "GDPIControl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.ResizeBegin += new System.EventHandler(this.FormMain_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.FormMain_ResizeEnd);
             this.TrayMenu.ResumeLayout(false);
             this.FormMenu.ResumeLayout(false);
             this.FormMenu.PerformLayout();

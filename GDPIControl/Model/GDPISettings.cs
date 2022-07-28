@@ -302,8 +302,8 @@ namespace GDPIControl.Model
             if (A) { SB.Append(" -a"); }
             if (W) { SB.Append(" -w"); }
 
-            if (DNS_State) { SB.Append($"--dns-addr {DNS_Addr} --dns-port {DNS_Port}"); }
-            if (DNS6_State) { SB.Append($"--dns-addr {DNS6_Addr} --dns-port {DNS6_Port}"); }
+            if (DNS_State) { SB.Append($" --dns-addr {DNS_Addr} --dns-port {DNS_Port}"); }
+            if (DNS6_State) { SB.Append($" --dns-addr {DNS6_Addr} --dns-port {DNS6_Port}"); }
             if (SNI) { SB.Append(" --allow-no-sni"); }
             if (STTL) { SB.Append($" --set-ttl {STTL_V}"); }
             if (ATTL) { SB.Append(" --auto-ttl"); }

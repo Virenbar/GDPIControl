@@ -124,6 +124,16 @@ namespace GDPIControl
             Visible = false;
         }
 
+        private void FormMain_ResizeBegin(object sender, EventArgs e)
+        {
+            TP_Custom.SuspendLayout();
+        }
+
+        private void FormMain_ResizeEnd(object sender, EventArgs e)
+        {
+            TP_Custom.ResumeLayout();
+        }
+
         private void MI_About_Click(object sender, EventArgs e)
         {
             var F = new FormAbout();

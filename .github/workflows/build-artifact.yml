@@ -3,6 +3,9 @@ name: Build Artifact
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - "**.md"
+      - ".github/**"
   pull_request:
     branches: [ master ]
   workflow_call:
@@ -10,6 +13,7 @@ on:
       version: 
         description: "Version builded"
         value: ${{ jobs.build.outputs.version }}
+
 jobs:
   build:
     name: Build
@@ -29,12 +33,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Install .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
 
-    - name: Setup MSBuild.exe
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Set VERSION
@@ -57,12 +61,12 @@ jobs:
       if: matrix.configuration == 'Release'
       uses: actions/upload-artifact@v2.3.1
       with:
-        name: GDPIControl(5.0)
+        name: GDPIControl
         path: |
-          GDPIControl\bin\Release\net5.0-windows\*.exe
-          GDPIControl\bin\Release\net5.0-windows\*.dll
-          GDPIControl\bin\Release\net5.0-windows\GDPI\**\*
-          GDPIControl\bin\Release\net5.0-windows\GDPIControl.runtimeconfig.json
+          GDPIControl\bin\Release\net6.0-windows\*.exe
+          GDPIControl\bin\Release\net6.0-windows\*.dll
+          GDPIControl\bin\Release\net6.0-windows\GDPI\**\*
+          GDPIControl\bin\Release\net6.0-windows\GDPIControl.runtimeconfig.json
         if-no-files-found: error
 
     - name: Upload a Build Artifact
