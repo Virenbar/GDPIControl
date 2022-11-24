@@ -57,7 +57,7 @@ namespace GDPIControl
             Settings.Modeset = RBModesets.First(X => X.Button.Checked).Modeset;
             if (Settings.Modeset == Modeset.Custom)
             {
-                Arguments = Settings.GDPISettings.ToString();
+                Arguments = Settings.GDPISettings.ToArguments();
             }
             else
             {
