@@ -1,11 +1,11 @@
 name: Build Artifact
-
 on:
   push:
     branches: [ master ]
     paths-ignore:
       - "**.md"
       - ".github/**"
+      - "assets/**"
   pull_request:
     branches: [ master ]
   workflow_call:
@@ -13,69 +13,61 @@ on:
       version: 
         description: "Version builded"
         value: ${{ jobs.build.outputs.version }}
-
 jobs:
   build:
     name: Build
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        include:
+          - framework: "net6.0-windows"
+            profile: "net6"
+          - framework: "net472"
+            profile: "net472"
     runs-on: windows-latest
     env:
       DOTNET_NOLOGO: true
-      SolutionName: GDPIControl.sln
-      Configuration: ${{ matrix.configuration }}
+      FRAMEWORK: ${{ matrix.framework }}
+      PROFILE: ${{ matrix.profile }}
     outputs:
       version: ${{steps.version.outputs.version}}
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Install .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
-
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
+        dotnet-version: 6.x
       
     - name: Set VERSION
       id: version
+      run: .\.github\scripts\version.ps1
+
+    - name: Restore cache
+      uses: actions/cache@v3
+      with:
+        path: ~\.nuget\packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
+    - name: Build solution
       run: |
-        dotnet tool install -g minver-cli --version 2.5.0
-        $version = minver -t v -d preview
-        $number = $version.Split('-')[0]
-        echo "VERSION=$version"
-        echo "VERSION=$version" >> $env:GITHUB_ENV
-        echo "::set-output name=version::$version"
+        dotnet restore --locked-mode
+        dotnet build -c Release
 
-    - name: Restore solution
-      run: msbuild $env:SolutionName /t:Restore /p:Configuration=$env:Configuration
-        
-    - name: Build solutin
-      run: msbuild $env:SolutionName /t:Build /p:Configuration=$env:Configuration
+    - name: Build artifact
+      run: dotnet publish -c Release -p:PublishProfile=$env:PROFILE -f $env:FRAMEWORK /property:Version=$env:VERSION
 
-    - name: Upload a Build Artifact
-      if: matrix.configuration == 'Release'
-      uses: actions/upload-artifact@v2.3.1
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: GDPIControl
+        name: GDPIControl(${{ matrix.framework }})
         path: |
-          GDPIControl\bin\Release\net6.0-windows\*.exe
-          GDPIControl\bin\Release\net6.0-windows\*.dll
-          GDPIControl\bin\Release\net6.0-windows\GDPI\**\*
-          GDPIControl\bin\Release\net6.0-windows\GDPIControl.runtimeconfig.json
-        if-no-files-found: error
-
-    - name: Upload a Build Artifact
-      if: matrix.configuration == 'Release'
-      uses: actions/upload-artifact@v2.3.1
-      with:
-        name: GDPIControl(4.7.2)
-        path: |
-          GDPIControl\bin\Release\net472\*.exe
-          GDPIControl\bin\Release\net472\*.dll
-          GDPIControl\bin\Release\net472\GDPI\**\*
+          GDPIControl\publish\${{ matrix.framework }}\*.exe
+          GDPIControl\publish\${{ matrix.framework }}\*.dll
+          GDPIControl\publish\${{ matrix.framework }}\GDPI\**\*
+          GDPIControl\publish\${{ matrix.framework }}\GDPIControl.runtimeconfig.json
         if-no-files-found: error

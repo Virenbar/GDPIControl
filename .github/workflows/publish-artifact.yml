@@ -1,16 +1,16 @@
-name: Publish Release
-
+name: Publish Artifact
 on:
   workflow_dispatch:
-
 jobs:
   build:
     name: Build
-    uses: Virenbar/GDPIControl/.github/workflows/build-artifact.yml@master
+    uses: ./.github/workflows/build-artifact.yml
 
   release:
-    name: Release
+    name: Publish
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs: build
     steps:
       - name: Version
@@ -19,10 +19,13 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v3
 
+      - name: List files
+        run: ls -R
+
       - name: Archive artifacts
         run: |
-          zip -r "GDPIControl.zip" "GDPIControl"
-          zip -r "GDPIControl-4.7.2.zip" "GDPIControl(4.7.2)"
+          zip -r "GDPIControl.zip" "GDPIControl(net6.0-windows)"
+          zip -r "GDPIControl-4.7.2.zip" "GDPIControl(net472)"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
