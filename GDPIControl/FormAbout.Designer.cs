@@ -36,8 +36,8 @@
             this.LL_Control = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.L_Version = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LL_Icons = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -149,17 +149,6 @@
             this.L_Version.TabIndex = 3;
             this.L_Version.Text = "V";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GDPIControl.Properties.Resources.GDPI;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(9);
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // LL_Icons
             // 
             this.LL_Icons.AutoSize = true;
@@ -172,6 +161,17 @@
             this.LL_Icons.Text = "Icons by Icons8";
             this.LL_Icons.UseCompatibleTextRendering = true;
             this.LL_Icons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LL_Icons_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GDPIControl.Properties.Resources.GDPI;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(9);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // FormAbout
             // 

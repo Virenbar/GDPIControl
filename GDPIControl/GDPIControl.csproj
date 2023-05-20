@@ -2,38 +2,33 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFrameworks>net472;net6.0-windows</TargetFrameworks>
-		<UseWindowsForms>true</UseWindowsForms>
-		<ApplicationManifest>app.manifest</ApplicationManifest>
-		<ApplicationIcon>Resources\icon.ico</ApplicationIcon>
-		<AssemblyVersion>2.0.0</AssemblyVersion>
-		<FileVersion>2.0.0</FileVersion>
-		<PreserveCompilationContext>false</PreserveCompilationContext>
+		<TargetFrameworks>net6.0-windows;net472</TargetFrameworks>
 		<DebugType>embedded</DebugType>
-		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-		<LangVersion>9.0</LangVersion>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<LangVersion>10.0</LangVersion>
+		<ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+		<UseWindowsForms>true</UseWindowsForms>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/Virenbar/RRTools</RepositoryUrl>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
+
+	<PropertyGroup>
+		<DeleteExistingFiles>true</DeleteExistingFiles>
+		<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
+		<PackageReference Include="TaskScheduler" Version="2.9.3" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Content Include="GDPI\**\*.*" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="All" />
-		<PackageReference Include="TaskScheduler" Version="2.9.3" />
-	</ItemGroup>
-
-	<PropertyGroup>
-		<MinVerTagPrefix>v</MinVerTagPrefix>
-		<MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
-	</PropertyGroup>
-
-	<Target Name="CustomVersion" AfterTargets="MinVer">
-		<PropertyGroup>
-			<FileVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)</FileVersion>
-			<AssemblyVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)</AssemblyVersion>
-		</PropertyGroup>
-	</Target>
 
 	<ItemGroup>
 		<Compile Update="icons8.Designer.cs">
