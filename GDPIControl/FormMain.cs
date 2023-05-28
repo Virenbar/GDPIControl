@@ -63,8 +63,8 @@ namespace GDPIControl
             {
                 Arguments = GDPISettings.ModesetArgument(Settings.Modeset);
             }
-            if (Settings.UseBlacklist) { Arguments += $" --blacklist {Constants.BlacklistName}"; }
-            if (Settings.UseUserlist) { Arguments += $" --blacklist {Constants.UserlistName}"; }
+            if (Settings.UseBlacklist) { Arguments += $@" --blacklist ""{Constants.BlacklistPath}"""; }
+            if (Settings.UseUserlist) { Arguments += $@" --blacklist ""{Constants.UserlistPath}"""; }
             Settings.Arguments = Arguments;
 
             B_Copy.Enabled = Settings.Modeset != Modeset.Custom;
