@@ -22,10 +22,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
-		<PackageReference Include="TaskScheduler" Version="2.9.3" />
+		<PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+		<PackageReference Include="TaskScheduler" Version="2.10.1" />
 	</ItemGroup>
-
+	
+	<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+		<Reference Include="System.Net.Http" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<Content Include="GDPI\**\*.*" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
