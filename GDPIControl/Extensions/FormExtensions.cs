@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace GDPIControl
+namespace GDPIControl.Extensions
 {
-    internal static class Extensions
+    internal static class FormExtensions
     {
         public static DialogResult ShowError(this Form form, Exception exception)
         {

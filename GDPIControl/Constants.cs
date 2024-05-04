@@ -15,17 +15,21 @@ namespace GDPIControl
         public static string BlacklistPath => Path.Combine(StartupPath, BlacklistName);
         public static string BlacklistTempPath => Path.Combine(StartupPath, BlacklistTempName);
         public static string ConfigPath => Path.Combine(StartupPath, ConfigName);
-
-        /// <summary>
-        /// .NET 6 uses TEMP directory for GDPI
-        /// </summary>
         public static string GDPIPath => Path.Combine(Application.StartupPath, Environment.Is64BitOperatingSystem ? x86_64 : x86);
+        public static string UserlistPath => Path.Combine(StartupPath, UserlistName);
+
+        #region StartupPath
+        /*
+        .NET 6 uses TEMP directory for GDPIControl
+        Application.StartupPath - Real executable path
+        Environment.ProcessPath - Packed executable path
+        */
 
 #if NET6_0_OR_GREATER
         public static string StartupPath => Path.GetDirectoryName(Environment.ProcessPath);
 #else
         public static string StartupPath => Application.StartupPath;
 #endif
-        public static string UserlistPath => Path.Combine(StartupPath, UserlistName);
+        #endregion StartupPath
     }
 }
