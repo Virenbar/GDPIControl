@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace GDPIControl.Model
 {
-    public class GDPISettings : INotifyPropertyChanged
+    public class GDPISettings : INotifyPropertyChanged, ICloneable
     {
         public GDPISettings()
         {
@@ -258,6 +259,8 @@ namespace GDPIControl.Model
         //                          Use this option to reduce CPU usage by skipping huge amount of data
         //                          (like file transfers) in already established sessions.
         //                          May skip some huge HTTP requests from being processed.
+
+        public object Clone() => MemberwiseClone();
 
         #region Static
 

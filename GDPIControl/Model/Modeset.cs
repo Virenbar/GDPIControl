@@ -8,6 +8,9 @@
         M4,
         M5,
         M6,
-        Custom
+        Custom,
+        Custom1,
+        Custom2,
+        Custom3
     }
 }

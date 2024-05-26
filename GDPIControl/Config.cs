@@ -9,7 +9,13 @@ namespace GDPIControl
     {
         public static ControlSettings Current { get; set; }
 
-        private static ControlSettings Default => new() { Modeset = Modeset.M5, GDPISettings = GDPISettings.ModesetSettings(Modeset.M5) };
+        private static ControlSettings Default => new()
+        {
+            Modeset = Modeset.M5,
+            CustomSettings1 = new GDPISettings(),
+            CustomSettings2 = new GDPISettings(),
+            CustomSettings3 = new GDPISettings()
+        };
 
         public static void Load()
         {
@@ -20,6 +26,12 @@ namespace GDPIControl
                     var XS = new XmlSerializer(typeof(ControlSettings));
                     using var SR = new StreamReader(Constants.ConfigPath);
                     Current = (ControlSettings)XS.Deserialize(SR);
+
+                    var def = Default;
+                    if (Current.Modeset == Modeset.Custom) { Current.Modeset = Modeset.Custom1; }
+                    Current.CustomSettings1 ??= Current.GDPISettings ?? def.CustomSettings1;
+                    Current.CustomSettings2 ??= def.CustomSettings2;
+                    Current.CustomSettings3 ??= def.CustomSettings3;
                 }
                 catch (Exception)
                 {

@@ -1,24 +1,30 @@
-﻿using GDPIControl.Model;
+﻿using GDPIControl.Forms;
+using GDPIControl.Model;
 using GDPIControl.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GDPIControl
 {
     public partial class FormMain : Form
     {
-        private readonly Regex IP_R = new(@"^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$");
+        private readonly HashSet<Modeset> CustomModesets;
         private readonly List<(RadioButton Button, Modeset Modeset)> RBModesets;
         private readonly ControlSettings Settings = Config.Current;
 
         public FormMain()
         {
             InitializeComponent();
+            CustomModesets = new() {
+                Modeset.Custom1,
+                Modeset.Custom2,
+                Modeset.Custom3
+            };
             RBModesets = new List<(RadioButton Button, Modeset Modeset)>
             {
                 (RB_M1,Modeset.M1),
@@ -27,7 +33,9 @@ namespace GDPIControl
                 (RB_M4,Modeset.M4),
                 (RB_M5,Modeset.M5),
                 (RB_M6,Modeset.M6),
-                (RB_Custom,Modeset.Custom)
+                (RB_Custom_1,Modeset.Custom1),
+                (RB_Custom_2,Modeset.Custom2),
+                (RB_Custom_3,Modeset.Custom3)
             };
             RBModesets.First(X => X.Modeset == Settings.Modeset).Button.Checked = true;
             MI_Autostart.Checked = Settings.AutostartGDPI;
@@ -35,9 +43,9 @@ namespace GDPIControl
             MI_Logon.Checked = ControlTask.IsRegistered;
 
             BS_ControlSettings.DataSource = Settings;
-            BS_GDPISettings.DataSource = Settings.GDPISettings;
 
-            SetArguments();
+            RefreshUI();
+            RefreshArguments();
             if (Settings.AutostartGDPI) { StartGDPI(); } else { StopGDPI(); }
         }
 
@@ -47,27 +55,30 @@ namespace GDPIControl
             TrayControl.Icon = null;
             TrayControl.Visible = false;
             TrayControl.Dispose();
-            SetArguments();
+            RefreshArguments();
             Application.Exit();
         }
 
-        private void SetArguments()
+        private void RefreshArguments()
         {
-            string Arguments;
             Settings.Modeset = RBModesets.First(X => X.Button.Checked).Modeset;
-            if (Settings.Modeset == Modeset.Custom)
+            var Arguments = Settings.Modeset switch
             {
-                Arguments = Settings.GDPISettings.ToArguments();
-            }
-            else
-            {
-                Arguments = GDPISettings.ModesetArgument(Settings.Modeset);
-            }
+                Modeset.Custom1 => Settings.CustomSettings1.ToArguments(),
+                Modeset.Custom2 => Settings.CustomSettings2.ToArguments(),
+                Modeset.Custom3 => Settings.CustomSettings3.ToArguments(),
+                _ => GDPISettings.ModesetArgument(Settings.Modeset)
+            };
+
             if (Settings.UseBlacklist) { Arguments += $@" --blacklist ""{Constants.BlacklistPath}"""; }
             if (Settings.UseUserlist) { Arguments += $@" --blacklist ""{Constants.UserlistPath}"""; }
             Settings.Arguments = Arguments;
+        }
 
-            B_Copy.Enabled = Settings.Modeset != Modeset.Custom;
+        private void RefreshUI()
+        {
+            B_Edit.Enabled = CustomModesets.Contains(Settings.Modeset);
+            B_Restart.Enabled = GDPIProcess.IsRunning;
         }
 
         private void ShowGDPIControl()
@@ -84,7 +95,7 @@ namespace GDPIControl
             MI_Stop.Enabled = true;
             TrayControl.Icon = Resources.icon_green;
             Icon = Resources.icon_green;
-            SetArguments();
+            RefreshArguments();
             GDPIProcess.Start();
         }
 
@@ -96,25 +107,44 @@ namespace GDPIControl
             MI_Stop.Enabled = false;
             TrayControl.Icon = Resources.icon_red;
             Icon = Resources.icon_red;
-            SetArguments();
+            RefreshArguments();
             GDPIProcess.Stop();
+        }
+
+        private void UIState(bool state)
+        {
+            B_Restart.Enabled = state;
+            B_Start.Enabled = state;
+            B_Close.Enabled = state;
         }
 
         #region UIEvents
 
         private void B_Close_Click(object sender, EventArgs e) => CloseGDPIControl();
 
-        private void B_Copy_Click(object sender, EventArgs e)
+        private void B_Edit_Click(object sender, EventArgs e)
         {
-            Settings.GDPISettings = GDPISettings.ModesetSettings(Settings.Modeset);
-            RB_Custom.Checked = true;
-            TC_Main.SelectedTab = TP_Custom;
-            BS_GDPISettings.DataSource = Settings.GDPISettings;
+            using var form = new FormGDPISettings(Settings);
+            if (form.ShowDialog(this) == DialogResult.OK)
+            {
+                RefreshArguments();
+            }
+        }
+
+        private async void B_Restart_Click(object sender, EventArgs e)
+        {
+            UIState(false);
+            StopGDPI();
+            await Task.Delay(500);
+            StartGDPI();
+            UIState(true);
         }
 
         private void B_Start_Click(object sender, EventArgs e)
         {
+            UIState(false);
             if (GDPIProcess.IsRunning) { StopGDPI(); } else { StartGDPI(); }
+            UIState(true);
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -124,23 +154,24 @@ namespace GDPIControl
             Visible = false;
         }
 
-        private void FormMain_ResizeBegin(object sender, EventArgs e)
-        {
-            TP_Custom.SuspendLayout();
-        }
-
-        private void FormMain_ResizeEnd(object sender, EventArgs e)
-        {
-            TP_Custom.ResumeLayout();
-        }
-
         private void MI_About_Click(object sender, EventArgs e)
         {
             var F = new FormAbout();
             F.ShowDialog(this);
         }
 
-        private void RB_CheckedChanged(object sender, EventArgs e) => SetArguments();
+        private void RB_CheckedChanged(object sender, EventArgs e)
+        {
+            var RB = (RadioButton)sender;
+            if (!RB.Checked) { return; }
+            foreach (var entry in RBModesets)
+            {
+                if (entry.Button == RB) { continue; }
+                entry.Button.Checked = false;
+            }
+            RefreshArguments();
+            RefreshUI();
+        }
 
         #region Lists
 
@@ -152,7 +183,10 @@ namespace GDPIControl
 
         private void MI_Userlist_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(Constants.UserlistPath)) { File.WriteAllText(Constants.UserlistPath, ""); }
+            if (!File.Exists(Constants.UserlistPath))
+            {
+                File.WriteAllText(Constants.UserlistPath, "");
+            }
             Process.Start(new ProcessStartInfo(Constants.UserlistPath) { UseShellExecute = true });
         }
 
@@ -184,49 +218,6 @@ namespace GDPIControl
         }
 
         #endregion Control settings
-
-        #region Validating
-        /*
-        Private Sub DNS_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS_IP.Validating
-            If DNS_IP.Text = "" Then Exit Sub
-            Try
-                Dim M = IP_R.Match(DNS_IP.Text)
-                e.Cancel = Not M.Success
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS_Port_Validating(sender As Object, e As CancelEventArgs) Handles DNS_Port.Validating
-            Try
-                Dim p = CInt(DNS_Port.Text)
-                e.Cancel = p <= 0 Or p > 65535
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS6_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS6_IP.Validating
-            If DNS6_IP.Text = "" Then Exit Sub
-            Try
-                Dim IP As IPAddress = Nothing
-                Dim r = IPAddress.TryParse(DNS6_IP.Text, IP)
-                Dim T = IP.AddressFamily
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS6_Port_Validating(sender As Object, e As CancelEventArgs) Handles DNS6_Port.Validating
-            Try
-                Dim p = CInt(DNS6_Port.Text)
-                e.Cancel = p <= 0 Or p > 65535
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-        */
-        #endregion Validating
 
         #region Tray
 
