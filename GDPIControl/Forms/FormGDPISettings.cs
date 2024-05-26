@@ -6,8 +6,6 @@ namespace GDPIControl.Forms
 {
     public partial class FormGDPISettings : Form
     {
-        //private readonly Regex IP_R = new(@"^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$");
-
         private readonly GDPISettings GDPISettings;
         private readonly ControlSettings Settings;
 
@@ -26,49 +24,6 @@ namespace GDPIControl.Forms
         }
 
         #region UIEvents
-
-        #region Validating
-        /*
-        Private Sub DNS_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS_IP.Validating
-            If DNS_IP.Text = "" Then Exit Sub
-            Try
-                Dim M = IP_R.Match(DNS_IP.Text)
-                e.Cancel = Not M.Success
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS_Port_Validating(sender As Object, e As CancelEventArgs) Handles DNS_Port.Validating
-            Try
-                Dim p = CInt(DNS_Port.Text)
-                e.Cancel = p <= 0 Or p > 65535
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS6_IP_Validating(sender As Object, e As CancelEventArgs) Handles DNS6_IP.Validating
-            If DNS6_IP.Text = "" Then Exit Sub
-            Try
-                Dim IP As IPAddress = Nothing
-                Dim r = IPAddress.TryParse(DNS6_IP.Text, IP)
-                Dim T = IP.AddressFamily
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-
-        Private Sub DNS6_Port_Validating(sender As Object, e As CancelEventArgs) Handles DNS6_Port.Validating
-            Try
-                Dim p = CInt(DNS6_Port.Text)
-                e.Cancel = p <= 0 Or p > 65535
-            Catch ex As Exception
-                e.Cancel = True
-            End Try
-        End Sub
-        */
-        #endregion Validating
 
         private void B_Cancel_Click(object sender, EventArgs e)
         {
