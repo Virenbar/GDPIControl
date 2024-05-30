@@ -23,11 +23,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
-		<PackageReference Include="TaskScheduler" Version="2.10.1" />
+		<PackageReference Include="TaskScheduler" Version="2.11.0" />
 	</ItemGroup>
 	
 	<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
 		<Reference Include="System.Net.Http" />
+		<PackageReference Include="PolySharp" Version="1.14.1" />
 	</ItemGroup>
 	
 	<ItemGroup>
