@@ -6,8 +6,8 @@ namespace GDPIControl.Forms
 {
     public partial class FormGDPISettings : Form
     {
-        private readonly GDPISettings GDPISettings;
         private readonly ControlSettings Settings;
+        private GDPISettings GDPISettings;
 
         public FormGDPISettings(ControlSettings settings)
         {
@@ -21,6 +21,13 @@ namespace GDPIControl.Forms
                 _ => default
             }).Clone();
             BS_GDPISettings.DataSource = GDPISettings;
+            Text = $"Custom settings {Settings.Modeset.ToString()[6..]}";
+        }
+
+        private void SetFromModeset(Modeset modeset)
+        {
+            GDPISettings = GDPISettings.ModesetSettings(modeset);
+            BS_GDPISettings.DataSource = GDPISettings;
         }
 
         #region UIEvents
@@ -33,13 +40,23 @@ namespace GDPIControl.Forms
 
         private void B_OK_Click(object sender, EventArgs e)
         {
-            _ = Settings.Modeset switch
+            switch (Settings.Modeset)
             {
-                Modeset.Custom1 => Settings.CustomSettings1 = GDPISettings,
-                Modeset.Custom2 => Settings.CustomSettings2 = GDPISettings,
-                Modeset.Custom3 => Settings.CustomSettings3 = GDPISettings,
-                _ => throw new InvalidOperationException()
-            };
+                case Modeset.Custom1:
+                    Settings.CustomSettings1 = GDPISettings;
+                    break;
+
+                case Modeset.Custom2:
+                    Settings.CustomSettings2 = GDPISettings;
+                    break;
+
+                case Modeset.Custom3:
+                    Settings.CustomSettings3 = GDPISettings;
+                    break;
+
+                default:
+                    throw new InvalidOperationException();
+            }
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -47,6 +64,36 @@ namespace GDPIControl.Forms
         private void FormGDPISettings_Load(object sender, EventArgs e)
         {
             Icon = Owner.Icon;
+        }
+
+        private void MI_M1_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M1);
+        }
+
+        private void MI_M2_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M2);
+        }
+
+        private void MI_M3_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M3);
+        }
+
+        private void MI_M4_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M4);
+        }
+
+        private void MI_M5_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M5);
+        }
+
+        private void MI_M6_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M6);
         }
 
         #endregion UIEvents

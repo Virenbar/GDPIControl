@@ -109,7 +109,12 @@
             B_Cancel = new System.Windows.Forms.Button();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             copyFromModesetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            modesset1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M1 = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M2 = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M3 = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M4 = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M5 = new System.Windows.Forms.ToolStripMenuItem();
+            MI_M6 = new System.Windows.Forms.ToolStripMenuItem();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)BS_GDPISettings).BeginInit();
@@ -179,7 +184,7 @@
             flowLayoutPanel4.Location = new System.Drawing.Point(0, 24);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            flowLayoutPanel4.Size = new System.Drawing.Size(565, 596);
+            flowLayoutPanel4.Size = new System.Drawing.Size(564, 587);
             flowLayoutPanel4.TabIndex = 8;
             flowLayoutPanel4.WrapContents = false;
             // 
@@ -872,7 +877,7 @@
             tableLayoutPanel17.Name = "tableLayoutPanel17";
             tableLayoutPanel17.RowCount = 1;
             tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel17.Size = new System.Drawing.Size(553, 30);
+            tableLayoutPanel17.Size = new System.Drawing.Size(552, 30);
             tableLayoutPanel17.TabIndex = 15;
             // 
             // checkBox1
@@ -996,7 +1001,7 @@
             tableLayoutPanel20.Name = "tableLayoutPanel20";
             tableLayoutPanel20.RowCount = 1;
             tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel20.Size = new System.Drawing.Size(553, 30);
+            tableLayoutPanel20.Size = new System.Drawing.Size(552, 30);
             tableLayoutPanel20.TabIndex = 17;
             // 
             // label21
@@ -1034,7 +1039,7 @@
             tableLayoutPanel21.Name = "tableLayoutPanel21";
             tableLayoutPanel21.RowCount = 1;
             tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel21.Size = new System.Drawing.Size(553, 45);
+            tableLayoutPanel21.Size = new System.Drawing.Size(552, 45);
             tableLayoutPanel21.TabIndex = 18;
             // 
             // label22
@@ -1144,23 +1149,59 @@
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { copyFromModesetToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(565, 24);
+            menuStrip1.Size = new System.Drawing.Size(564, 24);
             menuStrip1.TabIndex = 10;
             menuStrip1.Text = "menuStrip1";
             // 
             // copyFromModesetToolStripMenuItem
             // 
-            copyFromModesetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { modesset1ToolStripMenuItem });
+            copyFromModesetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_M1, MI_M2, MI_M3, MI_M4, MI_M5, MI_M6 });
             copyFromModesetToolStripMenuItem.Image = icons8.CopyToClipboard16;
             copyFromModesetToolStripMenuItem.Name = "copyFromModesetToolStripMenuItem";
             copyFromModesetToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
             copyFromModesetToolStripMenuItem.Text = "Copy from Modeset";
             // 
-            // modesset1ToolStripMenuItem
+            // MI_M1
             // 
-            modesset1ToolStripMenuItem.Name = "modesset1ToolStripMenuItem";
-            modesset1ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            modesset1ToolStripMenuItem.Text = "Modeset 1";
+            MI_M1.Name = "MI_M1";
+            MI_M1.Size = new System.Drawing.Size(129, 22);
+            MI_M1.Text = "Modeset 1";
+            MI_M1.Click += MI_M1_Click;
+            // 
+            // MI_M2
+            // 
+            MI_M2.Name = "MI_M2";
+            MI_M2.Size = new System.Drawing.Size(129, 22);
+            MI_M2.Text = "Modeset 2";
+            MI_M2.Click += MI_M2_Click;
+            // 
+            // MI_M3
+            // 
+            MI_M3.Name = "MI_M3";
+            MI_M3.Size = new System.Drawing.Size(129, 22);
+            MI_M3.Text = "Modeset 3";
+            MI_M3.Click += MI_M3_Click;
+            // 
+            // MI_M4
+            // 
+            MI_M4.Name = "MI_M4";
+            MI_M4.Size = new System.Drawing.Size(129, 22);
+            MI_M4.Text = "Modeset 4";
+            MI_M4.Click += MI_M4_Click;
+            // 
+            // MI_M5
+            // 
+            MI_M5.Name = "MI_M5";
+            MI_M5.Size = new System.Drawing.Size(129, 22);
+            MI_M5.Text = "Modeset 5";
+            MI_M5.Click += MI_M5_Click;
+            // 
+            // MI_M6
+            // 
+            MI_M6.Name = "MI_M6";
+            MI_M6.Size = new System.Drawing.Size(129, 22);
+            MI_M6.Text = "Modeset 6";
+            MI_M6.Click += MI_M6_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -1169,7 +1210,8 @@
             flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(B_OK);
             flowLayoutPanel1.Controls.Add(B_Cancel);
-            flowLayoutPanel1.Location = new System.Drawing.Point(428, 3);
+            flowLayoutPanel1.Location = new System.Drawing.Point(430, 0);
+            flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(134, 33);
             flowLayoutPanel1.TabIndex = 11;
@@ -1184,23 +1226,26 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 581);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 578);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(565, 39);
+            tableLayoutPanel1.Size = new System.Drawing.Size(564, 33);
             tableLayoutPanel1.TabIndex = 12;
             // 
             // FormGDPISettings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(565, 620);
+            ClientSize = new System.Drawing.Size(564, 611);
+            ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Controls.Add(flowLayoutPanel4);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            MinimumSize = new System.Drawing.Size(580, 650);
             Name = "FormGDPISettings";
+            ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "FormGDPISettings";
             Load += FormGDPISettings_Load;
@@ -1347,7 +1392,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem copyFromModesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modesset1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MI_M1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolStripMenuItem MI_M2;
+        private System.Windows.Forms.ToolStripMenuItem MI_M3;
+        private System.Windows.Forms.ToolStripMenuItem MI_M4;
+        private System.Windows.Forms.ToolStripMenuItem MI_M5;
+        private System.Windows.Forms.ToolStripMenuItem MI_M6;
     }
 }
