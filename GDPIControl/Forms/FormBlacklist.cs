@@ -19,7 +19,8 @@ namespace GDPIControl
         {
             InitializeComponent();
             RBtoURI.Add(RB_AZ, @"https://antizapret.prostovpn.org/domains-export.txt");
-            RBtoURI.Add(RB_AZM, @"https://mirror.virenbar.workers.dev/?key=blacklist-gdpi");
+            RBtoURI.Add(RB_AZ1, @"https://mirror.virenbar.workers.dev/?key=blacklist-gdpi");
+            RBtoURI.Add(RB_AZ2, @"https://mirror.thetahex.ru/?key=blacklist-gdpi");
             RBtoURI.Add(RB_AF, @"https://antifilter.download/list/domains.lst");
 
             Client.DefaultRequestHeaders.Add("Origin", "GDPIControl");
@@ -37,9 +38,10 @@ namespace GDPIControl
                 if (File.Exists(Constants.BlacklistTempPath)) { File.Delete(Constants.BlacklistTempPath); }
 
                 var progress = new Progress<float>(p => PB.Value = (int)(p * 100));
-                using var FS = new FileStream(Constants.BlacklistTempPath, FileMode.Create);
-                await Client.DownloadAsync(uri, FS, progress, CTS.Token);
-
+                using (var FS = new FileStream(Constants.BlacklistTempPath, FileMode.Create))
+                {
+                    await Client.DownloadAsync(uri, FS, progress, CTS.Token);
+                };
                 if (File.Exists(Constants.BlacklistPath)) { File.Delete(Constants.BlacklistPath); }
                 File.Move(Constants.BlacklistTempPath, Constants.BlacklistPath);
                 this.ShowInfo("Blacklist download done");

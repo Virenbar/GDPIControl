@@ -69,9 +69,10 @@ namespace GDPIControl.Extensions
             using var download = await response.Content.ReadAsStreamAsync();
             // Ignore progress reporting when no progress reporter was
             // passed or when the content length is unknown
-            if (progress == null || !contentLength.HasValue)
+            if (!contentLength.HasValue)
             {
                 await download.CopyToAsync(destination);
+                progress.Report(1);
                 return;
             }
 
