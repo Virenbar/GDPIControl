@@ -41,7 +41,7 @@ namespace GDPIControl
                 using (var FS = new FileStream(Constants.BlacklistTempPath, FileMode.Create))
                 {
                     await Client.DownloadAsync(uri, FS, progress, CTS.Token);
-                };
+                }
                 if (File.Exists(Constants.BlacklistPath)) { File.Delete(Constants.BlacklistPath); }
                 File.Move(Constants.BlacklistTempPath, Constants.BlacklistPath);
                 this.ShowInfo("Blacklist download done");
