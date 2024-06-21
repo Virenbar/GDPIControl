@@ -32,12 +32,12 @@ jobs:
       version: ${{steps.version.outputs.version}}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Install .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.x
       
@@ -46,7 +46,7 @@ jobs:
       run: .\.github\scripts\version.ps1
 
     - name: Restore cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~\.nuget\packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -62,7 +62,7 @@ jobs:
       run: dotnet publish -c Release -p:PublishProfile=$env:PROFILE -f $env:FRAMEWORK /property:Version=$env:VERSION
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: GDPIControl(${{ matrix.framework }})
         path: |

@@ -4,6 +4,9 @@
     {
         public string Arguments { get; set; }
         public GDPISettings GDPISettings { get; set; }
+        public GDPISettings CustomSettings1 { get; set; }
+        public GDPISettings CustomSettings2 { get; set; }
+        public GDPISettings CustomSettings3 { get; set; }
         public Modeset Modeset { get; set; }
         public bool LaunchMinimazed { get; set; }
         public bool AutostartGDPI { get; set; }
