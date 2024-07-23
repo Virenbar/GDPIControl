@@ -116,6 +116,7 @@ namespace GDPIControl
             B_Restart.Enabled = state;
             B_Start.Enabled = state;
             B_Close.Enabled = state;
+            if (state) { RefreshUI(); }
         }
 
         #region UIEvents
