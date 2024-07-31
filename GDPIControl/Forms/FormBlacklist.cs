@@ -19,7 +19,7 @@ namespace GDPIControl
         {
             InitializeComponent();
             RBtoURI.Add(RB_AZ, @"https://antizapret.prostovpn.org/domains-export.txt");
-            RBtoURI.Add(RB_AZ1, @"https://mirror.virenbar.workers.dev/?key=blacklist-gdpi");
+            RBtoURI.Add(RB_AZ1, @"https://p.thenewone.lol/domains-export.txt");
             RBtoURI.Add(RB_AZ2, @"https://mirror.thetahex.ru/?key=blacklist-gdpi");
             RBtoURI.Add(RB_AF, @"https://antifilter.download/list/domains.lst");
 

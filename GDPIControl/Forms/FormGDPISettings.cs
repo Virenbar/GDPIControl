@@ -20,6 +20,7 @@ namespace GDPIControl.Forms
                 Modeset.Custom3 => settings.CustomSettings3,
                 _ => default
             }).Clone();
+            BS_GDPISettings.CurrentItemChanged += BS_GDPISettings_CurrentItemChanged;
             BS_GDPISettings.DataSource = GDPISettings;
             Text = $"Custom settings {Settings.Modeset.ToString()[6..]}";
         }
@@ -61,6 +62,11 @@ namespace GDPIControl.Forms
             Close();
         }
 
+        private void BS_GDPISettings_CurrentItemChanged(object sender, EventArgs e)
+        {
+            TB_Arguments.Text = GDPISettings.ToArguments();
+        }
+
         private void FormGDPISettings_Load(object sender, EventArgs e)
         {
             Icon = Owner.Icon;
@@ -94,6 +100,21 @@ namespace GDPIControl.Forms
         private void MI_M6_Click(object sender, EventArgs e)
         {
             SetFromModeset(Modeset.M6);
+        }
+
+        private void MI_M7_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M7);
+        }
+
+        private void MI_M8_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M8);
+        }
+
+        private void MI_M9_Click(object sender, EventArgs e)
+        {
+            SetFromModeset(Modeset.M9);
         }
 
         #endregion UIEvents

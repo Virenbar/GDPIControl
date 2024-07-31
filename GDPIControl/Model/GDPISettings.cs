@@ -15,108 +15,249 @@ namespace GDPIControl.Model
         }
 
         #region P
+        private bool _P;
 
-        public bool P { get; set; }
+        public bool P
+        {
+            get => _P;
+            set
+            {
+                if (_P == value) { return; }
+                _P = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion P
 
-        #region R
+        #region Q
+        private bool _Q;
 
-        public bool R { get; set; }
+        public bool Q
+        {
+            get => _Q;
+            set
+            {
+                if (_Q == value) { return; }
+                _Q = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion Q
+
+        #region R
+        private bool _R;
+
+        public bool R
+        {
+            get => _R;
+            set
+            {
+                if (_R == value) { return; }
+                _R = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion R
 
         #region S
+        private bool _S;
 
-        public bool S { get; set; }
+        public bool S
+        {
+            get => _S;
+            set
+            {
+                if (_S == value) { return; }
+                _S = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion S
 
         #region M
+        private bool _M;
 
-        public bool M { get; set; }
+        public bool M
+        {
+            get => _M;
+            set
+            {
+                if (_M == value) { return; }
+                _M = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion M
 
         #region F
-        private bool F_State;
+        private bool _F;
+        private int _F_V;
 
         public bool F
         {
-            get => F_State;
+            get => _F;
             set
             {
-                F_State = value;
+                if (_F == value) { return; }
+                _F = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int F_V { get; set; }
+        public int F_V
+        {
+            get => _F_V;
+            set
+            {
+                if (_F_V == value) { return; }
+                _F_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         #endregion F
 
         #region K
-        private bool K_State;
+        private bool _K;
+        private int _K_V;
 
         public bool K
         {
-            get => K_State;
+            get => _K;
             set
             {
-                K_State = value;
+                if (_K == value) { return; }
+                _K = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int K_V { get; set; }
+        public int K_V
+        {
+            get => _K_V;
+            set
+            {
+                if (_K_V == value) { return; }
+                _K_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         #endregion K
 
         #region N
+        private bool _N;
 
-        public bool N { get; set; }
+        public bool N
+        {
+            get => _N;
+            set
+            {
+                if (_N == value) { return; }
+                _N = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion N
 
         #region E
-        private bool E_State;
+        private bool _E;
+        private int _E_V;
 
         public bool E
         {
-            get => E_State;
+            get => _E;
             set
             {
-                E_State = value;
+                if (_E == value) { return; }
+                _E = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int E_V { get; set; }
+        public int E_V
+        {
+            get => _E_V;
+            set
+            {
+                if (_E_V == value) { return; }
+                _E_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         #endregion E
 
         #region A
+        private bool _A;
 
-        public bool A { get; set; }
+        public bool A
+        {
+            get => _A;
+            set
+            {
+                if (_A == value) { return; }
+                _A = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion A
 
         #region W
+        private bool _W;
 
-        public bool W { get; set; }
+        public bool W
+        {
+            get => _W;
+            set
+            {
+                if (_W == value) { return; }
+                _W = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion W
 
         #region DNS
         private bool _DNS_State;
-
-        public string DNS_Addr { get; set; }
-
-        public string DNS_Port { get; set; }
+        private string _DNS_Addr;
+        private string _DNS_Port;
 
         public bool DNS_State
         {
             get => _DNS_State;
             set
             {
+                if (_DNS_State == value) { return; }
                 _DNS_State = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string DNS_Addr
+        {
+            get => _DNS_Addr; set
+            {
+                if (_DNS_Addr == value) { return; }
+                _DNS_Addr = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string DNS_Port
+        {
+            get => _DNS_Port; set
+            {
+                if (_DNS_Port == value) { return; }
+                _DNS_Port = value;
                 NotifyPropertyChanged();
             }
         }
@@ -125,17 +266,36 @@ namespace GDPIControl.Model
 
         #region DNS6
         private bool _DNS6_State;
-
-        public string DNS6_Addr { get; set; }
-
-        public string DNS6_Port { get; set; }
+        private string _DNS6_Addr;
+        private string _DNS6_Port;
 
         public bool DNS6_State
         {
             get => _DNS6_State;
             set
             {
+                if (_DNS6_State == value) { return; }
                 _DNS6_State = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string DNS6_Addr
+        {
+            get => _DNS6_Addr; set
+            {
+                if (_DNS6_Addr == value) { return; }
+                _DNS6_Addr = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string DNS6_Port
+        {
+            get => _DNS6_Port; set
+            {
+                if (_DNS6_Port == value) { return; }
+                _DNS6_Port = value;
                 NotifyPropertyChanged();
             }
         }
@@ -143,83 +303,186 @@ namespace GDPIControl.Model
         #endregion DNS6
 
         #region AllowNoSNI
-        public bool SNI { get; set; }
-        #endregion AllowNoSNI
+        private bool _SNI;
 
-        #region SetTTL
-        private bool STTL_State;
-
-        public bool STTL
+        public bool SNI
         {
-            get => STTL_State;
+            get => _SNI;
             set
             {
-                STTL_State = value;
+                if (_SNI == value) { return; }
+                _SNI = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int STTL_V { get; set; }
+        #endregion AllowNoSNI
+
+        #region SetTTL
+        private bool _STTL;
+        private int _STTL_V;
+
+        public bool STTL
+        {
+            get => _STTL;
+            set
+            {
+                if (_STTL == value) { return; }
+                _STTL = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public int STTL_V
+        {
+            get => _STTL_V; set
+            {
+                if (_STTL_V == value) { return; }
+                _STTL_V = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion SetTTL
 
         #region AutoTTL
-        public bool ATTL { get; set; }
+        private bool _ATTL;
+
+        public bool ATTL
+        {
+            get => _ATTL;
+            set
+            {
+                if (_ATTL == value) { return; }
+                _ATTL = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion AutoTTL
 
         #region MinTTL
-        private bool MTTL_State;
+        private bool _MTTL;
+        private int _MTTL_V;
 
         public bool MTTL
         {
-            get => MTTL_State;
+            get => _MTTL;
             set
             {
-                MTTL_State = value;
+                if (_MTTL == value) { return; }
+                _MTTL = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int MTTL_V { get; set; }
+        public int MTTL_V
+        {
+            get => _MTTL_V;
+            set
+            {
+                if (_MTTL_V == value) { return; }
+                _MTTL_V = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion MinTTL
 
         #region WrongCheckSum
+        private bool _ChkSum;
 
-        public bool ChkSum { get; set; }
-        #endregion WrongCheckSum
-
-        #region WrongSeq
-        public bool Seq { get; set; }
-        #endregion WrongSeq
-
-        #region NativeFrag
-        public bool NFrag { get; set; }
-        #endregion NativeFrag
-
-        #region ReverseFrag
-        public bool RFrag { get; set; }
-        #endregion ReverseFrag
-
-        #region MaxPayload
-        private bool MP_State;
-
-        public bool MP
+        public bool ChkSum
         {
-            get => MP_State;
+            get => _ChkSum;
             set
             {
-                MP_State = value;
+                if (_ChkSum == value) { return; }
+                _ChkSum = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int MP_V { get; set; }
+        #endregion WrongCheckSum
+
+        #region WrongSeq
+        private bool _Seq;
+
+        public bool Seq
+        {
+            get => _Seq;
+            set
+            {
+                if (_Seq == value) { return; }
+                _Seq = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion WrongSeq
+
+        #region NativeFrag
+        private bool _NFrag;
+
+        public bool NFrag
+        {
+            get => _NFrag;
+            set
+            {
+                if (_NFrag == value) { return; }
+                _NFrag = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion NativeFrag
+
+        #region ReverseFrag
+        private bool _RFrag;
+
+        public bool RFrag
+        {
+            get => _RFrag;
+            set
+            {
+                if (_RFrag == value) { return; }
+                _RFrag = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion ReverseFrag
+
+        #region MaxPayload
+        private bool _MP;
+        private int _MP_V;
+
+        public bool MP
+        {
+            get => _MP;
+            set
+            {
+                if (_MP == value) { return; }
+                _MP = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public int MP_V
+        {
+            get => _MP_V;
+            set
+            {
+                if (_MP_V == value) { return; }
+                _MP_V = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         #endregion MaxPayload
 
         // -p          block passive DPI
+        // -q          block QUIC/HTTP3
         // -r          replace Host with hoSt
         // -s          remove space between host header and its value
         // -m          mix Host header case (test.com -> tEsT.cOm)
@@ -259,6 +522,7 @@ namespace GDPIControl.Model
         //                          Use this option to reduce CPU usage by skipping huge amount of data
         //                          (like file transfers) in already established sessions.
         //                          May skip some huge HTTP requests from being processed.
+        // Note: combination of --wrong-seq and --wrong-chksum generates two different fake packets.
 
         public object Clone() => MemberwiseClone();
 
@@ -274,7 +538,10 @@ namespace GDPIControl.Model
                 Modeset.M4 => "-4",
                 Modeset.M5 => "-5",
                 Modeset.M6 => "-6",
-                _ => "-5",
+                Modeset.M7 => "-7",
+                Modeset.M8 => "-8",
+                Modeset.M9 => "-9",
+                _ => "-9",
             };
         }
 
@@ -288,6 +555,9 @@ namespace GDPIControl.Model
                 Modeset.M4 => new GDPISettings { P = true, R = true, S = true },
                 Modeset.M5 => new GDPISettings { F = true, F_V = 2, E = true, E_V = 2, ATTL = true, RFrag = true, MP = true, MP_V = 1200 },
                 Modeset.M6 => new GDPISettings { F = true, F_V = 2, E = true, E_V = 2, Seq = true, RFrag = true, MP = true, MP_V = 1200 },
+                Modeset.M7 => new GDPISettings { F = true, F_V = 2, E = true, E_V = 2, ChkSum = true, RFrag = true, MP = true, MP_V = 1200 },
+                Modeset.M8 => new GDPISettings { F = true, F_V = 2, E = true, E_V = 2, Seq = true, ChkSum = true, RFrag = true, MP = true, MP_V = 1200 },
+                Modeset.M9 => new GDPISettings { F = true, F_V = 2, E = true, E_V = 2, Seq = true, ChkSum = true, RFrag = true, MP = true, MP_V = 1200, Q = true },
                 _ => new GDPISettings(),
             };
         }
@@ -296,12 +566,14 @@ namespace GDPIControl.Model
         {
             var SB = new StringBuilder();
             if (P) { SB.Append(" -p"); }
+            if (Q) { SB.Append(" -q"); }
             if (R) { SB.Append(" -r"); }
             if (S) { SB.Append(" -s"); }
             if (M) { SB.Append(" -m"); }
             if (F) { SB.Append($" -f {F_V}"); }
             if (K) { SB.Append($" -k {K_V}"); }
             if (N) { SB.Append(" -n"); }
+            if (E) { SB.Append($" -e {E_V}"); }
             if (A) { SB.Append(" -a"); }
             if (W) { SB.Append(" -w"); }
 

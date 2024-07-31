@@ -33,6 +33,9 @@ namespace GDPIControl
                 (RB_M4,Modeset.M4),
                 (RB_M5,Modeset.M5),
                 (RB_M6,Modeset.M6),
+                (RB_M7,Modeset.M7),
+                (RB_M8,Modeset.M8),
+                (RB_M9,Modeset.M9),
                 (RB_Custom_1,Modeset.Custom1),
                 (RB_Custom_2,Modeset.Custom2),
                 (RB_Custom_3,Modeset.Custom3)

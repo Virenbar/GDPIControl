@@ -35,8 +35,10 @@
             L_Size = new System.Windows.Forms.Label();
             RB_AZ = new System.Windows.Forms.RadioButton();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            label2 = new System.Windows.Forms.Label();
             RB_AZ1 = new System.Windows.Forms.RadioButton();
             RB_AZ2 = new System.Windows.Forms.RadioButton();
+            label3 = new System.Windows.Forms.Label();
             RB_AF = new System.Windows.Forms.RadioButton();
             B_Download = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
@@ -99,21 +101,23 @@
             // 
             RB_AZ.AutoSize = true;
             RB_AZ.Checked = true;
-            RB_AZ.Location = new System.Drawing.Point(3, 3);
+            RB_AZ.Location = new System.Drawing.Point(70, 3);
             RB_AZ.Name = "RB_AZ";
-            RB_AZ.Size = new System.Drawing.Size(79, 17);
+            RB_AZ.Size = new System.Drawing.Size(67, 17);
             RB_AZ.TabIndex = 1;
             RB_AZ.TabStop = true;
-            RB_AZ.Text = "AntiZapret";
+            RB_AZ.Text = "Original";
             RB_AZ.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.Controls.Add(label2);
             flowLayoutPanel1.Controls.Add(RB_AZ);
             flowLayoutPanel1.Controls.Add(RB_AZ1);
             flowLayoutPanel1.Controls.Add(RB_AZ2);
+            flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(RB_AF);
             flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             flowLayoutPanel1.Location = new System.Drawing.Point(0, 13);
@@ -121,37 +125,58 @@
             flowLayoutPanel1.Size = new System.Drawing.Size(384, 46);
             flowLayoutPanel1.TabIndex = 2;
             // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(3, 5);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(61, 13);
+            label2.TabIndex = 2;
+            label2.Text = "AntiZapret";
+            // 
             // RB_AZ1
             // 
             RB_AZ1.AutoSize = true;
-            RB_AZ1.Location = new System.Drawing.Point(88, 3);
+            RB_AZ1.Location = new System.Drawing.Point(143, 3);
             RB_AZ1.Name = "RB_AZ1";
-            RB_AZ1.Size = new System.Drawing.Size(128, 17);
+            RB_AZ1.Size = new System.Drawing.Size(66, 17);
             RB_AZ1.TabIndex = 1;
             RB_AZ1.TabStop = true;
-            RB_AZ1.Text = "AntiZapret (mirror 1)";
+            RB_AZ1.Text = "Mirror 1";
             RB_AZ1.UseVisualStyleBackColor = true;
             // 
             // RB_AZ2
             // 
             RB_AZ2.AutoSize = true;
-            RB_AZ2.Location = new System.Drawing.Point(222, 3);
+            flowLayoutPanel1.SetFlowBreak(RB_AZ2, true);
+            RB_AZ2.Location = new System.Drawing.Point(215, 3);
             RB_AZ2.Name = "RB_AZ2";
-            RB_AZ2.Size = new System.Drawing.Size(128, 17);
+            RB_AZ2.Size = new System.Drawing.Size(66, 17);
             RB_AZ2.TabIndex = 1;
             RB_AZ2.TabStop = true;
-            RB_AZ2.Text = "AntiZapret (mirror 2)";
+            RB_AZ2.Text = "Mirror 2";
             RB_AZ2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(3, 28);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(51, 13);
+            label3.TabIndex = 2;
+            label3.Text = "antifilter";
             // 
             // RB_AF
             // 
             RB_AF.AutoSize = true;
-            RB_AF.Location = new System.Drawing.Point(3, 26);
+            RB_AF.Location = new System.Drawing.Point(60, 26);
             RB_AF.Name = "RB_AF";
-            RB_AF.Size = new System.Drawing.Size(69, 17);
+            RB_AF.Size = new System.Drawing.Size(67, 17);
             RB_AF.TabIndex = 1;
             RB_AF.TabStop = true;
-            RB_AF.Text = "antifilter";
+            RB_AF.Text = "Original";
             RB_AF.UseVisualStyleBackColor = true;
             // 
             // B_Download
@@ -242,5 +267,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.RadioButton RB_AZ1;
         private System.Windows.Forms.RadioButton RB_AZ2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

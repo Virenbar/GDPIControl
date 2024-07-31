@@ -73,6 +73,9 @@
             flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             groupBox3 = new System.Windows.Forms.GroupBox();
             flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            RB_M7 = new System.Windows.Forms.RadioButton();
+            RB_M8 = new System.Windows.Forms.RadioButton();
+            RB_M9 = new System.Windows.Forms.RadioButton();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             TrayMenu.SuspendLayout();
             FormMenu.SuspendLayout();
@@ -429,17 +432,18 @@
             RB_M5.AutoSize = true;
             RB_M5.Location = new System.Drawing.Point(3, 3);
             RB_M5.Name = "RB_M5";
-            RB_M5.Size = new System.Drawing.Size(81, 17);
+            RB_M5.Size = new System.Drawing.Size(35, 17);
             RB_M5.TabIndex = 5;
             RB_M5.TabStop = true;
-            RB_M5.Text = "-5 (default)";
+            RB_M5.Text = "-5";
             RB_M5.UseVisualStyleBackColor = true;
             RB_M5.CheckedChanged += RB_CheckedChanged;
             // 
             // RB_M6
             // 
             RB_M6.AutoSize = true;
-            RB_M6.Location = new System.Drawing.Point(3, 26);
+            flowLayoutPanel5.SetFlowBreak(RB_M6, true);
+            RB_M6.Location = new System.Drawing.Point(44, 3);
             RB_M6.Name = "RB_M6";
             RB_M6.Size = new System.Drawing.Size(35, 17);
             RB_M6.TabIndex = 6;
@@ -520,7 +524,7 @@
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(275, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(256, 67);
+            groupBox3.Size = new System.Drawing.Size(256, 90);
             groupBox3.TabIndex = 6;
             groupBox3.TabStop = false;
             groupBox3.Text = "Modern modesets";
@@ -530,13 +534,51 @@
             flowLayoutPanel5.AutoSize = true;
             flowLayoutPanel5.Controls.Add(RB_M5);
             flowLayoutPanel5.Controls.Add(RB_M6);
+            flowLayoutPanel5.Controls.Add(RB_M7);
+            flowLayoutPanel5.Controls.Add(RB_M8);
+            flowLayoutPanel5.Controls.Add(RB_M9);
             flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             flowLayoutPanel5.Location = new System.Drawing.Point(3, 18);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new System.Drawing.Size(250, 46);
+            flowLayoutPanel5.Size = new System.Drawing.Size(250, 69);
             flowLayoutPanel5.TabIndex = 7;
-            flowLayoutPanel5.WrapContents = false;
+            // 
+            // RB_M7
+            // 
+            RB_M7.AutoSize = true;
+            RB_M7.Location = new System.Drawing.Point(3, 26);
+            RB_M7.Name = "RB_M7";
+            RB_M7.Size = new System.Drawing.Size(35, 17);
+            RB_M7.TabIndex = 6;
+            RB_M7.TabStop = true;
+            RB_M7.Text = "-7";
+            RB_M7.UseVisualStyleBackColor = true;
+            RB_M7.CheckedChanged += RB_CheckedChanged;
+            // 
+            // RB_M8
+            // 
+            RB_M8.AutoSize = true;
+            flowLayoutPanel5.SetFlowBreak(RB_M8, true);
+            RB_M8.Location = new System.Drawing.Point(44, 26);
+            RB_M8.Name = "RB_M8";
+            RB_M8.Size = new System.Drawing.Size(35, 17);
+            RB_M8.TabIndex = 6;
+            RB_M8.TabStop = true;
+            RB_M8.Text = "-8";
+            RB_M8.UseVisualStyleBackColor = true;
+            RB_M8.CheckedChanged += RB_CheckedChanged;
+            // 
+            // RB_M9
+            // 
+            RB_M9.AutoSize = true;
+            RB_M9.Location = new System.Drawing.Point(3, 49);
+            RB_M9.Name = "RB_M9";
+            RB_M9.Size = new System.Drawing.Size(81, 17);
+            RB_M9.TabIndex = 6;
+            RB_M9.TabStop = true;
+            RB_M9.Text = "-9 (default)";
+            RB_M9.UseVisualStyleBackColor = true;
+            RB_M9.CheckedChanged += RB_CheckedChanged;
             // 
             // tableLayoutPanel2
             // 
@@ -648,5 +690,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RadioButton RB_M7;
+        private System.Windows.Forms.RadioButton RB_M8;
+        private System.Windows.Forms.RadioButton RB_M9;
     }
 }

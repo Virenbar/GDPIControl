@@ -11,7 +11,7 @@ namespace GDPIControl
 
         private static ControlSettings Default => new()
         {
-            Modeset = Modeset.M5,
+            Modeset = Modeset.M9,
             CustomSettings1 = new GDPISettings(),
             CustomSettings2 = new GDPISettings(),
             CustomSettings3 = new GDPISettings()
