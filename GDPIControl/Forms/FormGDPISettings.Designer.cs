@@ -32,21 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGDPISettings));
             BS_GDPISettings = new System.Windows.Forms.BindingSource(components);
             flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            label17 = new System.Windows.Forms.Label();
-            checkBox21 = new System.Windows.Forms.CheckBox();
-            tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            label15 = new System.Windows.Forms.Label();
-            checkBox15 = new System.Windows.Forms.CheckBox();
-            tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            label1 = new System.Windows.Forms.Label();
-            checkBox2 = new System.Windows.Forms.CheckBox();
-            tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            label16 = new System.Windows.Forms.Label();
-            checkBox17 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             label11 = new System.Windows.Forms.Label();
             checkBox18 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            label16 = new System.Windows.Forms.Label();
+            checkBox17 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            label1 = new System.Windows.Forms.Label();
+            checkBox2 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            label15 = new System.Windows.Forms.Label();
+            checkBox15 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            label17 = new System.Windows.Forms.Label();
+            checkBox21 = new System.Windows.Forms.CheckBox();
             tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             checkBox9 = new System.Windows.Forms.CheckBox();
             numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -124,13 +125,15 @@
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             TB_Arguments = new System.Windows.Forms.TextBox();
+            CB_Manual = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)BS_GDPISettings).BeginInit();
             flowLayoutPanel4.SuspendLayout();
-            tableLayoutPanel16.SuspendLayout();
-            tableLayoutPanel14.SuspendLayout();
-            tableLayoutPanel23.SuspendLayout();
-            tableLayoutPanel15.SuspendLayout();
+            tableLayoutPanel24.SuspendLayout();
             tableLayoutPanel10.SuspendLayout();
+            tableLayoutPanel15.SuspendLayout();
+            tableLayoutPanel23.SuspendLayout();
+            tableLayoutPanel14.SuspendLayout();
+            tableLayoutPanel16.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             tableLayoutPanel6.SuspendLayout();
@@ -165,12 +168,7 @@
             // 
             // flowLayoutPanel4
             // 
-            flowLayoutPanel4.AutoScroll = true;
-            flowLayoutPanel4.Controls.Add(tableLayoutPanel16);
-            flowLayoutPanel4.Controls.Add(tableLayoutPanel14);
-            flowLayoutPanel4.Controls.Add(tableLayoutPanel23);
-            flowLayoutPanel4.Controls.Add(tableLayoutPanel15);
-            flowLayoutPanel4.Controls.Add(tableLayoutPanel10);
+            flowLayoutPanel4.Controls.Add(tableLayoutPanel24);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel4);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel6);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel3);
@@ -193,9 +191,193 @@
             flowLayoutPanel4.Location = new System.Drawing.Point(0, 24);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            flowLayoutPanel4.Size = new System.Drawing.Size(564, 630);
+            flowLayoutPanel4.Size = new System.Drawing.Size(634, 518);
             flowLayoutPanel4.TabIndex = 8;
             flowLayoutPanel4.WrapContents = false;
+            // 
+            // tableLayoutPanel24
+            // 
+            tableLayoutPanel24.AutoSize = true;
+            tableLayoutPanel24.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel24.ColumnCount = 3;
+            tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel24.Controls.Add(tableLayoutPanel10, 2, 1);
+            tableLayoutPanel24.Controls.Add(tableLayoutPanel15, 0, 1);
+            tableLayoutPanel24.Controls.Add(tableLayoutPanel23, 2, 0);
+            tableLayoutPanel24.Controls.Add(tableLayoutPanel14, 1, 0);
+            tableLayoutPanel24.Controls.Add(tableLayoutPanel16, 0, 0);
+            tableLayoutPanel24.Location = new System.Drawing.Point(1, 1);
+            tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel24.Name = "tableLayoutPanel24";
+            tableLayoutPanel24.RowCount = 2;
+            tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel24.Size = new System.Drawing.Size(597, 44);
+            tableLayoutPanel24.TabIndex = 20;
+            // 
+            // tableLayoutPanel10
+            // 
+            tableLayoutPanel10.AutoSize = true;
+            tableLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel10.ColumnCount = 2;
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel10.Controls.Add(label11, 1, 0);
+            tableLayoutPanel10.Controls.Add(checkBox18, 0, 0);
+            tableLayoutPanel10.Location = new System.Drawing.Point(307, 23);
+            tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 1;
+            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel10.Size = new System.Drawing.Size(289, 20);
+            tableLayoutPanel10.TabIndex = 10;
+            // 
+            // label11
+            // 
+            label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(21, 2);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(265, 15);
+            label11.TabIndex = 0;
+            label11.Text = "-m Mix Host header case (test.com -> tEsT.cOm)";
+            // 
+            // checkBox18
+            // 
+            checkBox18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox18.AutoSize = true;
+            checkBox18.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "M", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            checkBox18.Location = new System.Drawing.Point(3, 3);
+            checkBox18.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox18.Name = "checkBox18";
+            checkBox18.Size = new System.Drawing.Size(15, 14);
+            checkBox18.TabIndex = 1;
+            checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel15
+            // 
+            tableLayoutPanel15.AutoSize = true;
+            tableLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel15.ColumnCount = 2;
+            tableLayoutPanel24.SetColumnSpan(tableLayoutPanel15, 2);
+            tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel15.Controls.Add(label16, 1, 0);
+            tableLayoutPanel15.Controls.Add(checkBox17, 0, 0);
+            tableLayoutPanel15.Location = new System.Drawing.Point(1, 23);
+            tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel15.Name = "tableLayoutPanel15";
+            tableLayoutPanel15.RowCount = 1;
+            tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel15.Size = new System.Drawing.Size(304, 20);
+            tableLayoutPanel15.TabIndex = 13;
+            // 
+            // label16
+            // 
+            label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label16.AutoSize = true;
+            label16.Location = new System.Drawing.Point(21, 2);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(280, 15);
+            label16.TabIndex = 0;
+            label16.Text = "-s Remove space between host header And its value";
+            // 
+            // checkBox17
+            // 
+            checkBox17.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox17.AutoSize = true;
+            checkBox17.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "S", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            checkBox17.Location = new System.Drawing.Point(3, 3);
+            checkBox17.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox17.Name = "checkBox17";
+            checkBox17.Size = new System.Drawing.Size(15, 14);
+            checkBox17.TabIndex = 1;
+            checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel23
+            // 
+            tableLayoutPanel23.AutoSize = true;
+            tableLayoutPanel23.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel23.ColumnCount = 2;
+            tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel23.Controls.Add(label1, 1, 0);
+            tableLayoutPanel23.Controls.Add(checkBox2, 0, 0);
+            tableLayoutPanel23.Location = new System.Drawing.Point(307, 1);
+            tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel23.Name = "tableLayoutPanel23";
+            tableLayoutPanel23.RowCount = 1;
+            tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel23.Size = new System.Drawing.Size(165, 20);
+            tableLayoutPanel23.TabIndex = 12;
+            // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(21, 2);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(141, 15);
+            label1.TabIndex = 0;
+            label1.Text = "-r Replace Host with hoSt";
+            // 
+            // checkBox2
+            // 
+            checkBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox2.AutoSize = true;
+            checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "R", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            checkBox2.Location = new System.Drawing.Point(3, 3);
+            checkBox2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new System.Drawing.Size(15, 14);
+            checkBox2.TabIndex = 1;
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel14
+            // 
+            tableLayoutPanel14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanel14.AutoSize = true;
+            tableLayoutPanel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel14.ColumnCount = 2;
+            tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel14.Controls.Add(label15, 1, 0);
+            tableLayoutPanel14.Controls.Add(checkBox15, 0, 0);
+            tableLayoutPanel14.Location = new System.Drawing.Point(160, 1);
+            tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel14.Name = "tableLayoutPanel14";
+            tableLayoutPanel14.RowCount = 1;
+            tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel14.Size = new System.Drawing.Size(145, 20);
+            tableLayoutPanel14.TabIndex = 12;
+            // 
+            // label15
+            // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(21, 2);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(121, 15);
+            label15.TabIndex = 0;
+            label15.Text = "-q Block QUIC/HTTP3";
+            // 
+            // checkBox15
+            // 
+            checkBox15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox15.AutoSize = true;
+            checkBox15.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "Q", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            checkBox15.Location = new System.Drawing.Point(3, 3);
+            checkBox15.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox15.Name = "checkBox15";
+            checkBox15.Size = new System.Drawing.Size(15, 14);
+            checkBox15.TabIndex = 1;
+            checkBox15.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel16
             // 
@@ -211,15 +393,15 @@
             tableLayoutPanel16.Name = "tableLayoutPanel16";
             tableLayoutPanel16.RowCount = 1;
             tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel16.Size = new System.Drawing.Size(140, 20);
+            tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel16.Size = new System.Drawing.Size(137, 20);
             tableLayoutPanel16.TabIndex = 14;
             // 
             // label17
             // 
             label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label17.AutoSize = true;
-            label17.Location = new System.Drawing.Point(24, 2);
+            label17.Location = new System.Drawing.Point(21, 2);
             label17.Name = "label17";
             label17.Size = new System.Drawing.Size(113, 15);
             label17.TabIndex = 0;
@@ -230,166 +412,11 @@
             checkBox21.AutoSize = true;
             checkBox21.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "P", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox21.Location = new System.Drawing.Point(3, 3);
+            checkBox21.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox21.Name = "checkBox21";
             checkBox21.Size = new System.Drawing.Size(15, 14);
             checkBox21.TabIndex = 1;
             checkBox21.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel14
-            // 
-            tableLayoutPanel14.AutoSize = true;
-            tableLayoutPanel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel14.ColumnCount = 2;
-            tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel14.Controls.Add(label15, 1, 0);
-            tableLayoutPanel14.Controls.Add(checkBox15, 0, 0);
-            tableLayoutPanel14.Location = new System.Drawing.Point(1, 23);
-            tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(1);
-            tableLayoutPanel14.Name = "tableLayoutPanel14";
-            tableLayoutPanel14.RowCount = 1;
-            tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel14.Size = new System.Drawing.Size(148, 20);
-            tableLayoutPanel14.TabIndex = 12;
-            // 
-            // label15
-            // 
-            label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(24, 2);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(121, 15);
-            label15.TabIndex = 0;
-            label15.Text = "-q Block QUIC/HTTP3";
-            // 
-            // checkBox15
-            // 
-            checkBox15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            checkBox15.AutoSize = true;
-            checkBox15.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "Q", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox15.Location = new System.Drawing.Point(3, 3);
-            checkBox15.Name = "checkBox15";
-            checkBox15.Size = new System.Drawing.Size(15, 14);
-            checkBox15.TabIndex = 1;
-            checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel23
-            // 
-            tableLayoutPanel23.AutoSize = true;
-            tableLayoutPanel23.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel23.ColumnCount = 2;
-            tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel23.Controls.Add(label1, 1, 0);
-            tableLayoutPanel23.Controls.Add(checkBox2, 0, 0);
-            tableLayoutPanel23.Location = new System.Drawing.Point(1, 45);
-            tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(1);
-            tableLayoutPanel23.Name = "tableLayoutPanel23";
-            tableLayoutPanel23.RowCount = 1;
-            tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel23.Size = new System.Drawing.Size(168, 20);
-            tableLayoutPanel23.TabIndex = 12;
-            // 
-            // label1
-            // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(24, 2);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(141, 15);
-            label1.TabIndex = 0;
-            label1.Text = "-r Replace Host with hoSt";
-            // 
-            // checkBox2
-            // 
-            checkBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            checkBox2.AutoSize = true;
-            checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "R", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox2.Location = new System.Drawing.Point(3, 3);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(15, 14);
-            checkBox2.TabIndex = 1;
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel15
-            // 
-            tableLayoutPanel15.AutoSize = true;
-            tableLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel15.ColumnCount = 2;
-            tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel15.Controls.Add(label16, 1, 0);
-            tableLayoutPanel15.Controls.Add(checkBox17, 0, 0);
-            tableLayoutPanel15.Location = new System.Drawing.Point(1, 67);
-            tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(1);
-            tableLayoutPanel15.Name = "tableLayoutPanel15";
-            tableLayoutPanel15.RowCount = 1;
-            tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel15.Size = new System.Drawing.Size(307, 20);
-            tableLayoutPanel15.TabIndex = 13;
-            // 
-            // label16
-            // 
-            label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(24, 2);
-            label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(280, 15);
-            label16.TabIndex = 0;
-            label16.Text = "-s Remove space between host header And its value";
-            // 
-            // checkBox17
-            // 
-            checkBox17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            checkBox17.AutoSize = true;
-            checkBox17.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "S", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox17.Location = new System.Drawing.Point(3, 3);
-            checkBox17.Name = "checkBox17";
-            checkBox17.Size = new System.Drawing.Size(15, 14);
-            checkBox17.TabIndex = 1;
-            checkBox17.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel10
-            // 
-            tableLayoutPanel10.AutoSize = true;
-            tableLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel10.ColumnCount = 2;
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel10.Controls.Add(label11, 1, 0);
-            tableLayoutPanel10.Controls.Add(checkBox18, 0, 0);
-            tableLayoutPanel10.Location = new System.Drawing.Point(1, 89);
-            tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(1);
-            tableLayoutPanel10.Name = "tableLayoutPanel10";
-            tableLayoutPanel10.RowCount = 1;
-            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel10.Size = new System.Drawing.Size(292, 20);
-            tableLayoutPanel10.TabIndex = 10;
-            // 
-            // label11
-            // 
-            label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(24, 2);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(265, 15);
-            label11.TabIndex = 0;
-            label11.Text = "-m Mix Host header case (test.com -> tEsT.cOm)";
-            // 
-            // checkBox18
-            // 
-            checkBox18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            checkBox18.AutoSize = true;
-            checkBox18.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "M", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox18.Location = new System.Drawing.Point(3, 3);
-            checkBox18.Name = "checkBox18";
-            checkBox18.Size = new System.Drawing.Size(15, 14);
-            checkBox18.TabIndex = 1;
-            checkBox18.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -402,12 +429,12 @@
             tableLayoutPanel4.Controls.Add(checkBox9, 0, 0);
             tableLayoutPanel4.Controls.Add(numericUpDown2, 1, 0);
             tableLayoutPanel4.Controls.Add(label5, 2, 0);
-            tableLayoutPanel4.Location = new System.Drawing.Point(1, 111);
+            tableLayoutPanel4.Location = new System.Drawing.Point(1, 47);
             tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel4.Size = new System.Drawing.Size(266, 26);
+            tableLayoutPanel4.Size = new System.Drawing.Size(263, 26);
             tableLayoutPanel4.TabIndex = 8;
             // 
             // checkBox9
@@ -416,6 +443,7 @@
             checkBox9.AutoSize = true;
             checkBox9.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", BS_GDPISettings, "F", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox9.Location = new System.Drawing.Point(3, 6);
+            checkBox9.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new System.Drawing.Size(15, 14);
             checkBox9.TabIndex = 0;
@@ -426,7 +454,7 @@
             numericUpDown2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "F_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown2.Location = new System.Drawing.Point(24, 3);
+            numericUpDown2.Location = new System.Drawing.Point(21, 3);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new System.Drawing.Size(43, 20);
             numericUpDown2.TabIndex = 1;
@@ -435,7 +463,7 @@
             // 
             label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(73, 5);
+            label5.Location = new System.Drawing.Point(70, 5);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(190, 15);
             label5.TabIndex = 2;
@@ -452,12 +480,12 @@
             tableLayoutPanel6.Controls.Add(checkBox11, 0, 0);
             tableLayoutPanel6.Controls.Add(numericUpDown4, 1, 0);
             tableLayoutPanel6.Controls.Add(label7, 2, 0);
-            tableLayoutPanel6.Location = new System.Drawing.Point(1, 139);
+            tableLayoutPanel6.Location = new System.Drawing.Point(1, 75);
             tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 1;
             tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel6.Size = new System.Drawing.Size(457, 26);
+            tableLayoutPanel6.Size = new System.Drawing.Size(454, 26);
             tableLayoutPanel6.TabIndex = 8;
             // 
             // checkBox11
@@ -466,6 +494,7 @@
             checkBox11.AutoSize = true;
             checkBox11.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", BS_GDPISettings, "K", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox11.Location = new System.Drawing.Point(3, 6);
+            checkBox11.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new System.Drawing.Size(15, 14);
             checkBox11.TabIndex = 0;
@@ -476,7 +505,7 @@
             numericUpDown4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "K_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown4.Location = new System.Drawing.Point(24, 3);
+            numericUpDown4.Location = new System.Drawing.Point(21, 3);
             numericUpDown4.Name = "numericUpDown4";
             numericUpDown4.Size = new System.Drawing.Size(43, 20);
             numericUpDown4.TabIndex = 1;
@@ -485,7 +514,7 @@
             // 
             label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(73, 5);
+            label7.Location = new System.Drawing.Point(70, 5);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(381, 15);
             label7.TabIndex = 2;
@@ -500,20 +529,20 @@
             tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel3.Controls.Add(label4, 1, 0);
             tableLayoutPanel3.Controls.Add(checkBox8, 0, 0);
-            tableLayoutPanel3.Location = new System.Drawing.Point(1, 167);
+            tableLayoutPanel3.Location = new System.Drawing.Point(1, 103);
             tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(328, 20);
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel3.Size = new System.Drawing.Size(325, 20);
             tableLayoutPanel3.TabIndex = 9;
             // 
             // label4
             // 
             label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(24, 2);
+            label4.Location = new System.Drawing.Point(21, 2);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(301, 15);
             label4.TabIndex = 0;
@@ -525,6 +554,7 @@
             checkBox8.AutoSize = true;
             checkBox8.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "N", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox8.Location = new System.Drawing.Point(3, 3);
+            checkBox8.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new System.Drawing.Size(15, 14);
             checkBox8.TabIndex = 1;
@@ -541,12 +571,12 @@
             tableLayoutPanel5.Controls.Add(checkBox10, 0, 0);
             tableLayoutPanel5.Controls.Add(numericUpDown3, 1, 0);
             tableLayoutPanel5.Controls.Add(label6, 2, 0);
-            tableLayoutPanel5.Location = new System.Drawing.Point(1, 189);
+            tableLayoutPanel5.Location = new System.Drawing.Point(1, 125);
             tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel5.Size = new System.Drawing.Size(274, 26);
+            tableLayoutPanel5.Size = new System.Drawing.Size(271, 26);
             tableLayoutPanel5.TabIndex = 8;
             // 
             // checkBox10
@@ -555,6 +585,7 @@
             checkBox10.AutoSize = true;
             checkBox10.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "E", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox10.Location = new System.Drawing.Point(3, 6);
+            checkBox10.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox10.Name = "checkBox10";
             checkBox10.Size = new System.Drawing.Size(15, 14);
             checkBox10.TabIndex = 0;
@@ -565,7 +596,7 @@
             numericUpDown3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "E_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown3.Location = new System.Drawing.Point(24, 3);
+            numericUpDown3.Location = new System.Drawing.Point(21, 3);
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new System.Drawing.Size(43, 20);
             numericUpDown3.TabIndex = 1;
@@ -574,7 +605,7 @@
             // 
             label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(73, 5);
+            label6.Location = new System.Drawing.Point(70, 5);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(198, 15);
             label6.TabIndex = 2;
@@ -589,19 +620,19 @@
             tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(label3, 1, 0);
             tableLayoutPanel2.Controls.Add(checkBox16, 0, 0);
-            tableLayoutPanel2.Location = new System.Drawing.Point(1, 217);
+            tableLayoutPanel2.Location = new System.Drawing.Point(1, 153);
             tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new System.Drawing.Size(473, 20);
+            tableLayoutPanel2.Size = new System.Drawing.Size(470, 20);
             tableLayoutPanel2.TabIndex = 8;
             // 
             // label3
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(24, 2);
+            label3.Location = new System.Drawing.Point(21, 2);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(446, 15);
             label3.TabIndex = 0;
@@ -613,6 +644,7 @@
             checkBox16.AutoSize = true;
             checkBox16.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "A", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox16.Location = new System.Drawing.Point(3, 3);
+            checkBox16.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox16.Name = "checkBox16";
             checkBox16.Size = new System.Drawing.Size(15, 14);
             checkBox16.TabIndex = 6;
@@ -627,19 +659,19 @@
             tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel11.Controls.Add(label12, 1, 0);
             tableLayoutPanel11.Controls.Add(checkBox19, 0, 0);
-            tableLayoutPanel11.Location = new System.Drawing.Point(1, 239);
+            tableLayoutPanel11.Location = new System.Drawing.Point(1, 175);
             tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
             tableLayoutPanel11.RowCount = 1;
             tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel11.Size = new System.Drawing.Size(457, 20);
+            tableLayoutPanel11.Size = new System.Drawing.Size(454, 20);
             tableLayoutPanel11.TabIndex = 11;
             // 
             // label12
             // 
             label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(24, 2);
+            label12.Location = new System.Drawing.Point(21, 2);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(430, 15);
             label12.TabIndex = 0;
@@ -651,6 +683,7 @@
             checkBox19.AutoSize = true;
             checkBox19.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "W", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox19.Location = new System.Drawing.Point(3, 3);
+            checkBox19.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox19.Name = "checkBox19";
             checkBox19.Size = new System.Drawing.Size(15, 14);
             checkBox19.TabIndex = 1;
@@ -669,12 +702,12 @@
             tableLayoutPanel7.Controls.Add(textBox3, 1, 0);
             tableLayoutPanel7.Controls.Add(label8, 3, 0);
             tableLayoutPanel7.Controls.Add(textBox4, 2, 0);
-            tableLayoutPanel7.Location = new System.Drawing.Point(1, 261);
+            tableLayoutPanel7.Location = new System.Drawing.Point(1, 197);
             tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
             tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel7.Size = new System.Drawing.Size(523, 26);
+            tableLayoutPanel7.Size = new System.Drawing.Size(519, 26);
             tableLayoutPanel7.TabIndex = 9;
             // 
             // checkBox12
@@ -683,6 +716,7 @@
             checkBox12.AutoSize = true;
             checkBox12.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "DNS_State", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox12.Location = new System.Drawing.Point(3, 6);
+            checkBox12.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox12.Name = "checkBox12";
             checkBox12.Size = new System.Drawing.Size(15, 14);
             checkBox12.TabIndex = 0;
@@ -693,7 +727,7 @@
             textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "DNS_Addr", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             textBox3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox3.Location = new System.Drawing.Point(24, 3);
+            textBox3.Location = new System.Drawing.Point(21, 3);
             textBox3.Name = "textBox3";
             textBox3.Size = new System.Drawing.Size(129, 20);
             textBox3.TabIndex = 0;
@@ -702,7 +736,7 @@
             // 
             label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(208, 5);
+            label8.Location = new System.Drawing.Point(204, 5);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(312, 15);
             label8.TabIndex = 2;
@@ -713,9 +747,9 @@
             textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "DNS_Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             textBox4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox4.Location = new System.Drawing.Point(159, 3);
+            textBox4.Location = new System.Drawing.Point(156, 3);
             textBox4.Name = "textBox4";
-            textBox4.Size = new System.Drawing.Size(43, 20);
+            textBox4.Size = new System.Drawing.Size(42, 20);
             textBox4.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -731,12 +765,12 @@
             tableLayoutPanel8.Controls.Add(textBox5, 1, 0);
             tableLayoutPanel8.Controls.Add(label9, 3, 0);
             tableLayoutPanel8.Controls.Add(textBox6, 2, 0);
-            tableLayoutPanel8.Location = new System.Drawing.Point(1, 289);
+            tableLayoutPanel8.Location = new System.Drawing.Point(1, 225);
             tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 1;
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel8.Size = new System.Drawing.Size(547, 26);
+            tableLayoutPanel8.Size = new System.Drawing.Size(543, 26);
             tableLayoutPanel8.TabIndex = 9;
             // 
             // checkBox13
@@ -745,6 +779,7 @@
             checkBox13.AutoSize = true;
             checkBox13.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "DNS6_State", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox13.Location = new System.Drawing.Point(3, 6);
+            checkBox13.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox13.Name = "checkBox13";
             checkBox13.Size = new System.Drawing.Size(15, 14);
             checkBox13.TabIndex = 0;
@@ -755,7 +790,7 @@
             textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "DNS6_Addr", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             textBox5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox5.Location = new System.Drawing.Point(24, 3);
+            textBox5.Location = new System.Drawing.Point(21, 3);
             textBox5.Name = "textBox5";
             textBox5.Size = new System.Drawing.Size(129, 20);
             textBox5.TabIndex = 0;
@@ -764,7 +799,7 @@
             // 
             label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(208, 5);
+            label9.Location = new System.Drawing.Point(204, 5);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(336, 15);
             label9.TabIndex = 2;
@@ -775,9 +810,9 @@
             textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "DNS6_Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             textBox6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox6.Location = new System.Drawing.Point(159, 3);
+            textBox6.Location = new System.Drawing.Point(156, 3);
             textBox6.Name = "textBox6";
-            textBox6.Size = new System.Drawing.Size(43, 20);
+            textBox6.Size = new System.Drawing.Size(42, 20);
             textBox6.TabIndex = 0;
             // 
             // tableLayoutPanel19
@@ -789,20 +824,20 @@
             tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel19.Controls.Add(label20, 1, 0);
             tableLayoutPanel19.Controls.Add(checkBox5, 0, 0);
-            tableLayoutPanel19.Location = new System.Drawing.Point(1, 317);
+            tableLayoutPanel19.Location = new System.Drawing.Point(1, 253);
             tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel19.Name = "tableLayoutPanel19";
             tableLayoutPanel19.RowCount = 1;
             tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel19.Size = new System.Drawing.Size(430, 20);
+            tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel19.Size = new System.Drawing.Size(427, 20);
             tableLayoutPanel19.TabIndex = 12;
             // 
             // label20
             // 
             label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label20.AutoSize = true;
-            label20.Location = new System.Drawing.Point(24, 2);
+            label20.Location = new System.Drawing.Point(21, 2);
             label20.Name = "label20";
             label20.Size = new System.Drawing.Size(403, 15);
             label20.TabIndex = 0;
@@ -814,6 +849,7 @@
             checkBox5.AutoSize = true;
             checkBox5.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "SNI", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox5.Location = new System.Drawing.Point(3, 3);
+            checkBox5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new System.Drawing.Size(15, 14);
             checkBox5.TabIndex = 1;
@@ -830,12 +866,12 @@
             tableLayoutPanel9.Controls.Add(checkBox14, 0, 0);
             tableLayoutPanel9.Controls.Add(numericUpDown5, 1, 0);
             tableLayoutPanel9.Controls.Add(label10, 2, 0);
-            tableLayoutPanel9.Location = new System.Drawing.Point(1, 339);
+            tableLayoutPanel9.Location = new System.Drawing.Point(1, 275);
             tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 1;
             tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel9.Size = new System.Drawing.Size(441, 26);
+            tableLayoutPanel9.Size = new System.Drawing.Size(438, 26);
             tableLayoutPanel9.TabIndex = 8;
             // 
             // checkBox14
@@ -844,6 +880,7 @@
             checkBox14.AutoSize = true;
             checkBox14.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "STTL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox14.Location = new System.Drawing.Point(3, 6);
+            checkBox14.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox14.Name = "checkBox14";
             checkBox14.Size = new System.Drawing.Size(15, 14);
             checkBox14.TabIndex = 0;
@@ -854,7 +891,7 @@
             numericUpDown5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "STTL_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown5.Location = new System.Drawing.Point(24, 3);
+            numericUpDown5.Location = new System.Drawing.Point(21, 3);
             numericUpDown5.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown5.Name = "numericUpDown5";
             numericUpDown5.Size = new System.Drawing.Size(63, 20);
@@ -864,7 +901,7 @@
             // 
             label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(93, 5);
+            label10.Location = new System.Drawing.Point(90, 5);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(345, 15);
             label10.TabIndex = 2;
@@ -879,20 +916,20 @@
             tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel18.Controls.Add(label19, 1, 0);
             tableLayoutPanel18.Controls.Add(checkBox4, 0, 0);
-            tableLayoutPanel18.Location = new System.Drawing.Point(1, 367);
+            tableLayoutPanel18.Location = new System.Drawing.Point(1, 303);
             tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel18.Name = "tableLayoutPanel18";
             tableLayoutPanel18.RowCount = 1;
             tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel18.Size = new System.Drawing.Size(507, 20);
+            tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            tableLayoutPanel18.Size = new System.Drawing.Size(504, 20);
             tableLayoutPanel18.TabIndex = 12;
             // 
             // label19
             // 
             label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(24, 2);
+            label19.Location = new System.Drawing.Point(21, 2);
             label19.Name = "label19";
             label19.Size = new System.Drawing.Size(480, 15);
             label19.TabIndex = 0;
@@ -904,6 +941,7 @@
             checkBox4.AutoSize = true;
             checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "ATTL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox4.Location = new System.Drawing.Point(3, 3);
+            checkBox4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new System.Drawing.Size(15, 14);
             checkBox4.TabIndex = 1;
@@ -920,12 +958,12 @@
             tableLayoutPanel17.Controls.Add(checkBox1, 0, 0);
             tableLayoutPanel17.Controls.Add(numericUpDown1, 1, 0);
             tableLayoutPanel17.Controls.Add(label18, 2, 0);
-            tableLayoutPanel17.Location = new System.Drawing.Point(1, 389);
+            tableLayoutPanel17.Location = new System.Drawing.Point(1, 325);
             tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel17.Name = "tableLayoutPanel17";
             tableLayoutPanel17.RowCount = 1;
             tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel17.Size = new System.Drawing.Size(552, 30);
+            tableLayoutPanel17.Size = new System.Drawing.Size(622, 30);
             tableLayoutPanel17.TabIndex = 15;
             // 
             // checkBox1
@@ -934,6 +972,7 @@
             checkBox1.AutoSize = true;
             checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "MTTL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox1.Location = new System.Drawing.Point(3, 8);
+            checkBox1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new System.Drawing.Size(15, 14);
             checkBox1.TabIndex = 0;
@@ -944,7 +983,7 @@
             numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "MTTL_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown1.Location = new System.Drawing.Point(24, 5);
+            numericUpDown1.Location = new System.Drawing.Point(21, 5);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new System.Drawing.Size(63, 20);
             numericUpDown1.TabIndex = 1;
@@ -953,9 +992,9 @@
             // 
             label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(93, 0);
+            label18.Location = new System.Drawing.Point(90, 0);
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(453, 30);
+            label18.Size = new System.Drawing.Size(506, 30);
             label18.TabIndex = 2;
             label18.Text = "Minimum TTL distance (128/64 - TTL) for which to send Fake Request in --set-ttl and --auto-ttl modes";
             // 
@@ -968,19 +1007,19 @@
             tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel12.Controls.Add(label13, 1, 0);
             tableLayoutPanel12.Controls.Add(checkBox20, 0, 0);
-            tableLayoutPanel12.Location = new System.Drawing.Point(1, 421);
+            tableLayoutPanel12.Location = new System.Drawing.Point(1, 357);
             tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.RowCount = 1;
             tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel12.Size = new System.Drawing.Size(402, 20);
+            tableLayoutPanel12.Size = new System.Drawing.Size(399, 20);
             tableLayoutPanel12.TabIndex = 12;
             // 
             // label13
             // 
             label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(24, 2);
+            label13.Location = new System.Drawing.Point(21, 2);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(375, 15);
             label13.TabIndex = 0;
@@ -992,6 +1031,7 @@
             checkBox20.AutoSize = true;
             checkBox20.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "ChkSum", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox20.Location = new System.Drawing.Point(3, 3);
+            checkBox20.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox20.Name = "checkBox20";
             checkBox20.Size = new System.Drawing.Size(15, 14);
             checkBox20.TabIndex = 1;
@@ -1006,19 +1046,19 @@
             tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel13.Controls.Add(label14, 1, 0);
             tableLayoutPanel13.Controls.Add(checkBox6, 0, 0);
-            tableLayoutPanel13.Location = new System.Drawing.Point(1, 443);
+            tableLayoutPanel13.Location = new System.Drawing.Point(1, 379);
             tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel13.Name = "tableLayoutPanel13";
             tableLayoutPanel13.RowCount = 1;
             tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel13.Size = new System.Drawing.Size(403, 20);
+            tableLayoutPanel13.Size = new System.Drawing.Size(400, 20);
             tableLayoutPanel13.TabIndex = 16;
             // 
             // label14
             // 
             label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(24, 2);
+            label14.Location = new System.Drawing.Point(21, 2);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(376, 15);
             label14.TabIndex = 0;
@@ -1030,6 +1070,7 @@
             checkBox6.AutoSize = true;
             checkBox6.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "Seq", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox6.Location = new System.Drawing.Point(3, 3);
+            checkBox6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new System.Drawing.Size(15, 14);
             checkBox6.TabIndex = 1;
@@ -1044,21 +1085,21 @@
             tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel20.Controls.Add(label21, 1, 0);
             tableLayoutPanel20.Controls.Add(checkBox7, 0, 0);
-            tableLayoutPanel20.Location = new System.Drawing.Point(1, 465);
+            tableLayoutPanel20.Location = new System.Drawing.Point(1, 401);
             tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel20.Name = "tableLayoutPanel20";
             tableLayoutPanel20.RowCount = 1;
             tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel20.Size = new System.Drawing.Size(552, 30);
+            tableLayoutPanel20.Size = new System.Drawing.Size(622, 30);
             tableLayoutPanel20.TabIndex = 17;
             // 
             // label21
             // 
             label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label21.AutoSize = true;
-            label21.Location = new System.Drawing.Point(24, 0);
+            label21.Location = new System.Drawing.Point(21, 0);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(515, 30);
+            label21.Size = new System.Drawing.Size(577, 30);
             label21.TabIndex = 0;
             label21.Text = "Fragment (split) the packets by sending them in smaller packets, without  shrinking the Window Size. Works faster (does not slow down the connection) and better";
             // 
@@ -1068,6 +1109,7 @@
             checkBox7.AutoSize = true;
             checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "NFrag", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox7.Location = new System.Drawing.Point(3, 8);
+            checkBox7.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox7.Name = "checkBox7";
             checkBox7.Size = new System.Drawing.Size(15, 14);
             checkBox7.TabIndex = 1;
@@ -1082,21 +1124,21 @@
             tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel21.Controls.Add(label22, 1, 0);
             tableLayoutPanel21.Controls.Add(checkBox22, 0, 0);
-            tableLayoutPanel21.Location = new System.Drawing.Point(1, 497);
+            tableLayoutPanel21.Location = new System.Drawing.Point(1, 433);
             tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel21.Name = "tableLayoutPanel21";
             tableLayoutPanel21.RowCount = 1;
             tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel21.Size = new System.Drawing.Size(552, 45);
+            tableLayoutPanel21.Size = new System.Drawing.Size(622, 30);
             tableLayoutPanel21.TabIndex = 18;
             // 
             // label22
             // 
             label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label22.AutoSize = true;
-            label22.Location = new System.Drawing.Point(24, 0);
+            label22.Location = new System.Drawing.Point(21, 0);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(523, 45);
+            label22.Size = new System.Drawing.Size(591, 30);
             label22.TabIndex = 0;
             label22.Text = resources.GetString("label22.Text");
             // 
@@ -1105,7 +1147,8 @@
             checkBox22.Anchor = System.Windows.Forms.AnchorStyles.Left;
             checkBox22.AutoSize = true;
             checkBox22.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "RFrag", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox22.Location = new System.Drawing.Point(3, 15);
+            checkBox22.Location = new System.Drawing.Point(3, 8);
+            checkBox22.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox22.Name = "checkBox22";
             checkBox22.Size = new System.Drawing.Size(15, 14);
             checkBox22.TabIndex = 1;
@@ -1122,12 +1165,12 @@
             tableLayoutPanel22.Controls.Add(checkBox23, 0, 0);
             tableLayoutPanel22.Controls.Add(numericUpDown6, 1, 0);
             tableLayoutPanel22.Controls.Add(label23, 2, 0);
-            tableLayoutPanel22.Location = new System.Drawing.Point(1, 544);
+            tableLayoutPanel22.Location = new System.Drawing.Point(1, 465);
             tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel22.Name = "tableLayoutPanel22";
             tableLayoutPanel22.RowCount = 1;
             tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel22.Size = new System.Drawing.Size(465, 26);
+            tableLayoutPanel22.Size = new System.Drawing.Size(462, 26);
             tableLayoutPanel22.TabIndex = 19;
             // 
             // checkBox23
@@ -1136,6 +1179,7 @@
             checkBox23.AutoSize = true;
             checkBox23.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "MP", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             checkBox23.Location = new System.Drawing.Point(3, 6);
+            checkBox23.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox23.Name = "checkBox23";
             checkBox23.Size = new System.Drawing.Size(15, 14);
             checkBox23.TabIndex = 0;
@@ -1146,7 +1190,7 @@
             numericUpDown6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "MP_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown6.Location = new System.Drawing.Point(24, 3);
+            numericUpDown6.Location = new System.Drawing.Point(21, 3);
             numericUpDown6.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown6.Name = "numericUpDown6";
             numericUpDown6.Size = new System.Drawing.Size(63, 20);
@@ -1156,7 +1200,7 @@
             // 
             label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label23.AutoSize = true;
-            label23.Location = new System.Drawing.Point(93, 5);
+            label23.Location = new System.Drawing.Point(90, 5);
             label23.Name = "label23";
             label23.Size = new System.Drawing.Size(369, 15);
             label23.TabIndex = 2;
@@ -1197,7 +1241,7 @@
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { copyFromModesetToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(564, 24);
+            menuStrip1.Size = new System.Drawing.Size(634, 24);
             menuStrip1.TabIndex = 10;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -1212,63 +1256,63 @@
             // MI_M1
             // 
             MI_M1.Name = "MI_M1";
-            MI_M1.Size = new System.Drawing.Size(129, 22);
+            MI_M1.Size = new System.Drawing.Size(180, 22);
             MI_M1.Text = "Modeset 1";
             MI_M1.Click += MI_M1_Click;
             // 
             // MI_M2
             // 
             MI_M2.Name = "MI_M2";
-            MI_M2.Size = new System.Drawing.Size(129, 22);
+            MI_M2.Size = new System.Drawing.Size(180, 22);
             MI_M2.Text = "Modeset 2";
             MI_M2.Click += MI_M2_Click;
             // 
             // MI_M3
             // 
             MI_M3.Name = "MI_M3";
-            MI_M3.Size = new System.Drawing.Size(129, 22);
+            MI_M3.Size = new System.Drawing.Size(180, 22);
             MI_M3.Text = "Modeset 3";
             MI_M3.Click += MI_M3_Click;
             // 
             // MI_M4
             // 
             MI_M4.Name = "MI_M4";
-            MI_M4.Size = new System.Drawing.Size(129, 22);
+            MI_M4.Size = new System.Drawing.Size(180, 22);
             MI_M4.Text = "Modeset 4";
             MI_M4.Click += MI_M4_Click;
             // 
             // MI_M5
             // 
             MI_M5.Name = "MI_M5";
-            MI_M5.Size = new System.Drawing.Size(129, 22);
+            MI_M5.Size = new System.Drawing.Size(180, 22);
             MI_M5.Text = "Modeset 5";
             MI_M5.Click += MI_M5_Click;
             // 
             // MI_M6
             // 
             MI_M6.Name = "MI_M6";
-            MI_M6.Size = new System.Drawing.Size(129, 22);
+            MI_M6.Size = new System.Drawing.Size(180, 22);
             MI_M6.Text = "Modeset 6";
             MI_M6.Click += MI_M6_Click;
             // 
             // MI_M7
             // 
             MI_M7.Name = "MI_M7";
-            MI_M7.Size = new System.Drawing.Size(129, 22);
+            MI_M7.Size = new System.Drawing.Size(180, 22);
             MI_M7.Text = "Modeset 7";
             MI_M7.Click += MI_M7_Click;
             // 
             // MI_M8
             // 
             MI_M8.Name = "MI_M8";
-            MI_M8.Size = new System.Drawing.Size(129, 22);
+            MI_M8.Size = new System.Drawing.Size(180, 22);
             MI_M8.Text = "Modeset 8";
             MI_M8.Click += MI_M8_Click;
             // 
             // MI_M9
             // 
             MI_M9.Name = "MI_M9";
-            MI_M9.Size = new System.Drawing.Size(129, 22);
+            MI_M9.Size = new System.Drawing.Size(180, 22);
             MI_M9.Text = "Modeset 9";
             MI_M9.Click += MI_M9_Click;
             // 
@@ -1279,7 +1323,7 @@
             flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(B_OK);
             flowLayoutPanel1.Controls.Add(B_Cancel);
-            flowLayoutPanel1.Location = new System.Drawing.Point(430, 0);
+            flowLayoutPanel1.Location = new System.Drawing.Point(500, 29);
             flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(134, 33);
@@ -1293,36 +1337,55 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 0);
             tableLayoutPanel1.Controls.Add(TB_Arguments, 0, 0);
+            tableLayoutPanel1.Controls.Add(CB_Manual, 0, 1);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 621);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 542);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(564, 33);
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.Size = new System.Drawing.Size(634, 62);
             tableLayoutPanel1.TabIndex = 12;
             // 
             // TB_Arguments
             // 
             TB_Arguments.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            TB_Arguments.Location = new System.Drawing.Point(3, 5);
+            tableLayoutPanel1.SetColumnSpan(TB_Arguments, 2);
+            TB_Arguments.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "Arguments", true));
+            TB_Arguments.Location = new System.Drawing.Point(3, 3);
             TB_Arguments.Name = "TB_Arguments";
             TB_Arguments.ReadOnly = true;
-            TB_Arguments.Size = new System.Drawing.Size(424, 23);
+            TB_Arguments.Size = new System.Drawing.Size(628, 23);
             TB_Arguments.TabIndex = 0;
+            // 
+            // CB_Manual
+            // 
+            CB_Manual.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            CB_Manual.AutoSize = true;
+            CB_Manual.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "Manual", true));
+            CB_Manual.Location = new System.Drawing.Point(3, 36);
+            CB_Manual.Name = "CB_Manual";
+            CB_Manual.Size = new System.Drawing.Size(66, 19);
+            CB_Manual.TabIndex = 1;
+            CB_Manual.Text = "Manual";
+            CB_Manual.UseVisualStyleBackColor = true;
+            CB_Manual.CheckedChanged += CB_Manual_CheckedChanged;
             // 
             // FormGDPISettings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(564, 654);
+            BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
+            ClientSize = new System.Drawing.Size(634, 604);
             ControlBox = false;
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(flowLayoutPanel4);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            MinimumSize = new System.Drawing.Size(580, 670);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(650, 620);
             Name = "FormGDPISettings";
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1331,16 +1394,18 @@
             ((System.ComponentModel.ISupportInitialize)BS_GDPISettings).EndInit();
             flowLayoutPanel4.ResumeLayout(false);
             flowLayoutPanel4.PerformLayout();
-            tableLayoutPanel16.ResumeLayout(false);
-            tableLayoutPanel16.PerformLayout();
-            tableLayoutPanel14.ResumeLayout(false);
-            tableLayoutPanel14.PerformLayout();
-            tableLayoutPanel23.ResumeLayout(false);
-            tableLayoutPanel23.PerformLayout();
-            tableLayoutPanel15.ResumeLayout(false);
-            tableLayoutPanel15.PerformLayout();
+            tableLayoutPanel24.ResumeLayout(false);
+            tableLayoutPanel24.PerformLayout();
             tableLayoutPanel10.ResumeLayout(false);
             tableLayoutPanel10.PerformLayout();
+            tableLayoutPanel15.ResumeLayout(false);
+            tableLayoutPanel15.PerformLayout();
+            tableLayoutPanel23.ResumeLayout(false);
+            tableLayoutPanel23.PerformLayout();
+            tableLayoutPanel14.ResumeLayout(false);
+            tableLayoutPanel14.PerformLayout();
+            tableLayoutPanel16.ResumeLayout(false);
+            tableLayoutPanel16.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
@@ -1487,5 +1552,7 @@
         private System.Windows.Forms.ToolStripMenuItem MI_M8;
         private System.Windows.Forms.ToolStripMenuItem MI_M9;
         private System.Windows.Forms.TextBox TB_Arguments;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.CheckBox CB_Manual;
     }
 }

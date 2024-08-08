@@ -1,4 +1,5 @@
-﻿using GDPIControl.Model;
+﻿using GDPIControl.Extensions;
+using GDPIControl.Model;
 using System;
 using System.Windows.Forms;
 
@@ -22,12 +23,12 @@ namespace GDPIControl.Forms
             }).Clone();
             BS_GDPISettings.CurrentItemChanged += BS_GDPISettings_CurrentItemChanged;
             BS_GDPISettings.DataSource = GDPISettings;
-            Text = $"Custom settings {Settings.Modeset.ToString()[6..]}";
+            Text = $"GDPI Settings {Settings.Modeset.ToString()[6..]}";
         }
 
         private void SetFromModeset(Modeset modeset)
         {
-            GDPISettings = GDPISettings.ModesetSettings(modeset);
+            GDPISettings = modeset.ToSettings();
             BS_GDPISettings.DataSource = GDPISettings;
         }
 
@@ -64,7 +65,13 @@ namespace GDPIControl.Forms
 
         private void BS_GDPISettings_CurrentItemChanged(object sender, EventArgs e)
         {
-            TB_Arguments.Text = GDPISettings.ToArguments();
+            if (GDPISettings.Manual) { return; }
+            GDPISettings.Arguments = GDPISettings.ToArguments();
+        }
+
+        private void CB_Manual_CheckedChanged(object sender, EventArgs e)
+        {
+            TB_Arguments.ReadOnly = !CB_Manual.Checked;
         }
 
         private void FormGDPISettings_Load(object sender, EventArgs e)

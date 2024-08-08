@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Properties.Settings settings1 = new Properties.Settings();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             PB = new System.Windows.Forms.ProgressBar();
             L_Done = new System.Windows.Forms.Label();
@@ -59,14 +58,14 @@
             tableLayoutPanel1.Controls.Add(L_Done, 0, 1);
             tableLayoutPanel1.Controls.Add(L_Size, 1, 1);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 92);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 97);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(384, 49);
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(384, 54);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // PB
@@ -75,15 +74,15 @@
             PB.Dock = System.Windows.Forms.DockStyle.Top;
             PB.Location = new System.Drawing.Point(8, 8);
             PB.Name = "PB";
-            PB.Size = new System.Drawing.Size(368, 20);
+            PB.Size = new System.Drawing.Size(368, 23);
             PB.TabIndex = 0;
             // 
             // L_Done
             // 
             L_Done.AutoSize = true;
-            L_Done.Location = new System.Drawing.Point(8, 31);
+            L_Done.Location = new System.Drawing.Point(8, 34);
             L_Done.Name = "L_Done";
-            L_Done.Size = new System.Drawing.Size(12, 13);
+            L_Done.Size = new System.Drawing.Size(12, 15);
             L_Done.TabIndex = 1;
             L_Done.Text = "_";
             // 
@@ -91,9 +90,9 @@
             // 
             L_Size.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             L_Size.AutoSize = true;
-            L_Size.Location = new System.Drawing.Point(364, 31);
+            L_Size.Location = new System.Drawing.Point(364, 34);
             L_Size.Name = "L_Size";
-            L_Size.Size = new System.Drawing.Size(12, 13);
+            L_Size.Size = new System.Drawing.Size(12, 15);
             L_Size.TabIndex = 1;
             L_Size.Text = "_";
             // 
@@ -101,9 +100,9 @@
             // 
             RB_AZ.AutoSize = true;
             RB_AZ.Checked = true;
-            RB_AZ.Location = new System.Drawing.Point(70, 3);
+            RB_AZ.Location = new System.Drawing.Point(72, 3);
             RB_AZ.Name = "RB_AZ";
-            RB_AZ.Size = new System.Drawing.Size(67, 17);
+            RB_AZ.Size = new System.Drawing.Size(67, 19);
             RB_AZ.TabIndex = 1;
             RB_AZ.TabStop = true;
             RB_AZ.Text = "Original";
@@ -120,9 +119,9 @@
             flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(RB_AF);
             flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            flowLayoutPanel1.Location = new System.Drawing.Point(0, 13);
+            flowLayoutPanel1.Location = new System.Drawing.Point(0, 15);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new System.Drawing.Size(384, 46);
+            flowLayoutPanel1.Size = new System.Drawing.Size(384, 50);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // label2
@@ -131,16 +130,16 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(3, 5);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(61, 13);
+            label2.Size = new System.Drawing.Size(63, 15);
             label2.TabIndex = 2;
             label2.Text = "AntiZapret";
             // 
             // RB_AZ1
             // 
             RB_AZ1.AutoSize = true;
-            RB_AZ1.Location = new System.Drawing.Point(143, 3);
+            RB_AZ1.Location = new System.Drawing.Point(145, 3);
             RB_AZ1.Name = "RB_AZ1";
-            RB_AZ1.Size = new System.Drawing.Size(66, 17);
+            RB_AZ1.Size = new System.Drawing.Size(67, 19);
             RB_AZ1.TabIndex = 1;
             RB_AZ1.TabStop = true;
             RB_AZ1.Text = "Mirror 1";
@@ -150,9 +149,9 @@
             // 
             RB_AZ2.AutoSize = true;
             flowLayoutPanel1.SetFlowBreak(RB_AZ2, true);
-            RB_AZ2.Location = new System.Drawing.Point(215, 3);
+            RB_AZ2.Location = new System.Drawing.Point(218, 3);
             RB_AZ2.Name = "RB_AZ2";
-            RB_AZ2.Size = new System.Drawing.Size(66, 17);
+            RB_AZ2.Size = new System.Drawing.Size(67, 19);
             RB_AZ2.TabIndex = 1;
             RB_AZ2.TabStop = true;
             RB_AZ2.Text = "Mirror 2";
@@ -162,18 +161,18 @@
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(3, 28);
+            label3.Location = new System.Drawing.Point(3, 30);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(51, 13);
+            label3.Size = new System.Drawing.Size(51, 15);
             label3.TabIndex = 2;
             label3.Text = "antifilter";
             // 
             // RB_AF
             // 
             RB_AF.AutoSize = true;
-            RB_AF.Location = new System.Drawing.Point(60, 26);
+            RB_AF.Location = new System.Drawing.Point(60, 28);
             RB_AF.Name = "RB_AF";
-            RB_AF.Size = new System.Drawing.Size(67, 17);
+            RB_AF.Size = new System.Drawing.Size(67, 19);
             RB_AF.TabIndex = 1;
             RB_AF.TabStop = true;
             RB_AF.Text = "Original";
@@ -186,7 +185,7 @@
             B_Download.Location = new System.Drawing.Point(308, 3);
             B_Download.Name = "B_Download";
             B_Download.Padding = new System.Windows.Forms.Padding(1);
-            B_Download.Size = new System.Drawing.Size(73, 25);
+            B_Download.Size = new System.Drawing.Size(73, 27);
             B_Download.TabIndex = 3;
             B_Download.Text = "Download";
             B_Download.UseVisualStyleBackColor = true;
@@ -198,7 +197,7 @@
             label1.Dock = System.Windows.Forms.DockStyle.Top;
             label1.Location = new System.Drawing.Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(89, 13);
+            label1.Size = new System.Drawing.Size(92, 15);
             label1.TabIndex = 4;
             label1.Text = "Blacklist Source:";
             // 
@@ -209,34 +208,27 @@
             flowLayoutPanel2.Controls.Add(B_Download);
             flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            flowLayoutPanel2.Location = new System.Drawing.Point(0, 61);
+            flowLayoutPanel2.Location = new System.Drawing.Point(0, 64);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new System.Drawing.Size(384, 31);
+            flowLayoutPanel2.Size = new System.Drawing.Size(384, 33);
             flowLayoutPanel2.TabIndex = 2;
             // 
             // FormBlacklist
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(384, 141);
+            ClientSize = new System.Drawing.Size(384, 151);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
-            settings1.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            settings1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            settings1.ForeColor = System.Drawing.Color.Black;
-            settings1.SettingsKey = "";
-            DataBindings.Add(new System.Windows.Forms.Binding("Font", settings1, "Font", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            DataBindings.Add(new System.Windows.Forms.Binding("BackColor", settings1, "BackColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", settings1, "ForeColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ForeColor = System.Drawing.Color.Black;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(550, 180);
+            MaximumSize = new System.Drawing.Size(639, 202);
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(400, 180);
+            MinimumSize = new System.Drawing.Size(400, 190);
             Name = "FormBlacklist";
             ShowIcon = false;
             ShowInTaskbar = false;
