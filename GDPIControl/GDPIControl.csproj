@@ -32,7 +32,9 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<Content Include="GDPI\**\*.*" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="GDPI\**\*.*" CopyToOutputDirectory="PreserveNewest">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>

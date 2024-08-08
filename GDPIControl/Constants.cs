@@ -15,7 +15,7 @@ namespace GDPIControl
         public static string BlacklistPath => Path.Combine(StartupPath, BlacklistName);
         public static string BlacklistTempPath => Path.Combine(StartupPath, BlacklistTempName);
         public static string ConfigPath => Path.Combine(StartupPath, ConfigName);
-        public static string GDPIPath => Path.Combine(Application.StartupPath, Environment.Is64BitOperatingSystem ? x86_64 : x86);
+        public static string GDPIPath => Path.Combine(StartupPath, Environment.Is64BitOperatingSystem ? x86_64 : x86);
         public static string UserlistPath => Path.Combine(StartupPath, UserlistName);
 
         #region StartupPath
