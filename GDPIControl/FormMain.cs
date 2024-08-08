@@ -1,4 +1,5 @@
-﻿using GDPIControl.Forms;
+﻿using GDPIControl.Extensions;
+using GDPIControl.Forms;
 using GDPIControl.Model;
 using GDPIControl.Properties;
 using System;
@@ -65,14 +66,7 @@ namespace GDPIControl
         private void RefreshArguments()
         {
             Settings.Modeset = RBModesets.First(X => X.Button.Checked).Modeset;
-            var Arguments = Settings.Modeset switch
-            {
-                Modeset.Custom1 => Settings.CustomSettings1.ToArguments(),
-                Modeset.Custom2 => Settings.CustomSettings2.ToArguments(),
-                Modeset.Custom3 => Settings.CustomSettings3.ToArguments(),
-                _ => GDPISettings.ModesetArgument(Settings.Modeset)
-            };
-
+            var Arguments = Settings.Modeset.ToArgument();
             if (Settings.UseBlacklist) { Arguments += $@" --blacklist ""{Constants.BlacklistPath}"""; }
             if (Settings.UseUserlist) { Arguments += $@" --blacklist ""{Constants.UserlistPath}"""; }
             Settings.Arguments = Arguments;
@@ -100,6 +94,7 @@ namespace GDPIControl
             Icon = Resources.icon_green;
             RefreshArguments();
             GDPIProcess.Start();
+            RefreshUI();
         }
 
         private void StopGDPI()
@@ -112,6 +107,7 @@ namespace GDPIControl
             Icon = Resources.icon_red;
             RefreshArguments();
             GDPIProcess.Stop();
+            RefreshUI();
         }
 
         private void UIState(bool state)
@@ -119,7 +115,6 @@ namespace GDPIControl
             B_Restart.Enabled = state;
             B_Start.Enabled = state;
             B_Close.Enabled = state;
-            if (state) { RefreshUI(); }
         }
 
         #region UIEvents

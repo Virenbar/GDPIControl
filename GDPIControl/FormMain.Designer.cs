@@ -49,6 +49,8 @@
             MI_Blacklist = new System.Windows.Forms.ToolStripMenuItem();
             MI_Userlist = new System.Windows.Forms.ToolStripMenuItem();
             MI_About = new System.Windows.Forms.ToolStripMenuItem();
+            gDPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             B_Restart = new System.Windows.Forms.Button();
             B_Close = new System.Windows.Forms.Button();
@@ -139,7 +141,7 @@
             // 
             // FormMenu
             // 
-            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, MI_About });
+            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, MI_About, gDPIToolStripMenuItem });
             FormMenu.Location = new System.Drawing.Point(0, 0);
             FormMenu.Name = "FormMenu";
             FormMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -235,6 +237,21 @@
             MI_About.Text = "About";
             MI_About.Click += MI_About_Click;
             // 
+            // gDPIToolStripMenuItem
+            // 
+            gDPIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { downloadToolStripMenuItem });
+            gDPIToolStripMenuItem.Enabled = false;
+            gDPIToolStripMenuItem.Name = "gDPIToolStripMenuItem";
+            gDPIToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            gDPIToolStripMenuItem.Text = "GDPI";
+            gDPIToolStripMenuItem.Visible = false;
+            // 
+            // downloadToolStripMenuItem
+            // 
+            downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            downloadToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            downloadToolStripMenuItem.Text = "Download";
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSize = true;
@@ -247,11 +264,11 @@
             tableLayoutPanel1.Controls.Add(B_Close, 2, 0);
             tableLayoutPanel1.Controls.Add(B_Start, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 230);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 248);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(534, 31);
+            tableLayoutPanel1.Size = new System.Drawing.Size(534, 33);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // B_Restart
@@ -262,7 +279,7 @@
             B_Restart.Location = new System.Drawing.Point(3, 3);
             B_Restart.Name = "B_Restart";
             B_Restart.Padding = new System.Windows.Forms.Padding(1);
-            B_Restart.Size = new System.Drawing.Size(99, 25);
+            B_Restart.Size = new System.Drawing.Size(100, 27);
             B_Restart.TabIndex = 7;
             B_Restart.Text = "Restart GDPI";
             B_Restart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -275,10 +292,10 @@
             B_Close.AutoSize = true;
             B_Close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Close.Image = icons8.shutdown16;
-            B_Close.Location = new System.Drawing.Point(401, 3);
+            B_Close.Location = new System.Drawing.Point(398, 3);
             B_Close.Name = "B_Close";
             B_Close.Padding = new System.Windows.Forms.Padding(1);
-            B_Close.Size = new System.Drawing.Size(130, 25);
+            B_Close.Size = new System.Drawing.Size(133, 27);
             B_Close.TabIndex = 3;
             B_Close.Text = "Close GDPIControl";
             B_Close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -294,7 +311,7 @@
             B_Start.Location = new System.Drawing.Point(223, 3);
             B_Start.Name = "B_Start";
             B_Start.Padding = new System.Windows.Forms.Padding(1);
-            B_Start.Size = new System.Drawing.Size(87, 25);
+            B_Start.Size = new System.Drawing.Size(88, 27);
             B_Start.TabIndex = 1;
             B_Start.Text = "Start GDPI";
             B_Start.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -311,7 +328,7 @@
             flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3);
-            flowLayoutPanel1.Size = new System.Drawing.Size(534, 29);
+            flowLayoutPanel1.Size = new System.Drawing.Size(534, 31);
             flowLayoutPanel1.TabIndex = 3;
             // 
             // checkBox3
@@ -320,7 +337,7 @@
             checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_ControlSettings, "UseBlacklist", true));
             checkBox3.Location = new System.Drawing.Point(6, 6);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new System.Drawing.Size(89, 17);
+            checkBox3.Size = new System.Drawing.Size(91, 19);
             checkBox3.TabIndex = 6;
             checkBox3.Text = "Use Blacklist";
             checkBox3.UseVisualStyleBackColor = true;
@@ -333,9 +350,9 @@
             // 
             checkBox2.AutoSize = true;
             checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_ControlSettings, "UseUserlist", true));
-            checkBox2.Location = new System.Drawing.Point(101, 6);
+            checkBox2.Location = new System.Drawing.Point(103, 6);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(86, 17);
+            checkBox2.Size = new System.Drawing.Size(86, 19);
             checkBox2.TabIndex = 6;
             checkBox2.Text = "Use Userlist";
             checkBox2.UseVisualStyleBackColor = true;
@@ -344,12 +361,12 @@
             // 
             RB_Custom_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             RB_Custom_1.AutoSize = true;
-            RB_Custom_1.Location = new System.Drawing.Point(88, 6);
+            RB_Custom_1.Location = new System.Drawing.Point(91, 6);
             RB_Custom_1.Name = "RB_Custom_1";
-            RB_Custom_1.Size = new System.Drawing.Size(117, 17);
+            RB_Custom_1.Size = new System.Drawing.Size(105, 19);
             RB_Custom_1.TabIndex = 6;
             RB_Custom_1.TabStop = true;
-            RB_Custom_1.Text = "Custom settings 1";
+            RB_Custom_1.Text = "GDPI Settings 1";
             RB_Custom_1.UseVisualStyleBackColor = true;
             RB_Custom_1.CheckedChanged += RB_CheckedChanged;
             // 
@@ -357,12 +374,12 @@
             // 
             RB_Custom_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             RB_Custom_2.AutoSize = true;
-            RB_Custom_2.Location = new System.Drawing.Point(211, 6);
+            RB_Custom_2.Location = new System.Drawing.Point(202, 6);
             RB_Custom_2.Name = "RB_Custom_2";
-            RB_Custom_2.Size = new System.Drawing.Size(117, 17);
+            RB_Custom_2.Size = new System.Drawing.Size(105, 19);
             RB_Custom_2.TabIndex = 6;
             RB_Custom_2.TabStop = true;
-            RB_Custom_2.Text = "Custom settings 2";
+            RB_Custom_2.Text = "GDPI Settings 2";
             RB_Custom_2.UseVisualStyleBackColor = true;
             RB_Custom_2.CheckedChanged += RB_CheckedChanged;
             // 
@@ -370,12 +387,12 @@
             // 
             RB_Custom_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             RB_Custom_3.AutoSize = true;
-            RB_Custom_3.Location = new System.Drawing.Point(334, 6);
+            RB_Custom_3.Location = new System.Drawing.Point(313, 6);
             RB_Custom_3.Name = "RB_Custom_3";
-            RB_Custom_3.Size = new System.Drawing.Size(117, 17);
+            RB_Custom_3.Size = new System.Drawing.Size(105, 19);
             RB_Custom_3.TabIndex = 6;
             RB_Custom_3.TabStop = true;
-            RB_Custom_3.Text = "Custom settings 3";
+            RB_Custom_3.Text = "GDPI Settings 3";
             RB_Custom_3.UseVisualStyleBackColor = true;
             RB_Custom_3.CheckedChanged += RB_CheckedChanged;
             // 
@@ -384,7 +401,7 @@
             RB_M1.AutoSize = true;
             RB_M1.Location = new System.Drawing.Point(3, 3);
             RB_M1.Name = "RB_M1";
-            RB_M1.Size = new System.Drawing.Size(156, 17);
+            RB_M1.Size = new System.Drawing.Size(163, 19);
             RB_M1.TabIndex = 1;
             RB_M1.TabStop = true;
             RB_M1.Text = "-1 Most compatible mode";
@@ -394,9 +411,9 @@
             // RB_M2
             // 
             RB_M2.AutoSize = true;
-            RB_M2.Location = new System.Drawing.Point(3, 49);
+            RB_M2.Location = new System.Drawing.Point(3, 53);
             RB_M2.Name = "RB_M2";
-            RB_M2.Size = new System.Drawing.Size(254, 17);
+            RB_M2.Size = new System.Drawing.Size(262, 19);
             RB_M2.TabIndex = 2;
             RB_M2.TabStop = true;
             RB_M2.Text = "-2 Better speed for HTTPS yet still compatible";
@@ -406,9 +423,9 @@
             // RB_M3
             // 
             RB_M3.AutoSize = true;
-            RB_M3.Location = new System.Drawing.Point(3, 26);
+            RB_M3.Location = new System.Drawing.Point(3, 28);
             RB_M3.Name = "RB_M3";
-            RB_M3.Size = new System.Drawing.Size(207, 17);
+            RB_M3.Size = new System.Drawing.Size(213, 19);
             RB_M3.TabIndex = 3;
             RB_M3.TabStop = true;
             RB_M3.Text = "-3 Better speed for HTTP and HTTPS";
@@ -418,9 +435,9 @@
             // RB_M4
             // 
             RB_M4.AutoSize = true;
-            RB_M4.Location = new System.Drawing.Point(3, 72);
+            RB_M4.Location = new System.Drawing.Point(3, 78);
             RB_M4.Name = "RB_M4";
-            RB_M4.Size = new System.Drawing.Size(93, 17);
+            RB_M4.Size = new System.Drawing.Size(95, 19);
             RB_M4.TabIndex = 4;
             RB_M4.TabStop = true;
             RB_M4.Text = "-4 Best speed";
@@ -432,7 +449,7 @@
             RB_M5.AutoSize = true;
             RB_M5.Location = new System.Drawing.Point(3, 3);
             RB_M5.Name = "RB_M5";
-            RB_M5.Size = new System.Drawing.Size(35, 17);
+            RB_M5.Size = new System.Drawing.Size(36, 19);
             RB_M5.TabIndex = 5;
             RB_M5.TabStop = true;
             RB_M5.Text = "-5";
@@ -442,10 +459,9 @@
             // RB_M6
             // 
             RB_M6.AutoSize = true;
-            flowLayoutPanel5.SetFlowBreak(RB_M6, true);
-            RB_M6.Location = new System.Drawing.Point(44, 3);
+            RB_M6.Location = new System.Drawing.Point(45, 3);
             RB_M6.Name = "RB_M6";
-            RB_M6.Size = new System.Drawing.Size(35, 17);
+            RB_M6.Size = new System.Drawing.Size(36, 19);
             RB_M6.TabIndex = 6;
             RB_M6.TabStop = true;
             RB_M6.Text = "-6";
@@ -458,9 +474,9 @@
             B_Edit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Edit.Location = new System.Drawing.Point(3, 3);
             B_Edit.Name = "B_Edit";
-            B_Edit.Size = new System.Drawing.Size(79, 23);
+            B_Edit.Size = new System.Drawing.Size(82, 25);
             B_Edit.TabIndex = 5;
-            B_Edit.Text = "Edit Custom";
+            B_Edit.Text = "Edit Settings";
             B_Edit.UseVisualStyleBackColor = true;
             B_Edit.Click += B_Edit_Click;
             // 
@@ -470,9 +486,9 @@
             tableLayoutPanel2.SetColumnSpan(groupBox1, 2);
             groupBox1.Controls.Add(flowLayoutPanel3);
             groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            groupBox1.Location = new System.Drawing.Point(3, 122);
+            groupBox1.Location = new System.Drawing.Point(3, 131);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(528, 50);
+            groupBox1.Size = new System.Drawing.Size(528, 53);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Custom settings";
@@ -485,9 +501,9 @@
             flowLayoutPanel3.Controls.Add(RB_Custom_2);
             flowLayoutPanel3.Controls.Add(RB_Custom_3);
             flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            flowLayoutPanel3.Location = new System.Drawing.Point(3, 18);
+            flowLayoutPanel3.Location = new System.Drawing.Point(3, 19);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new System.Drawing.Size(522, 29);
+            flowLayoutPanel3.Size = new System.Drawing.Size(522, 31);
             flowLayoutPanel3.TabIndex = 7;
             // 
             // groupBox2
@@ -497,7 +513,7 @@
             groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox2.Location = new System.Drawing.Point(3, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(266, 113);
+            groupBox2.Size = new System.Drawing.Size(274, 122);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "LEGACY modesets";
@@ -511,9 +527,9 @@
             flowLayoutPanel4.Controls.Add(RB_M4);
             flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            flowLayoutPanel4.Location = new System.Drawing.Point(3, 18);
+            flowLayoutPanel4.Location = new System.Drawing.Point(3, 19);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new System.Drawing.Size(260, 92);
+            flowLayoutPanel4.Size = new System.Drawing.Size(268, 100);
             flowLayoutPanel4.TabIndex = 7;
             flowLayoutPanel4.WrapContents = false;
             // 
@@ -522,9 +538,9 @@
             groupBox3.AutoSize = true;
             groupBox3.Controls.Add(flowLayoutPanel5);
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            groupBox3.Location = new System.Drawing.Point(275, 3);
+            groupBox3.Location = new System.Drawing.Point(283, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(256, 90);
+            groupBox3.Size = new System.Drawing.Size(248, 72);
             groupBox3.TabIndex = 6;
             groupBox3.TabStop = false;
             groupBox3.Text = "Modern modesets";
@@ -538,17 +554,18 @@
             flowLayoutPanel5.Controls.Add(RB_M8);
             flowLayoutPanel5.Controls.Add(RB_M9);
             flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            flowLayoutPanel5.Location = new System.Drawing.Point(3, 18);
+            flowLayoutPanel5.Location = new System.Drawing.Point(3, 19);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new System.Drawing.Size(250, 69);
+            flowLayoutPanel5.Size = new System.Drawing.Size(242, 50);
             flowLayoutPanel5.TabIndex = 7;
             // 
             // RB_M7
             // 
             RB_M7.AutoSize = true;
-            RB_M7.Location = new System.Drawing.Point(3, 26);
+            flowLayoutPanel5.SetFlowBreak(RB_M7, true);
+            RB_M7.Location = new System.Drawing.Point(87, 3);
             RB_M7.Name = "RB_M7";
-            RB_M7.Size = new System.Drawing.Size(35, 17);
+            RB_M7.Size = new System.Drawing.Size(36, 19);
             RB_M7.TabIndex = 6;
             RB_M7.TabStop = true;
             RB_M7.Text = "-7";
@@ -558,10 +575,9 @@
             // RB_M8
             // 
             RB_M8.AutoSize = true;
-            flowLayoutPanel5.SetFlowBreak(RB_M8, true);
-            RB_M8.Location = new System.Drawing.Point(44, 26);
+            RB_M8.Location = new System.Drawing.Point(3, 28);
             RB_M8.Name = "RB_M8";
-            RB_M8.Size = new System.Drawing.Size(35, 17);
+            RB_M8.Size = new System.Drawing.Size(36, 19);
             RB_M8.TabIndex = 6;
             RB_M8.TabStop = true;
             RB_M8.Text = "-8";
@@ -571,9 +587,9 @@
             // RB_M9
             // 
             RB_M9.AutoSize = true;
-            RB_M9.Location = new System.Drawing.Point(3, 49);
+            RB_M9.Location = new System.Drawing.Point(45, 28);
             RB_M9.Name = "RB_M9";
-            RB_M9.Size = new System.Drawing.Size(81, 17);
+            RB_M9.Size = new System.Drawing.Size(84, 19);
             RB_M9.TabIndex = 6;
             RB_M9.TabStop = true;
             RB_M9.Text = "-9 (default)";
@@ -590,31 +606,30 @@
             tableLayoutPanel2.Controls.Add(groupBox1, 0, 1);
             tableLayoutPanel2.Controls.Add(groupBox3, 1, 0);
             tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            tableLayoutPanel2.Location = new System.Drawing.Point(0, 53);
+            tableLayoutPanel2.Location = new System.Drawing.Point(0, 55);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel2.Size = new System.Drawing.Size(534, 175);
+            tableLayoutPanel2.Size = new System.Drawing.Size(534, 187);
             tableLayoutPanel2.TabIndex = 7;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(534, 261);
+            ClientSize = new System.Drawing.Size(534, 281);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(FormMenu);
             DoubleBuffered = true;
-            Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = FormMenu;
             MaximizeBox = false;
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(550, 300);
+            MinimumSize = new System.Drawing.Size(550, 310);
             Name = "FormMain";
             Text = "GDPIControl";
             FormClosing += FormMain_FormClosing;
@@ -693,5 +708,7 @@
         private System.Windows.Forms.RadioButton RB_M7;
         private System.Windows.Forms.RadioButton RB_M8;
         private System.Windows.Forms.RadioButton RB_M9;
+        private System.Windows.Forms.ToolStripMenuItem gDPIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
     }
 }

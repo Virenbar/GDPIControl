@@ -20,7 +20,7 @@ namespace GDPIControl
             Application.SetCompatibleTextRenderingDefault(false);
             if (!created)
             {
-                MessageBox.Show($"Another instance of {Application.ProductName} is already running.", Application.ProductName);
+                MessageBox.Show($"Another instance of {Application.ProductName} is already running.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
