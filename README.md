@@ -1,24 +1,26 @@
-# GDPIControl - GoodbyeDPI Tray Control
+# GDPIControl - GUI for [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI/)
 
-Small tray application for controlling GoodbyeDPI
+Small GUI application for controlling GoodbyeDPI
 
 ## Features
 
-- Switching GoodbyeDPI on/off from tray
-- Selecting custom options
-- Updating blacklist
-- Autostart at logon
+- Enable/disable Goodbye DPI from the tray
+- Custom settings (up to 3)
+- Updating the blacklist
+- Autorun at login
 
 ## Screenshots
 
-Tray window  
+Tray menu  
 ![tray](./assets/tray.png)
 
 Main window  
 ![modesets](./assets/modesets.png)
-![custom](./assets/custom.png)
+
+Custom settings  
+![settings](./assets/settings.png)
 
 ## Links
 
-- **[WinDivert](https://github.com/basil00/Divert)** by @basil00
 - **[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI/)** by @ValdikSS
+- **[WinDivert](https://github.com/basil00/Divert)** by @basil00
