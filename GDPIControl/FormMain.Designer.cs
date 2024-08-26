@@ -37,14 +37,7 @@
             MI_Show = new System.Windows.Forms.ToolStripMenuItem();
             MI_Close = new System.Windows.Forms.ToolStripMenuItem();
             FormMenu = new System.Windows.Forms.MenuStrip();
-            toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            MI_Minimized = new System.Windows.Forms.ToolStripMenuItem();
-            MI_Autostart = new System.Windows.Forms.ToolStripMenuItem();
-            MI_Logon = new System.Windows.Forms.ToolStripMenuItem();
+            MI_Settings = new System.Windows.Forms.ToolStripMenuItem();
             toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             MI_Blacklist = new System.Windows.Forms.ToolStripMenuItem();
             MI_Userlist = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,7 +118,7 @@
             // 
             // MI_Show
             // 
-            MI_Show.Image = icons8.settings16;
+            MI_Show.Image = icons8.Settings16;
             MI_Show.Name = "MI_Show";
             MI_Show.Size = new System.Drawing.Size(172, 22);
             MI_Show.Text = "Show GDPIControl";
@@ -133,7 +126,7 @@
             // 
             // MI_Close
             // 
-            MI_Close.Image = icons8.shutdown16;
+            MI_Close.Image = icons8.Shutdown16;
             MI_Close.Name = "MI_Close";
             MI_Close.Size = new System.Drawing.Size(172, 22);
             MI_Close.Text = "Close GDPIControl";
@@ -141,7 +134,7 @@
             // 
             // FormMenu
             // 
-            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, MI_About, gDPIToolStripMenuItem });
+            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_Settings, toolStripMenuItem3, MI_About, gDPIToolStripMenuItem });
             FormMenu.Location = new System.Drawing.Point(0, 0);
             FormMenu.Name = "FormMenu";
             FormMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -149,63 +142,13 @@
             FormMenu.TabIndex = 1;
             FormMenu.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // MI_Settings
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveToolStripMenuItem, loadToolStripMenuItem, deleteToolStripMenuItem });
-            toolStripMenuItem1.Enabled = false;
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new System.Drawing.Size(58, 20);
-            toolStripMenuItem1.Text = "Profiles";
-            toolStripMenuItem1.Visible = false;
-            // 
-            // saveToolStripMenuItem
-            // 
-            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            saveToolStripMenuItem.Text = "Save";
-            // 
-            // loadToolStripMenuItem
-            // 
-            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            loadToolStripMenuItem.Text = "Load";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // toolStripMenuItem2
-            // 
-            toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_Minimized, MI_Autostart, MI_Logon });
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new System.Drawing.Size(104, 20);
-            toolStripMenuItem2.Text = "Control Settings";
-            // 
-            // MI_Minimized
-            // 
-            MI_Minimized.CheckOnClick = true;
-            MI_Minimized.Name = "MI_Minimized";
-            MI_Minimized.Size = new System.Drawing.Size(172, 22);
-            MI_Minimized.Text = "Launch minimized";
-            MI_Minimized.CheckedChanged += MI_Minimized_CheckedChanged;
-            // 
-            // MI_Autostart
-            // 
-            MI_Autostart.CheckOnClick = true;
-            MI_Autostart.Name = "MI_Autostart";
-            MI_Autostart.Size = new System.Drawing.Size(172, 22);
-            MI_Autostart.Text = "Autostart GDPI";
-            MI_Autostart.CheckedChanged += MI_Autostart_CheckedChanged;
-            // 
-            // MI_Logon
-            // 
-            MI_Logon.CheckOnClick = true;
-            MI_Logon.Name = "MI_Logon";
-            MI_Logon.Size = new System.Drawing.Size(172, 22);
-            MI_Logon.Text = "Launch on logon";
-            MI_Logon.Click += MI_Logon_Click;
+            MI_Settings.Image = icons8.Settings16;
+            MI_Settings.Name = "MI_Settings";
+            MI_Settings.Size = new System.Drawing.Size(77, 20);
+            MI_Settings.Text = "Settings";
+            MI_Settings.Click += MI_Settings_Click;
             // 
             // toolStripMenuItem3
             // 
@@ -217,21 +160,21 @@
             // MI_Blacklist
             // 
             MI_Blacklist.Name = "MI_Blacklist";
-            MI_Blacklist.Size = new System.Drawing.Size(158, 22);
+            MI_Blacklist.Size = new System.Drawing.Size(180, 22);
             MI_Blacklist.Text = "Update Blacklist";
             MI_Blacklist.Click += MI_Blacklist_Click;
             // 
             // MI_Userlist
             // 
             MI_Userlist.Name = "MI_Userlist";
-            MI_Userlist.Size = new System.Drawing.Size(158, 22);
+            MI_Userlist.Size = new System.Drawing.Size(180, 22);
             MI_Userlist.Text = "Open Userlist";
             MI_Userlist.Click += MI_Userlist_Click;
             // 
             // MI_About
             // 
             MI_About.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            MI_About.Image = icons8.info16;
+            MI_About.Image = icons8.Info16;
             MI_About.Name = "MI_About";
             MI_About.Size = new System.Drawing.Size(68, 20);
             MI_About.Text = "About";
@@ -249,7 +192,7 @@
             // downloadToolStripMenuItem
             // 
             downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            downloadToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            downloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             downloadToolStripMenuItem.Text = "Download";
             // 
             // tableLayoutPanel1
@@ -264,7 +207,7 @@
             tableLayoutPanel1.Controls.Add(B_Close, 2, 0);
             tableLayoutPanel1.Controls.Add(B_Start, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 248);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 238);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -291,7 +234,7 @@
             B_Close.Anchor = System.Windows.Forms.AnchorStyles.Right;
             B_Close.AutoSize = true;
             B_Close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            B_Close.Image = icons8.shutdown16;
+            B_Close.Image = icons8.Shutdown16;
             B_Close.Location = new System.Drawing.Point(398, 3);
             B_Close.Name = "B_Close";
             B_Close.Padding = new System.Windows.Forms.Padding(1);
@@ -616,10 +559,10 @@
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(534, 281);
+            ClientSize = new System.Drawing.Size(534, 271);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(tableLayoutPanel1);
@@ -664,16 +607,10 @@
         private System.Windows.Forms.NotifyIcon TrayControl;
         private System.Windows.Forms.ContextMenuStrip TrayMenu;
         private System.Windows.Forms.MenuStrip FormMenu;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem MI_Logon;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button B_Close;
         private System.Windows.Forms.Button B_Start;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MI_Userlist;
         private System.Windows.Forms.ToolStripMenuItem MI_Blacklist;
         private System.Windows.Forms.ToolStripMenuItem MI_About;
@@ -691,8 +628,6 @@
         private System.Windows.Forms.ToolStripMenuItem MI_Stop;
         private System.Windows.Forms.ToolStripMenuItem MI_Show;
         private System.Windows.Forms.ToolStripMenuItem MI_Close;
-        private System.Windows.Forms.ToolStripMenuItem MI_Minimized;
-        private System.Windows.Forms.ToolStripMenuItem MI_Autostart;
         private System.Windows.Forms.RadioButton RB_M6;
         private System.Windows.Forms.RadioButton RB_Custom_2;
         private System.Windows.Forms.Button B_Edit;
@@ -710,5 +645,6 @@
         private System.Windows.Forms.RadioButton RB_M9;
         private System.Windows.Forms.ToolStripMenuItem gDPIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MI_Settings;
     }
 }
