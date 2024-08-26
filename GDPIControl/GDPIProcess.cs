@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Linq;
+using System.ServiceProcess;
 using System.Threading.Tasks;
 
 namespace GDPIControl
@@ -42,6 +44,13 @@ namespace GDPIControl
             if (!IsRunning) { return; }
             GDPIP.Kill();
             GDPIP = null;
+        }
+
+        public static void StopDriver()
+        {
+            var devices = ServiceController.GetDevices();
+            var driver = devices.FirstOrDefault(S => S.ServiceName.Contains("WinDivert"));
+            driver?.Stop();
         }
 
         private static void GDPIP_ErrorDataReceived(object sender, DataReceivedEventArgs e)
