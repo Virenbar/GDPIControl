@@ -13,6 +13,7 @@ namespace GDPIControl.Forms
         public FormGDPISettings(ControlSettings settings)
         {
             InitializeComponent();
+            this.BindSettings();
             Settings = settings;
             GDPISettings = (GDPISettings)(Settings.Modeset switch
             {

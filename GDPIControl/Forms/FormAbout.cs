@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using GDPIControl.Extensions;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace GDPIControl
@@ -8,6 +9,7 @@ namespace GDPIControl
         public FormAbout()
         {
             InitializeComponent();
+            this.BindSettings();
             L_Version.Text = $"v{Application.ProductVersion}";
         }
 

@@ -12,6 +12,7 @@ namespace GDPIControl.Forms
         public FormSettings()
         {
             InitializeComponent();
+            this.BindSettings();
             CB_Minimized.Checked = Settings.LaunchMinimazed;
             CB_AutostartGDPIControl.Checked = ControlTask.IsRegistered;
 

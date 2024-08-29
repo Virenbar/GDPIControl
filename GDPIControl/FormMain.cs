@@ -21,6 +21,7 @@ namespace GDPIControl
         public FormMain()
         {
             InitializeComponent();
+            this.BindSettings();
             CustomModesets = new() {
                 Modeset.Custom1,
                 Modeset.Custom2,

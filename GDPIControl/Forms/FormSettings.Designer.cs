@@ -47,9 +47,9 @@
             CB_Minimized.AutoSize = true;
             CB_Minimized.Location = new System.Drawing.Point(3, 28);
             CB_Minimized.Name = "CB_Minimized";
-            CB_Minimized.Size = new System.Drawing.Size(193, 19);
+            CB_Minimized.Size = new System.Drawing.Size(109, 19);
             CB_Minimized.TabIndex = 7;
-            CB_Minimized.Text = "Launch GDPIControl minimized";
+            CB_Minimized.Text = "Start minimized";
             // 
             // flowLayoutPanel3
             // 
@@ -63,7 +63,7 @@
             flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new System.Drawing.Size(384, 100);
+            flowLayoutPanel3.Size = new System.Drawing.Size(284, 100);
             flowLayoutPanel3.TabIndex = 8;
             flowLayoutPanel3.WrapContents = false;
             // 
@@ -81,9 +81,9 @@
             CB_AutostartGDPI.AutoSize = true;
             CB_AutostartGDPI.Location = new System.Drawing.Point(3, 53);
             CB_AutostartGDPI.Name = "CB_AutostartGDPI";
-            CB_AutostartGDPI.Size = new System.Drawing.Size(175, 19);
+            CB_AutostartGDPI.Size = new System.Drawing.Size(267, 19);
             CB_AutostartGDPI.TabIndex = 7;
-            CB_AutostartGDPI.Text = "Start GoodbyeDPI on launch";
+            CB_AutostartGDPI.Text = "Start GoodbyeDPI when GDPControl is started";
             // 
             // CB_StopDriver
             // 
@@ -99,29 +99,30 @@
             tableLayoutPanel1.AutoSize = true;
             tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             tableLayoutPanel1.Location = new System.Drawing.Point(0, 108);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(384, 33);
+            tableLayoutPanel1.Size = new System.Drawing.Size(284, 33);
             tableLayoutPanel1.TabIndex = 9;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(B_OK);
             flowLayoutPanel1.Controls.Add(B_Cancel);
-            flowLayoutPanel1.Location = new System.Drawing.Point(250, 0);
+            flowLayoutPanel1.Location = new System.Drawing.Point(150, 0);
             flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(134, 33);
             flowLayoutPanel1.TabIndex = 9;
+            flowLayoutPanel1.WrapContents = false;
             // 
             // B_OK
             // 
@@ -159,7 +160,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(384, 141);
+            ClientSize = new System.Drawing.Size(284, 141);
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Controls.Add(flowLayoutPanel3);

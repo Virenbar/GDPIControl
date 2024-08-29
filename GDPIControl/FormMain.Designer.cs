@@ -160,14 +160,14 @@
             // MI_Blacklist
             // 
             MI_Blacklist.Name = "MI_Blacklist";
-            MI_Blacklist.Size = new System.Drawing.Size(180, 22);
+            MI_Blacklist.Size = new System.Drawing.Size(158, 22);
             MI_Blacklist.Text = "Update Blacklist";
             MI_Blacklist.Click += MI_Blacklist_Click;
             // 
             // MI_Userlist
             // 
             MI_Userlist.Name = "MI_Userlist";
-            MI_Userlist.Size = new System.Drawing.Size(180, 22);
+            MI_Userlist.Size = new System.Drawing.Size(158, 22);
             MI_Userlist.Text = "Open Userlist";
             MI_Userlist.Click += MI_Userlist_Click;
             // 
@@ -192,7 +192,7 @@
             // downloadToolStripMenuItem
             // 
             downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            downloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            downloadToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             downloadToolStripMenuItem.Text = "Download";
             // 
             // tableLayoutPanel1
@@ -571,6 +571,7 @@
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = FormMenu;
             MaximizeBox = false;
+            MaximumSize = new System.Drawing.Size(650, 350);
             MinimizeBox = false;
             MinimumSize = new System.Drawing.Size(550, 310);
             Name = "FormMain";
