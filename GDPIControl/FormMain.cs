@@ -21,6 +21,7 @@ namespace GDPIControl
         public FormMain()
         {
             InitializeComponent();
+            this.BindSettings();
             CustomModesets = new() {
                 Modeset.Custom1,
                 Modeset.Custom2,
@@ -42,10 +43,6 @@ namespace GDPIControl
                 (RB_Custom_3,Modeset.Custom3)
             };
             RBModesets.First(X => X.Modeset == Settings.Modeset).Button.Checked = true;
-            MI_Autostart.Checked = Settings.AutostartGDPI;
-            MI_Minimized.Checked = Settings.LaunchMinimazed;
-            MI_Logon.Checked = ControlTask.IsRegistered;
-
             BS_ControlSettings.DataSource = Settings;
 
             RefreshUI();
@@ -60,6 +57,10 @@ namespace GDPIControl
             TrayControl.Visible = false;
             TrayControl.Dispose();
             RefreshArguments();
+            if (Settings.StopDriver)
+            {
+                GDPIProcess.StopDriver();
+            }
             Application.Exit();
         }
 
@@ -159,6 +160,12 @@ namespace GDPIControl
             F.ShowDialog(this);
         }
 
+        private void MI_Settings_Click(object sender, EventArgs e)
+        {
+            using var F = new FormSettings();
+            F.ShowDialog(this);
+        }
+
         private void RB_CheckedChanged(object sender, EventArgs e)
         {
             var RB = (RadioButton)sender;
@@ -190,33 +197,6 @@ namespace GDPIControl
         }
 
         #endregion Lists
-
-        #region Control settings
-
-        private void MI_Autostart_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.Current.AutostartGDPI = MI_Autostart.Checked;
-        }
-
-        private void MI_Logon_Click(object sender, EventArgs e)
-        {
-            if (!ControlTask.IsRegistered)
-            {
-                ControlTask.Register();
-            }
-            else
-            {
-                ControlTask.Delete();
-            }
-            MI_Logon.Checked = ControlTask.IsRegistered;
-        }
-
-        private void MI_Minimized_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.Current.LaunchMinimazed = MI_Minimized.Checked;
-        }
-
-        #endregion Control settings
 
         #region Tray
 

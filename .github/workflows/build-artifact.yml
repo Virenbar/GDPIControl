@@ -70,4 +70,5 @@ jobs:
           GDPIControl\publish\${{ matrix.framework }}\*.dll
           GDPIControl\publish\${{ matrix.framework }}\GDPI\**\*
           GDPIControl\publish\${{ matrix.framework }}\GDPIControl.runtimeconfig.json
+          GDPIControl\publish\${{ matrix.framework }}\GDPIControl.exe.config
         if-no-files-found: error

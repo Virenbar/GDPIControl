@@ -14,7 +14,8 @@ namespace GDPIControl
             Modeset = Modeset.M9,
             CustomSettings1 = new GDPISettings(),
             CustomSettings2 = new GDPISettings(),
-            CustomSettings3 = new GDPISettings()
+            CustomSettings3 = new GDPISettings(),
+            StopDriver = true
         };
 
         public static void Load()

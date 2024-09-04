@@ -83,9 +83,9 @@ namespace GDPIControl {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap info16 {
+        internal static System.Drawing.Bitmap Info16 {
             get {
-                object obj = ResourceManager.GetObject("info16", resourceCulture);
+                object obj = ResourceManager.GetObject("Info16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace GDPIControl {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings16 {
+        internal static System.Drawing.Bitmap Settings16 {
             get {
-                object obj = ResourceManager.GetObject("settings16", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace GDPIControl {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shutdown16 {
+        internal static System.Drawing.Bitmap Shutdown16 {
             get {
-                object obj = ResourceManager.GetObject("shutdown16", resourceCulture);
+                object obj = ResourceManager.GetObject("Shutdown16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

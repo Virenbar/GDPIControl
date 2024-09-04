@@ -191,7 +191,7 @@
             flowLayoutPanel4.Location = new System.Drawing.Point(0, 24);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            flowLayoutPanel4.Size = new System.Drawing.Size(634, 518);
+            flowLayoutPanel4.Size = new System.Drawing.Size(634, 495);
             flowLayoutPanel4.TabIndex = 8;
             flowLayoutPanel4.WrapContents = false;
             // 
@@ -1256,63 +1256,63 @@
             // MI_M1
             // 
             MI_M1.Name = "MI_M1";
-            MI_M1.Size = new System.Drawing.Size(180, 22);
+            MI_M1.Size = new System.Drawing.Size(129, 22);
             MI_M1.Text = "Modeset 1";
             MI_M1.Click += MI_M1_Click;
             // 
             // MI_M2
             // 
             MI_M2.Name = "MI_M2";
-            MI_M2.Size = new System.Drawing.Size(180, 22);
+            MI_M2.Size = new System.Drawing.Size(129, 22);
             MI_M2.Text = "Modeset 2";
             MI_M2.Click += MI_M2_Click;
             // 
             // MI_M3
             // 
             MI_M3.Name = "MI_M3";
-            MI_M3.Size = new System.Drawing.Size(180, 22);
+            MI_M3.Size = new System.Drawing.Size(129, 22);
             MI_M3.Text = "Modeset 3";
             MI_M3.Click += MI_M3_Click;
             // 
             // MI_M4
             // 
             MI_M4.Name = "MI_M4";
-            MI_M4.Size = new System.Drawing.Size(180, 22);
+            MI_M4.Size = new System.Drawing.Size(129, 22);
             MI_M4.Text = "Modeset 4";
             MI_M4.Click += MI_M4_Click;
             // 
             // MI_M5
             // 
             MI_M5.Name = "MI_M5";
-            MI_M5.Size = new System.Drawing.Size(180, 22);
+            MI_M5.Size = new System.Drawing.Size(129, 22);
             MI_M5.Text = "Modeset 5";
             MI_M5.Click += MI_M5_Click;
             // 
             // MI_M6
             // 
             MI_M6.Name = "MI_M6";
-            MI_M6.Size = new System.Drawing.Size(180, 22);
+            MI_M6.Size = new System.Drawing.Size(129, 22);
             MI_M6.Text = "Modeset 6";
             MI_M6.Click += MI_M6_Click;
             // 
             // MI_M7
             // 
             MI_M7.Name = "MI_M7";
-            MI_M7.Size = new System.Drawing.Size(180, 22);
+            MI_M7.Size = new System.Drawing.Size(129, 22);
             MI_M7.Text = "Modeset 7";
             MI_M7.Click += MI_M7_Click;
             // 
             // MI_M8
             // 
             MI_M8.Name = "MI_M8";
-            MI_M8.Size = new System.Drawing.Size(180, 22);
+            MI_M8.Size = new System.Drawing.Size(129, 22);
             MI_M8.Text = "Modeset 8";
             MI_M8.Click += MI_M8_Click;
             // 
             // MI_M9
             // 
             MI_M9.Name = "MI_M9";
-            MI_M9.Size = new System.Drawing.Size(180, 22);
+            MI_M9.Size = new System.Drawing.Size(129, 22);
             MI_M9.Text = "Modeset 9";
             MI_M9.Click += MI_M9_Click;
             // 
@@ -1341,7 +1341,7 @@
             tableLayoutPanel1.Controls.Add(CB_Manual, 0, 1);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 542);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 519);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1378,13 +1378,14 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(634, 604);
+            ClientSize = new System.Drawing.Size(634, 581);
             ControlBox = false;
             Controls.Add(flowLayoutPanel4);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximumSize = new System.Drawing.Size(700, 650);
             MinimumSize = new System.Drawing.Size(650, 620);
             Name = "FormGDPISettings";
             ShowInTaskbar = false;
