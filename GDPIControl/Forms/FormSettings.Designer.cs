@@ -167,8 +167,9 @@
             MaximumSize = new System.Drawing.Size(400, 200);
             MinimumSize = new System.Drawing.Size(300, 180);
             Name = "FormSettings";
+            ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            Text = "FormSettings";
+            Text = "Settings";
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
