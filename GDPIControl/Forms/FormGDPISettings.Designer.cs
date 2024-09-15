@@ -105,13 +105,25 @@
             tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             label22 = new System.Windows.Forms.Label();
             checkBox22 = new System.Windows.Forms.CheckBox();
+            tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            checkBox3 = new System.Windows.Forms.CheckBox();
+            textBox1 = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            checkBox24 = new System.Windows.Forms.CheckBox();
+            numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            label24 = new System.Windows.Forms.Label();
+            tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
+            checkBox25 = new System.Windows.Forms.CheckBox();
+            numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            label25 = new System.Windows.Forms.Label();
             tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             checkBox23 = new System.Windows.Forms.CheckBox();
             numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             label23 = new System.Windows.Forms.Label();
             B_OK = new System.Windows.Forms.Button();
             B_Cancel = new System.Windows.Forms.Button();
-            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            MS_Modeset = new System.Windows.Forms.MenuStrip();
             copyFromModesetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             MI_M1 = new System.Windows.Forms.ToolStripMenuItem();
             MI_M2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,9 +167,14 @@
             tableLayoutPanel13.SuspendLayout();
             tableLayoutPanel20.SuspendLayout();
             tableLayoutPanel21.SuspendLayout();
+            tableLayoutPanel25.SuspendLayout();
+            tableLayoutPanel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown8).BeginInit();
+            tableLayoutPanel27.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
             tableLayoutPanel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
-            menuStrip1.SuspendLayout();
+            MS_Modeset.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -185,13 +202,16 @@
             flowLayoutPanel4.Controls.Add(tableLayoutPanel13);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel20);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel21);
+            flowLayoutPanel4.Controls.Add(tableLayoutPanel25);
+            flowLayoutPanel4.Controls.Add(tableLayoutPanel26);
+            flowLayoutPanel4.Controls.Add(tableLayoutPanel27);
             flowLayoutPanel4.Controls.Add(tableLayoutPanel22);
             flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             flowLayoutPanel4.Location = new System.Drawing.Point(0, 24);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            flowLayoutPanel4.Size = new System.Drawing.Size(634, 495);
+            flowLayoutPanel4.Size = new System.Drawing.Size(684, 575);
             flowLayoutPanel4.TabIndex = 8;
             flowLayoutPanel4.WrapContents = false;
             // 
@@ -963,7 +983,7 @@
             tableLayoutPanel17.Name = "tableLayoutPanel17";
             tableLayoutPanel17.RowCount = 1;
             tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel17.Size = new System.Drawing.Size(622, 30);
+            tableLayoutPanel17.Size = new System.Drawing.Size(635, 26);
             tableLayoutPanel17.TabIndex = 15;
             // 
             // checkBox1
@@ -971,7 +991,7 @@
             checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             checkBox1.AutoSize = true;
             checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "MTTL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            checkBox1.Location = new System.Drawing.Point(3, 8);
+            checkBox1.Location = new System.Drawing.Point(3, 6);
             checkBox1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -983,7 +1003,7 @@
             numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "MTTL_V", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            numericUpDown1.Location = new System.Drawing.Point(21, 5);
+            numericUpDown1.Location = new System.Drawing.Point(21, 3);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new System.Drawing.Size(63, 20);
             numericUpDown1.TabIndex = 1;
@@ -992,9 +1012,9 @@
             // 
             label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(90, 0);
+            label18.Location = new System.Drawing.Point(90, 5);
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(506, 30);
+            label18.Size = new System.Drawing.Size(542, 15);
             label18.TabIndex = 2;
             label18.Text = "Minimum TTL distance (128/64 - TTL) for which to send Fake Request in --set-ttl and --auto-ttl modes";
             // 
@@ -1007,7 +1027,7 @@
             tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel12.Controls.Add(label13, 1, 0);
             tableLayoutPanel12.Controls.Add(checkBox20, 0, 0);
-            tableLayoutPanel12.Location = new System.Drawing.Point(1, 357);
+            tableLayoutPanel12.Location = new System.Drawing.Point(1, 353);
             tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.RowCount = 1;
@@ -1046,7 +1066,7 @@
             tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel13.Controls.Add(label14, 1, 0);
             tableLayoutPanel13.Controls.Add(checkBox6, 0, 0);
-            tableLayoutPanel13.Location = new System.Drawing.Point(1, 379);
+            tableLayoutPanel13.Location = new System.Drawing.Point(1, 375);
             tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel13.Name = "tableLayoutPanel13";
             tableLayoutPanel13.RowCount = 1;
@@ -1085,12 +1105,12 @@
             tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel20.Controls.Add(label21, 1, 0);
             tableLayoutPanel20.Controls.Add(checkBox7, 0, 0);
-            tableLayoutPanel20.Location = new System.Drawing.Point(1, 401);
+            tableLayoutPanel20.Location = new System.Drawing.Point(1, 397);
             tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel20.Name = "tableLayoutPanel20";
             tableLayoutPanel20.RowCount = 1;
             tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel20.Size = new System.Drawing.Size(622, 30);
+            tableLayoutPanel20.Size = new System.Drawing.Size(672, 30);
             tableLayoutPanel20.TabIndex = 17;
             // 
             // label21
@@ -1099,7 +1119,7 @@
             label21.AutoSize = true;
             label21.Location = new System.Drawing.Point(21, 0);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(577, 30);
+            label21.Size = new System.Drawing.Size(641, 30);
             label21.TabIndex = 0;
             label21.Text = "Fragment (split) the packets by sending them in smaller packets, without  shrinking the Window Size. Works faster (does not slow down the connection) and better";
             // 
@@ -1124,12 +1144,12 @@
             tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel21.Controls.Add(label22, 1, 0);
             tableLayoutPanel21.Controls.Add(checkBox22, 0, 0);
-            tableLayoutPanel21.Location = new System.Drawing.Point(1, 433);
+            tableLayoutPanel21.Location = new System.Drawing.Point(1, 429);
             tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel21.Name = "tableLayoutPanel21";
             tableLayoutPanel21.RowCount = 1;
             tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel21.Size = new System.Drawing.Size(622, 30);
+            tableLayoutPanel21.Size = new System.Drawing.Size(672, 30);
             tableLayoutPanel21.TabIndex = 18;
             // 
             // label22
@@ -1138,7 +1158,7 @@
             label22.AutoSize = true;
             label22.Location = new System.Drawing.Point(21, 0);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(591, 30);
+            label22.Size = new System.Drawing.Size(626, 30);
             label22.TabIndex = 0;
             label22.Text = resources.GetString("label22.Text");
             // 
@@ -1154,6 +1174,161 @@
             checkBox22.TabIndex = 1;
             checkBox22.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel25
+            // 
+            tableLayoutPanel25.AutoSize = true;
+            tableLayoutPanel25.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel25.ColumnCount = 3;
+            tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel25.Controls.Add(checkBox3, 0, 0);
+            tableLayoutPanel25.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel25.Controls.Add(label2, 2, 0);
+            tableLayoutPanel25.Location = new System.Drawing.Point(1, 461);
+            tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel25.Name = "tableLayoutPanel25";
+            tableLayoutPanel25.RowCount = 1;
+            tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel25.Size = new System.Drawing.Size(620, 26);
+            tableLayoutPanel25.TabIndex = 21;
+            // 
+            // checkBox3
+            // 
+            checkBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox3.AutoSize = true;
+            checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "FakeHex", true));
+            checkBox3.Location = new System.Drawing.Point(3, 6);
+            checkBox3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new System.Drawing.Size(15, 14);
+            checkBox3.TabIndex = 0;
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", BS_GDPISettings, "FakeHex_V", true));
+            textBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBox1.Location = new System.Drawing.Point(21, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(177, 20);
+            textBox1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(204, 5);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(413, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Load fake packets for Fake Request Mode from HEX values (like 1234abcDEF).";
+            // 
+            // tableLayoutPanel26
+            // 
+            tableLayoutPanel26.AutoSize = true;
+            tableLayoutPanel26.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel26.ColumnCount = 3;
+            tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel26.Controls.Add(checkBox24, 0, 0);
+            tableLayoutPanel26.Controls.Add(numericUpDown8, 1, 0);
+            tableLayoutPanel26.Controls.Add(label24, 2, 0);
+            tableLayoutPanel26.Location = new System.Drawing.Point(1, 489);
+            tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel26.Name = "tableLayoutPanel26";
+            tableLayoutPanel26.RowCount = 1;
+            tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel26.Size = new System.Drawing.Size(551, 26);
+            tableLayoutPanel26.TabIndex = 22;
+            // 
+            // checkBox24
+            // 
+            checkBox24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox24.AutoSize = true;
+            checkBox24.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "FakeGen", true));
+            checkBox24.Location = new System.Drawing.Point(3, 6);
+            checkBox24.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox24.Name = "checkBox24";
+            checkBox24.Size = new System.Drawing.Size(15, 14);
+            checkBox24.TabIndex = 0;
+            checkBox24.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown8
+            // 
+            numericUpDown8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            numericUpDown8.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "FakeGen_V", true));
+            numericUpDown8.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            numericUpDown8.Location = new System.Drawing.Point(21, 3);
+            numericUpDown8.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown8.Name = "numericUpDown8";
+            numericUpDown8.Size = new System.Drawing.Size(63, 20);
+            numericUpDown8.TabIndex = 1;
+            // 
+            // label24
+            // 
+            label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label24.AutoSize = true;
+            label24.Location = new System.Drawing.Point(90, 5);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(458, 15);
+            label24.TabIndex = 2;
+            label24.Text = "Generate random-filled fake packets for Fake Request Mode, value of them (up to 30).";
+            // 
+            // tableLayoutPanel27
+            // 
+            tableLayoutPanel27.AutoSize = true;
+            tableLayoutPanel27.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel27.ColumnCount = 3;
+            tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel27.Controls.Add(checkBox25, 0, 0);
+            tableLayoutPanel27.Controls.Add(numericUpDown9, 1, 0);
+            tableLayoutPanel27.Controls.Add(label25, 2, 0);
+            tableLayoutPanel27.Location = new System.Drawing.Point(1, 517);
+            tableLayoutPanel27.Margin = new System.Windows.Forms.Padding(1);
+            tableLayoutPanel27.Name = "tableLayoutPanel27";
+            tableLayoutPanel27.RowCount = 1;
+            tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel27.Size = new System.Drawing.Size(529, 26);
+            tableLayoutPanel27.TabIndex = 23;
+            // 
+            // checkBox25
+            // 
+            checkBox25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            checkBox25.AutoSize = true;
+            checkBox25.DataBindings.Add(new System.Windows.Forms.Binding("Checked", BS_GDPISettings, "FakeResend", true));
+            checkBox25.Location = new System.Drawing.Point(3, 6);
+            checkBox25.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            checkBox25.Name = "checkBox25";
+            checkBox25.Size = new System.Drawing.Size(15, 14);
+            checkBox25.TabIndex = 0;
+            checkBox25.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown9
+            // 
+            numericUpDown9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            numericUpDown9.DataBindings.Add(new System.Windows.Forms.Binding("Value", BS_GDPISettings, "FakeResend_V", true));
+            numericUpDown9.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            numericUpDown9.Location = new System.Drawing.Point(21, 3);
+            numericUpDown9.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown9.Name = "numericUpDown9";
+            numericUpDown9.Size = new System.Drawing.Size(63, 20);
+            numericUpDown9.TabIndex = 1;
+            // 
+            // label25
+            // 
+            label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label25.AutoSize = true;
+            label25.Location = new System.Drawing.Point(90, 5);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(436, 15);
+            label25.TabIndex = 2;
+            label25.Text = "Send each fake packet value number of times. Default: 1 (send each packet once).";
+            // 
             // tableLayoutPanel22
             // 
             tableLayoutPanel22.AutoSize = true;
@@ -1165,7 +1340,7 @@
             tableLayoutPanel22.Controls.Add(checkBox23, 0, 0);
             tableLayoutPanel22.Controls.Add(numericUpDown6, 1, 0);
             tableLayoutPanel22.Controls.Add(label23, 2, 0);
-            tableLayoutPanel22.Location = new System.Drawing.Point(1, 465);
+            tableLayoutPanel22.Location = new System.Drawing.Point(1, 545);
             tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(1);
             tableLayoutPanel22.Name = "tableLayoutPanel22";
             tableLayoutPanel22.RowCount = 1;
@@ -1236,14 +1411,13 @@
             B_Cancel.UseVisualStyleBackColor = true;
             B_Cancel.Click += B_Cancel_Click;
             // 
-            // menuStrip1
+            // MS_Modeset
             // 
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { copyFromModesetToolStripMenuItem });
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(634, 24);
-            menuStrip1.TabIndex = 10;
-            menuStrip1.Text = "menuStrip1";
+            MS_Modeset.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { copyFromModesetToolStripMenuItem });
+            MS_Modeset.Location = new System.Drawing.Point(0, 0);
+            MS_Modeset.Name = "MS_Modeset";
+            MS_Modeset.Size = new System.Drawing.Size(684, 24);
+            MS_Modeset.TabIndex = 10;
             // 
             // copyFromModesetToolStripMenuItem
             // 
@@ -1323,7 +1497,7 @@
             flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(B_OK);
             flowLayoutPanel1.Controls.Add(B_Cancel);
-            flowLayoutPanel1.Location = new System.Drawing.Point(500, 29);
+            flowLayoutPanel1.Location = new System.Drawing.Point(550, 29);
             flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(134, 33);
@@ -1341,12 +1515,12 @@
             tableLayoutPanel1.Controls.Add(CB_Manual, 0, 1);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 519);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 599);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel1.Size = new System.Drawing.Size(634, 62);
+            tableLayoutPanel1.Size = new System.Drawing.Size(684, 62);
             tableLayoutPanel1.TabIndex = 12;
             // 
             // TB_Arguments
@@ -1357,7 +1531,7 @@
             TB_Arguments.Location = new System.Drawing.Point(3, 3);
             TB_Arguments.Name = "TB_Arguments";
             TB_Arguments.ReadOnly = true;
-            TB_Arguments.Size = new System.Drawing.Size(628, 23);
+            TB_Arguments.Size = new System.Drawing.Size(678, 23);
             TB_Arguments.TabIndex = 0;
             // 
             // CB_Manual
@@ -1378,15 +1552,15 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(634, 581);
+            ClientSize = new System.Drawing.Size(684, 661);
             ControlBox = false;
             Controls.Add(flowLayoutPanel4);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(MS_Modeset);
+            MainMenuStrip = MS_Modeset;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            MaximumSize = new System.Drawing.Size(700, 650);
-            MinimumSize = new System.Drawing.Size(650, 620);
+            MaximumSize = new System.Drawing.Size(700, 900);
+            MinimumSize = new System.Drawing.Size(650, 700);
             Name = "FormGDPISettings";
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1444,11 +1618,19 @@
             tableLayoutPanel20.PerformLayout();
             tableLayoutPanel21.ResumeLayout(false);
             tableLayoutPanel21.PerformLayout();
+            tableLayoutPanel25.ResumeLayout(false);
+            tableLayoutPanel25.PerformLayout();
+            tableLayoutPanel26.ResumeLayout(false);
+            tableLayoutPanel26.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown8).EndInit();
+            tableLayoutPanel27.ResumeLayout(false);
+            tableLayoutPanel27.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
             tableLayoutPanel22.ResumeLayout(false);
             tableLayoutPanel22.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            MS_Modeset.ResumeLayout(false);
+            MS_Modeset.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -1536,7 +1718,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button B_OK;
         private System.Windows.Forms.Button B_Cancel;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MS_Modeset;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem copyFromModesetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MI_M1;
@@ -1555,5 +1737,17 @@
         private System.Windows.Forms.TextBox TB_Arguments;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.CheckBox CB_Manual;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.CheckBox checkBox24;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        private System.Windows.Forms.CheckBox checkBox25;
+        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

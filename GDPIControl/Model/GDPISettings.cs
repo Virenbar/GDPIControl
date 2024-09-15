@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace GDPIControl.Model
         {
             DNS_Port = "53";
             DNS6_Port = "53";
+            FakeResend_V = 1;
             MP_V = 1200;
         }
 
@@ -453,6 +455,90 @@ namespace GDPIControl.Model
 
         #endregion ReverseFrag
 
+        #region FakeFromHex
+        private bool _FFH;
+        private string _FFH_V;
+
+        public bool FakeHex
+        {
+            get => _FFH;
+            set
+            {
+                if (_FFH == value) { return; }
+                _FFH = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string FakeHex_V
+        {
+            get => _FFH_V;
+            set
+            {
+                if (_FFH_V == value) { return; }
+                _FFH_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion FakeFromHex
+
+        #region FakeGen
+        private bool _FG;
+        private int _FG_V;
+
+        public bool FakeGen
+        {
+            get => _FG;
+            set
+            {
+                if (_FG == value) { return; }
+                _FG = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public int FakeGen_V
+        {
+            get => _FG_V;
+            set
+            {
+                if (_FG_V == value) { return; }
+                _FG_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion FakeGen
+
+        #region FakeResend
+        private bool _FR;
+        private int _FR_V;
+
+        public bool FakeResend
+        {
+            get => _FR;
+            set
+            {
+                if (_FR == value) { return; }
+                _FR = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public int FakeResend_V
+        {
+            get => _FR_V;
+            set
+            {
+                if (_FR_V == value) { return; }
+                _FR_V = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #endregion FakeResend
+
         #region MaxPayload
         private bool _MP;
         private int _MP_V;
@@ -518,6 +604,13 @@ namespace GDPIControl.Model
         // --reverse-frag           fragment (split) the packets just as --native-frag, but send them in the
         //                          reversed order. Works with the websites which could not handle segmented
         //                          HTTPS TLS ClientHello (because they receive the TCP flow "combined").
+        // --fake-from-hex <value>   Load fake packets for Fake Request Mode from HEX values(like 1234abcDEF).
+        //                          This option can be supplied multiple times, in this case each fake packet
+        //                          would be sent on every request in the command line argument order.
+        // --fake-gen <value>        Generate random-filled fake packets for Fake Request Mode, value of them
+        //                          (up to 30).
+        // --fake-resend <value>     Send each fake packet value number of times.
+        //                          Default: 1 (send each packet once).
         // --max-payload [value]    packets with TCP payload data more than [value] won't be processed.
         //                          Use this option to reduce CPU usage by skipping huge amount of data
         //                          (like file transfers) in already established sessions.
@@ -577,6 +670,11 @@ namespace GDPIControl.Model
             if (Seq) { SB.Append(" --wrong-seq"); }
             if (NFrag) { SB.Append(" --native-frag "); }
             if (RFrag) { SB.Append(" --reverse-frag "); }
+
+            if (FakeHex) { SB.Append($" --fake-from-hex {FakeHex_V}"); }
+            if (FakeGen) { SB.Append($" --fake-gen {FakeGen_V}"); }
+            if (FakeResend) { SB.Append($" --fake-resend {FakeResend_V}"); }
+
             if (MP) { SB.Append($" --max-payload {MP_V}"); }
             return SB.ToString().Trim();
         }
